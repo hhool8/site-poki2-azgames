@@ -4,7 +4,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT            = path.join(__dirname, '..');
-const { gamesData, navGamesHtml } = require('./config');
+const { gamesData } = require('./config');
 const baseTemplate    = fs.readFileSync(path.join(ROOT, 'src/templates/base.html'),     'utf8');
 const playTemplate    = fs.readFileSync(path.join(ROOT, 'src/templates/play.html'),     'utf8');
 const categoryTemplate = fs.readFileSync(path.join(ROOT, 'src/templates/category.html'), 'utf8');
@@ -51,8 +51,8 @@ for (const game of games) {
     .replace(/\{\{CATEGORY_NAME\}\}/g, cat.name)
     .replace(/\{\{RESOURCE_URL\}\}/g,  resourceUrl);
 
-  const title       = `${game.title} - Play Free Online | AZ Games`;
-  const description = `${game.description} Play ${game.title} free online — no download, instant play!`;
+  const title       = `Play ${game.title} Free Online — No Download | AZ Games`;
+  const description = `Play ${game.title} for free in your browser. ${game.description} No download, no login — instant play on AZ Games!`;
 
   const html = renderBase(baseTemplate, {
     title, description,
@@ -112,12 +112,12 @@ for (const cat of categories) {
     .replace(/\{\{GAME_COUNT\}\}/g,            catGames.length)
     .replace(/\{\{GAMES_HTML\}\}/g,            gamesHtml);
 
-  const title       = `${cat.name} — Play Free Online | AZ Games`;
-  const description = `${cat.description} Play all ${catGames.length} ${cat.name} games free in your browser — no download needed!`;
+  const title       = `${cat.name} — Play Free Online, No Download | AZ Games`;
+  const description = `Play ${catGames.length} free ${cat.name} games online at AZ Games. ${cat.description} No download, no login — instant browser play!`;
 
   const html = renderBase(baseTemplate, {
     title, description,
-    keywords:     `${cat.name} games online free, play ${cat.name.toLowerCase()} games, az games ${cat.name.toLowerCase()}`,
+    keywords:     `${cat.name.toLowerCase()} online free, play ${cat.name.toLowerCase()}, free ${cat.name.toLowerCase()} no download, az games ${cat.name.toLowerCase()}, browser ${cat.name.toLowerCase()}`,
     canonical:    canonicalUrl,
     ogTitle:      title,
     ogDescription: description,
@@ -158,8 +158,7 @@ function renderBase(template, p) {
     .replace(/\{\{TWITTER_IMAGE\}\}/g,        escAttr(p.twitterImage))
     .replace(/\{\{BODY_CLASS\}\}/g,           escAttr(p.bodyClass))
     .replace(/\{\{SCHEMA\}\}/g,               p.schema)
-    .replace(/\{\{CONTENT\}\}/g,              p.content)
-    .replace(/\{\{NAV_GAMES\}\}/g,            navGamesHtml);
+    .replace(/\{\{CONTENT\}\}/g,              p.content);
 }
 
 function buildSchema(schemas) {

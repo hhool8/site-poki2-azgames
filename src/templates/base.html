@@ -28,14 +28,19 @@
 
   <nav class="site-nav" aria-label="Main navigation">
     <a class="logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" style="flex-shrink:0"><rect width="32" height="32" rx="5" fill="#0f0f1a"/><text x="3" y="22" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="14" fill="#f97316">AZ</text></svg>AZ Games</a>
-    <ul id="nav-menu">
-      <li><a class="nav-home" href="/">Home</a></li>
-      <li><a class="nav-about" href="/about.html">About</a></li>
-      <li><a class="nav-privacy" href="/privacy.html">Privacy</a></li>
-      <li><a class="nav-terms" href="/terms.html">Terms</a></li>
-      <li><a class="nav-contact" href="/contact.html">Contact</a></li>
-    </ul>
-    {{NAV_GAMES}}
+    <div class="nav-cats" id="nav-cats" role="navigation" aria-label="Game categories">
+      <a href="/category/clicker-games.html">🖱️ Clicker</a>
+      <a href="/category/io-games.html">🌐 IO</a>
+      <a href="/category/adventure-games.html">🗺️ Adventure</a>
+      <a href="/category/2-player-games.html">👥 2 Player</a>
+      <a href="/category/shooting-games.html">🎯 Shooting</a>
+      <a href="/category/sports-games.html">🏆 Sports</a>
+      <a href="/category/car-games.html">🚗 Car</a>
+      <a href="/category/puzzle-games.html">🧩 Puzzle</a>
+      <a href="/category/casual-games.html">🎮 Casual</a>
+      <a href="/category/kids-games.html">🧒 Kids</a>
+      <a href="/blog.html" class="nav-blog">📝 Blog</a>
+    </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -65,31 +70,12 @@
   <script>
     (function(){
       var btn = document.getElementById('nav-toggle');
-      var menu = document.getElementById('nav-menu');
-      if (btn && menu) {
+      var cats = document.getElementById('nav-cats');
+      if (btn && cats) {
         btn.addEventListener('click', function(){
-          var open = menu.classList.toggle('open');
+          var open = cats.classList.toggle('open');
           btn.classList.toggle('open', open);
           btn.setAttribute('aria-expanded', open);
-        });
-      }
-      var gBtn = document.getElementById('nav-games-btn');
-      var gDrop = document.getElementById('nav-games-dropdown');
-      if (gBtn && gDrop) {
-        gBtn.addEventListener('click', function(e){
-          e.stopPropagation();
-          var open = gDrop.classList.toggle('open');
-          gBtn.setAttribute('aria-expanded', open);
-        });
-        document.addEventListener('click', function(){
-          gDrop.classList.remove('open');
-          gBtn.setAttribute('aria-expanded', 'false');
-        });
-        document.addEventListener('keydown', function(e){
-          if (e.key === 'Escape') {
-            gDrop.classList.remove('open');
-            gBtn.setAttribute('aria-expanded', 'false');
-          }
         });
       }
     })();

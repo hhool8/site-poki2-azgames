@@ -1,4 +1,8 @@
-<section class="homepage-rows">
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const OUT = path.join(__dirname, '../src/content/index.html');
+const content = `<section class="homepage-rows">
   <div class="container">
     {{HOMEPAGE_GAME_ROWS}}
   </div>
@@ -85,3 +89,6 @@
     </ul>
   </div>
 </section>
+`;
+fs.writeFileSync(OUT, content, 'utf8');
+console.log('Written', fs.statSync(OUT).size, 'bytes to', OUT);

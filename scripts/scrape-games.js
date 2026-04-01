@@ -100,19 +100,45 @@ function parsePage(html, slug) {
   }
   if (!thumbnail) thumbnail = `https://azgames.io/upload/imgs/${slug.replace(/-/g,'')}.png`;
 
-  // Category: use breadcrumb link (primary category) or first us-sticker tag
-  // Nav lists all 10 categories — must ignore nav and use game-specific elements.
-  let category = DEFAULT_CAT;
+  // Category: collect ALL candidate slugs from breadcrumb + us-sticker elements,
+  // then pick by priority (rarest/most specific category first).
+  // Nav lists all 10 categories first — must collect only content-area tags.
+  const CAT_PRIORITY = [
+    'io-games', '2-player-games', 'shooting-games', 'car-games',
+    'sports-games', 'clicker-games', 'puzzle-games', 'kids-games',
+    'adventure-games', 'casual-games'
+  ];
 
-  // 1. Try breadcrumb: class="bread-crumb-item ... href="/category/X"
-  const breadM = html.match(/class="bread-crumb-item[^"]*"\s+href="\/category\/([a-z0-9-]+)"/i);
-  if (breadM && VALID_CAT_SLUGS.has(breadM[1])) {
-    category = breadM[1];
-  } else {
-    // 2. Try us-sticker: <a class="us-sticker" href="/category/X">
-    const stickerM = html.match(/class="us-sticker"\s+href="\/category\/([a-z0-9-]+)"/i);
-    if (stickerM && VALID_CAT_SLUGS.has(stickerM[1])) {
-      category = stickerM[1];
+  const catCandidates = new Set();
+
+  // Breadcrumb: <... class="bread-crumb-item..." href="/category/X" ...>
+  // Attribute order may vary — match both orders
+  const breadRe1 = /class="bread-crumb-item[^"]*"[^>]*href="\/category\/([a-z0-9-]+)"/gi;
+  const breadRe2 = /href="\/category\/([a-z0-9-]+)"[^>]*class="bread-crumb-item[^"]*"/gi;
+  let m;
+  while ((m = breadRe1.exec(html)) !== null) {
+    if (VALID_CAT_SLUGS.has(m[1])) catCandidates.add(m[1]);
+  }
+  while ((m = breadRe2.exec(html)) !== null) {
+    if (VALID_CAT_SLUGS.has(m[1])) catCandidates.add(m[1]);
+  }
+
+  // US-sticker: <a class="us-sticker..." href="/category/X"> — attribute order may vary
+  const stickerRe1 = /class="us-sticker[^"]*"[^>]*href="\/category\/([a-z0-9-]+)"/gi;
+  const stickerRe2 = /href="\/category\/([a-z0-9-]+)"[^>]*class="us-sticker[^"]*"/gi;
+  while ((m = stickerRe1.exec(html)) !== null) {
+    if (VALID_CAT_SLUGS.has(m[1])) catCandidates.add(m[1]);
+  }
+  while ((m = stickerRe2.exec(html)) !== null) {
+    if (VALID_CAT_SLUGS.has(m[1])) catCandidates.add(m[1]);
+  }
+
+  // Pick highest-priority (rarest) category
+  let category = DEFAULT_CAT;
+  for (const catSlug of CAT_PRIORITY) {
+    if (catCandidates.has(catSlug)) {
+      category = catSlug;
+      break;
     }
   }
 

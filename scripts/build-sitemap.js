@@ -4,8 +4,9 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT     = path.join(__dirname, '..');
-const seoData  = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/seo.json'),   'utf8'));
-const gamesData = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/games.json'), 'utf8'));
+const seoData  = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/seo.json'),        'utf8'));
+const gamesData = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/games.json'),     'utf8'));
+const blogData  = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/blog-posts.json'),'utf8'));
 
 // Apply SITE_DOMAIN override
 if (process.env.SITE_DOMAIN) {
@@ -37,6 +38,14 @@ for (const g of gamesData.games) {
 // Category pages
 for (const c of gamesData.categories) {
   entries.push(urlTag(`${gamesData.site.domain}/category/${c.slug}.html`, today, 'weekly', '0.9'));
+}
+
+// Blog index + posts
+const blogDomain = gamesData.site.domain;
+entries.push(urlTag(`${blogDomain}/blog.html`, today, 'weekly', '0.8'));
+for (const post of blogData.posts) {
+  const postCanonical = post.canonical.replace('https://azgames.poki2.online', blogDomain);
+  entries.push(urlTag(postCanonical, post.date, 'monthly', '0.7'));
 }
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

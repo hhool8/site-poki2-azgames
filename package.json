@@ -7,7 +7,8 @@
     "build:pages": "node scripts/build-pages.js",
     "build:games": "node scripts/build-games.js",
     "build:sitemap": "node scripts/build-sitemap.js",
-    "build": "node scripts/build-pages.js && node scripts/build-games.js && node scripts/build-sitemap.js",
+    "build:blog": "node scripts/build-blog.js",
+    "build": "node scripts/build-pages.js && node scripts/build-games.js && node scripts/build-blog.js && node scripts/build-sitemap.js",
     "deploy": "wrangler pages deploy dist --project-name azgames-poki2-site",
     "clean": "rm -rf dist"
   },

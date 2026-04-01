@@ -72,35 +72,35 @@
       "title": "1v1.lol",
       "description": "1v1 LOL is a multiplayer battle game that brings an experience that combines competitive gameplay with diverse modes and player customization.",
       "thumbnail": "https://azgames.io/upload/imgs/1v1lol.png",
-      "category": "shooting-games"
+      "category": "io-games"
     },
     {
       "slug": "1v1soccerio",
       "title": "1v1soccer.io",
       "description": "1v1soccer.io is a free online soccer game that offers exciting and dramatic 1v1 soccer matches.",
       "thumbnail": "https://azgames.io/upload/imgs/1200x1200.png",
-      "category": "kids-games"
+      "category": "io-games"
     },
     {
       "slug": "2048-drop",
       "title": "2048 Drop",
       "description": "Game 2048 Drop challenges you to merge chips strategically to create the ultimate number 2048. Dive into this addictive game!",
       "thumbnail": "https://azgames.io/upload/imgs/2048drop2.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "2048-italian-brainrot",
       "title": "2048 Italian Brainrot",
       "description": "2048 Italian Brainrot is a fun block puzzle game that blends the classic 2048 gameplay with the viral charm of Italian Brainrot characters. Play on Azgames now!",
       "thumbnail": "https://azgames.io/upload/imgs/2048italian3.png",
-      "category": "adventure-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "2048-rogue",
       "title": "2048 Rogue",
       "description": "Set on a 4x4 grid, 2048 Rogue is an addictive yet challenging merging puzzle game where you combine tiles for higher-value creatures or objects. Play now & have fun!",
       "thumbnail": "https://azgames.io/upload/imgs/2048rogue2.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "2048",
@@ -121,119 +121,119 @@
       "title": "American Truck Driving",
       "description": "America Truck Driving is a 3D driving simulation game where players experience the job of a truck driver in realistic driving gameplay. Play on Azgames today!",
       "thumbnail": "https://azgames.io/upload/imgs/truckdriving.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "animal-craft",
       "title": "Animal Craft",
       "description": "Animal Craft is a quirky animal fusion and battle survival game where you combine different animals to create bizarre hybrids, then explore, battle, and survive.",
       "thumbnail": "https://azgames.io/upload/imgs/animalcraft3.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "arcade-tennis",
       "title": "Arcade Tennis",
       "description": "Arcade Tennis is a fun arcade sports game where you play as a quirky tennis player and aim to dominate the court with your precision and powerful strikes. Enjoy it!",
       "thumbnail": "https://azgames.io/upload/imgs/arcadetennis3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "arcade-volley",
       "title": "Arcade Volley",
       "description": "Jump in, join quick volleyball matches across a variety of court locations in Arcade Volley. Enjoy fun, fast-paced matches and hit powerful spikes to earn scores.",
       "thumbnail": "https://azgames.io/upload/imgs/arcadevolley2.png",
-      "category": "casual-games"
+      "category": "2-player-games"
     },
     {
       "slug": "astro-robot-clicker",
       "title": "Astro Robot Clicker",
       "description": "Astro Robot Clicker is the best clicker game, transporting you to a thrilling space journey! Get ready to discover the universe",
       "thumbnail": "https://azgames.io/upload/imgs/astrorobotclicker.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "astro-tycoon",
       "title": "Astro Tycoon",
       "description": "Astro Tycoon is a casual space-themed idle game that drops you into a special space-mining adventure. Play now, collect minerals, and go to even the farthest planet.",
       "thumbnail": "https://azgames.io/upload/imgs/astrotycoon3.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "ball-orbit",
       "title": "Ball Orbit",
       "description": "Hit your baseball the farthest distance possible in Ball Orbit: Unleash the perfect hit, earn rewards, and upgrade your ball to make it fly farther and farther.",
       "thumbnail": "https://azgames.io/upload/imgs/ballorbit2.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "basket-random",
       "title": "Basket Random",
       "description": "Basket Random is a fun two-player basketball sports game. The object is to score as many goals as possible to beat your opponent and get more points.",
       "thumbnail": "https://azgames.io/upload/imgs/basketrandom.jpeg",
-      "category": "casual-games"
+      "category": "2-player-games"
     },
     {
       "slug": "basketball-stars",
       "title": "Basketball Stars",
       "description": "Basketball Stars is an exciting basketball game that is sure to get you excited. Developed by Madpuffers, the game is a playground where you play as the most iconic soccer players in history.",
       "thumbnail": "https://azgames.io/upload/imgs/basketballstarsgamelogo2.png",
-      "category": "casual-games"
+      "category": "2-player-games"
     },
     {
       "slug": "bat-smash",
       "title": "Bat Smash",
       "description": "Bat Smash is a fun, casual sports game where your goal is to swing your bat at the perfect timing to send the baseball as far as possible, earn money, and upgrade.",
       "thumbnail": "https://azgames.io/upload/imgs/batsmash.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "battle-karts",
       "title": "Battle Karts",
       "description": "Battle Karts Join the ultimate free multiplayer kart battle arena. Drive fast Unleash rockets Create epic explosions. Play now for endless thrills",
       "thumbnail": "https://azgames.io/upload/imgs/battlekarts.png",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "bike-xtreme",
       "title": "Bike Xtreme",
       "description": "Bike Xtreme is an exciting racing game. Test your skills with smooth controls and thrilling jumps in this adventure. Ready to ride through rugged terrains?",
       "thumbnail": "https://azgames.io/upload/imgs/bikextreme11.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "billiards-master",
       "title": "Billiards Master",
       "description": "Dive in Billiards Master realistic billiards simulation gameplay. Select a mode you love, aim, control shot strength, and strike the ball. Play on Azgames today!",
       "thumbnail": "https://azgames.io/upload/imgs/billiardmaster.png",
-      "category": "shooting-games"
+      "category": "io-games"
     },
     {
       "slug": "bitlife",
       "title": "Bitlife",
       "description": "BitLife is a text-based life simulation game. Here you can make every decision about your life, from birth to death. Each choice will create a unique and unpredictable life story.",
       "thumbnail": "https://azgames.io/upload/imgs/bitlifegamebanner1.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "blendrix",
       "title": "Blendrix",
       "description": "Blendrix is a minimalist puzzle game focused on connecting colored dots to make them all one unified color. Draw lines to link dots and make them in the same color.",
       "thumbnail": "https://azgames.io/upload/imgs/blendrix3.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "block-blast-3d",
       "title": "Block Blast 3D",
       "description": "Block Blast 3D is a relaxing 3D block-placement puzzle game that challenges you to reach the highest score by creating and clearing as many full lines as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/blockblast3d1.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "block-slide",
       "title": "Block Slide",
       "description": "Block Slide is the ultimate puzzle adventure! Slide colorful blocks and clear challenging obstacles in hundreds of fun and creative levels. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/blockslide1.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "blocky-hunter",
@@ -247,91 +247,91 @@
       "title": "Blocky Overtake X",
       "description": "Blocky Overtake X is the ultimate blocky driving challenge! Speed through blocky landscapes, avoid blocky crashes, and become the blocky road champion. Experience the blocky thrill!",
       "thumbnail": "https://azgames.io/upload/imgs/512x512-logo.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "blocky-rider",
       "title": "Blocky Rider",
       "description": "Blocky Rider is a block-style motorcycle racing game where players ride bikes across city streets full of traffic, obstacles, and crashes. Explore all game modes now!",
       "thumbnail": "https://azgames.io/upload/imgs/blockyrider11.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "blocky-rush",
       "title": "Blocky Rush",
       "description": "Blocky Rush is a fun, endless block puzzle game where you move blocks left or right to form full rows and clear them. Play now and aim to clear as many rows as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/blockyrush3.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "bombardino-crocodilo-clicker",
       "title": "Bombardino Crocodilo Clicker",
       "description": "Bombardino Crocodilo Clicker is an Italian Brainrot meme-themed clicker where players click/tap repeatedly on Bombardino Crocodilo to earn coins. Enjoy on AZgames today!",
       "thumbnail": "https://azgames.io/upload/imgs/bombardinocrocodiloclicker.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "bottle-hop",
       "title": "Bottle Hop",
       "description": "Bottle Hop is a one-button casual arcade game where you flip a plastic bottle through rooms filled with furniture and objects, trying to reach the finish platform.",
       "thumbnail": "https://azgames.io/upload/imgs/bottlehop2.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "bottle-jump",
       "title": "Bottle Jump",
       "description": "Bottle Jump is an addictive arcade skill-based game, where players progress by jumping a bottle from object to object while ensuring its upright landing. Play it now!",
       "thumbnail": "https://azgames.io/upload/imgs/bottlejump2.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "bounce-path",
       "title": "Bounce Path",
       "description": "Bounce Path is a rhythm‑platformer game where you control a small black blob-looking character jumping in sync with the beat of the music. Jump through paths now!",
       "thumbnail": "https://azgames.io/upload/imgs/bouncepath1.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "bounce-up",
       "title": "Bounce Up",
       "description": "Bounce Up is a fast-paced, skill-based arcade game where you control a ball bouncing from one platform to another. Play now and score as many points as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/bounceup3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "brain-lines",
       "title": "Brain Lines",
       "description": "Brain Lines is a drawing-based puzzle game that challenges your creativity and problem-solving skills with clever physics puzzles.",
       "thumbnail": "https://azgames.io/upload/imgs/brainlines.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "breakout-racing",
       "title": "Breakout Racing",
       "description": "Breakout Racing is an action-packed driving game! Race against the police, collect coins, and unlock cool cars. Can you help the panda make a clean getaway? Play now and find out!",
       "thumbnail": "https://azgames.io/upload/imgs/breakoutracing1.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "bricky-blast",
       "title": "Bricky Blast",
       "description": "Bricky Blast dive into a vibrant puzzle adventure! Match blocks, solve tricky challenges, and clear levels in this colorful, addictive game. Ready to blast? Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/brickyblast.png",
-      "category": "adventure-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "bricky-break",
       "title": "Bricky Break",
       "description": "Bricky Break is a fun and simple arcade blast! Launch balls, break bricks, and collect more balls for a chain reaction. Relaxing gameplay, challenging levels. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/brickybreak.png",
-      "category": "casual-games"
+      "category": "shooting-games"
     },
     {
       "slug": "bucket-smash",
       "title": "Bucket Smash",
       "description": "Get ready to control a giant saw to destroy walls brick by brick and, more importantly, turn debris into coin earnings for essential upgrades. Play Bucket Smash now!",
       "thumbnail": "https://azgames.io/upload/imgs/bucketsmash2.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "car-chaos",
@@ -345,28 +345,28 @@
       "title": "Chase Rush",
       "description": "Chase Rush is a high-speed car chasing game where you step into the driver’s seat of a getaway car, dodging police pursuit and surviving for as long as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/chaserush3.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "chicken-flip",
       "title": "Chicken Flip",
       "description": "Chicken Flip is a hilariously chaotic arcade game where you guide your cute little chicken down hills by jumping, flipping, and bouncing through tricky levels.",
       "thumbnail": "https://azgames.io/upload/imgs/chickenflip4.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "chicken-jockey-clicker",
       "title": "Chicken Jockey Clicker",
       "description": "Chicken Jockey Clicker is a casual idle clicker game featuring Chicken Jockey characters. Click to earn points and spend them on upgrades to boost scores faster.",
       "thumbnail": "https://azgames.io/upload/imgs/chickenjockeyclicker.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "chicken-jockey-combat",
       "title": "Chicken Jockey Combat",
       "description": "Chicken Jockey Combat is a first-person zombie survival shooter game where players must defend themselves and their base against relentless waves of zombies.",
       "thumbnail": "https://azgames.io/upload/imgs/chickenjockeycombat1.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "chill-clicker",
@@ -380,14 +380,14 @@
       "title": "Chill Girl Clicker",
       "description": "Play Chill Girl Clicker free online.",
       "thumbnail": "https://azgames.io/upload/imgs/chillgirlclicker.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "chill-guy-clicker-3d",
       "title": "Chill Guy Clicker 3D",
       "description": "Game Chill Guy Clicker 3D lets you click the chill guy for a fun and easy way to relax. Enjoy this game and chill out as you play!",
       "thumbnail": "https://azgames.io/upload/imgs/chillguyclicker3d.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "chill-guy-clicker",
@@ -408,21 +408,21 @@
       "title": "Color Jump",
       "description": "Color Jump is a vibrant arcade game where players guide a shape through a ever-changing color obstacles by matching colors. Play now and go as far as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/colorjump3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "color-rhythm",
       "title": "Color Rhythm",
       "description": "Play Color Rhythm, a fast-paced, rhythm-based reflex game where your moves need to be in sync with the beats and color switching. Aim to survive as long as you can.",
       "thumbnail": "https://azgames.io/upload/imgs/colorrhythm.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "color-rush",
       "title": "Color Rush",
       "description": "Leap into the fast-paced world of Color Rush! Switch colors, dodge obstacles, and master thrilling levels in this addictive action game. Play Now!",
       "thumbnail": "https://azgames.io/upload/imgs/colorrush2.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "contact-us",
@@ -450,14 +450,14 @@
       "title": "Cowboy Safari",
       "description": "Cowboy Safari is an endless runner and zoo management game, where you lasso, ride, and tame as many wild animals as possible and bring them to your zoo. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/cowboysafari2.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "crafty-car",
       "title": "Crafty Car",
       "description": "Crafty Car is a casual simulation game where you work in a small auto workshop, fixing and crafting cars piece by piece. Play now & tackle challenging mechanic jobs.",
       "thumbnail": "https://azgames.io/upload/imgs/craftycar3.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "crazy-animal-city",
@@ -471,84 +471,84 @@
       "title": "Crazy Bull City",
       "description": "Crazy Bull City is a wild 3D bull rampage simulator where players take on the role of a running bull charging through arenas and streets, smashing anything in sight.",
       "thumbnail": "https://azgames.io/upload/imgs/crazybullcity1.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "crazy-mouse-battle",
       "title": "Crazy Mouse Battle",
       "description": "Crazy Mouse Battle is a fast-paced, single-player battle royale game where you control a wild mouse on a chaotic mission to bump rival mice off the battlefield and claim victory!",
       "thumbnail": "https://azgames.io/upload/imgs/crazymousebattle.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "crazy-shark",
       "title": "Crazy Shark",
       "description": "Crazy Shark is an evolution simulator game featuring a mighty, hungry shark. Play now and control your shark to navigate the ocean, hunting prey and evolving.",
       "thumbnail": "https://azgames.io/upload/imgs/crazyshark.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "crazy-taxi",
       "title": "Crazy Taxi",
       "description": "Play Crazy Taxi, take on the role of a taxi driver, pick up and drop off passengers at the target stop. Avoid crashes and transport as many passengers as you can.",
       "thumbnail": "https://azgames.io/upload/imgs/crazytaxi3.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "crossy-road",
       "title": "Crossy Road",
       "description": "Crossy Road is a free game with the main character being a cute chicken. You control the chicken to cross the road and avoid obstacles such as cars, trees...",
       "thumbnail": "https://azgames.io/upload/imgs/crossyroad1.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "cuby-road-halloween",
       "title": "Cuby Road Halloween",
       "description": "Cuby Road Halloween is a variation of Cuby Road game with a Halloween theme. To the greatest extent feasible, the player moves a cube across a hostile, obstacle-filled environment.",
       "thumbnail": "https://azgames.io/upload/imgs/cubyroadhalloween.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "cuby-road",
       "title": "Cuby Road",
       "description": "Cuby Road is a newly released addictive endless running game. The player navigates a cube across a hostile and obstacle-filled area to the greatest extent possible.",
       "thumbnail": "https://azgames.io/upload/imgs/cubyroad.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "curve-rush-2",
       "title": "Curve Rush 2",
       "description": "Curve Rush 2 is a newly released sequel to the original Curve Rush. It’s still about controlling a rolling ball navigating sandy hills but now having fresh features.",
       "thumbnail": "https://azgames.io/upload/imgs/curverush22.png",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "curve-rush-io",
       "title": "Curve Rush IO",
       "description": "The addictive Curve Rush IO experience is back with a twist: now you can guide your ball through endless hills in thrilling multiplayer mode. Let’s give it a try today!",
       "thumbnail": "https://azgames.io/upload/imgs/curverushio3.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "curve-rush",
       "title": "Curve Rush",
       "description": "Curve Rush challenges you to fly above the line and score points, but beware! The higher you get, the harder the landing will be. Keep it smooth and avoid crashing!",
       "thumbnail": "https://azgames.io/upload/imgs/curverush2.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "dancing-beat",
       "title": "Dancing Beat",
       "description": "Dancing Beat is a rhythm-based music game where you guide a ball through dynamic mazes by clicking in sync with the music. Aim to reach the end of levels safely.",
       "thumbnail": "https://azgames.io/upload/imgs/dancingbeat3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "dark-loop",
       "title": "Dark Loop",
       "description": "Dark Loop is a quirky puzzle game with a twist! Solve the same level repeatedly with new creative solutions. Challenge your mind and enjoy endless fun!",
       "thumbnail": "https://azgames.io/upload/imgs/darkloop.png",
-      "category": "adventure-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "dead-strike",
@@ -562,77 +562,77 @@
       "title": "Deer Adventure",
       "description": "Deer Adventure is an absurd open-world simulation sandbox game where you play as a flexible, stretchy-necked deer freely roaming around the slow-paced town.",
       "thumbnail": "https://azgames.io/upload/imgs/deeraventure3.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "dino-age",
       "title": "Dino Age",
       "description": "Dino Age is a tower-defense-style strategy game where your goal is to defend your dinosaur egg from waves of humans by using powerful shots and dinosaur units.",
       "thumbnail": "https://azgames.io/upload/imgs/dinoage.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "dino-dash-3d",
       "title": "Dino Dash 3D",
       "description": "Dino Dash 3D is the classic T-Rex game you love now in beautiful and immersive 3D. How long can you survive in this game?",
       "thumbnail": "https://azgames.io/upload/imgs/dinodash3d1.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "doom-rider",
       "title": "Doom Rider",
       "description": "Doom Rider is an arcade-driving game where players ride, drift, and speed up through various obstacle-filled tracks and battle against angry skeletons and their king.",
       "thumbnail": "https://azgames.io/upload/imgs/doomrider2.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "drift-boss",
       "title": "Drift Boss",
       "description": "Drift Boss is an online drift game. Avoid falling into space past an endless road. Avoid hard bends and twists!",
       "thumbnail": "https://azgames.io/upload/imgs/drift-boss.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "drift-hunters",
       "title": "Drift Hunters",
       "description": "Drift Hunters is a free-to-play 3D drift car game. Want to race on various challenging yet exciting racetracks, customize your supercars, and, more importantly, experience the art of drifting?",
       "thumbnail": "https://azgames.io/upload/imgs/drifthunters.jpg",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "drift-road",
       "title": "Drift Road",
       "description": "Become the king of Drift Boss cars! Drift on winding trails, perform skillful drifts and conquer all challenges.",
       "thumbnail": "https://azgames.io/upload/imgs/driftroad.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "drive-mad",
       "title": "Drive Mad",
       "description": "Drive Mad is a fun car driving game where players drive silly cars moving on diverse courses filled with obstacles and try to reach the finish line safely.",
       "thumbnail": "https://azgames.io/upload/imgs/drivemad.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "duck-clicker",
       "title": "Duck Clicker",
       "description": "Duck Clicker takes you on a delightful journey, tapping to earn rewards and unlock cute ducks. Enjoy this charming clicker game and relax as you play!",
       "thumbnail": "https://azgames.io/upload/imgs/duckclicker1.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "duck-life",
       "title": "Duck Life",
       "description": "Duck Life is an amazing adventure and training game where you farm and race ducks. The game starts with a tornado destroying your farm and leaving a duck egg...",
       "thumbnail": "https://azgames.io/upload/imgs/ducklife.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "dude-theft-auto",
       "title": "Dude Theft Auto",
       "description": "Dude Theft Auto is a multiple-mode, open-world sandbox action game full of freedom where players can choose to play the game and explore the city their own way.",
       "thumbnail": "https://azgames.io/upload/imgs/dudetheftauto3.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "dunk-clash",
@@ -646,203 +646,203 @@
       "title": "Dunk Dash",
       "description": "Dunk Dash is fast-paced and full of chaotic moments. Grab the ball, dribble hard, and launch high-flying slam dunks to win scores. Enjoy the game today!",
       "thumbnail": "https://azgames.io/upload/imgs/dunkdash3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "egg-race",
       "title": "Egg Race",
       "description": "Eggy Car is a game about driving a wobbly car carrying a precious egg! Balance, collect coins and see how far you can go. Click here to play!",
       "thumbnail": "https://azgames.io/upload/imgs/eggrace1.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "eggy-car",
       "title": "Eggy Car",
       "description": "Eggy Car is an entertaining driving game where you control a car carrying a loose egg and navigate over bumpy, hilly roads.",
       "thumbnail": "https://azgames.io/upload/imgs/eggycar.jpg",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-animals",
       "title": "Escape Animals",
       "description": "Escape Animals is a casual survival game where your goal is to escape rising lava, giant tsunamis, and ice while navigating different zones to grab unique animals.",
       "thumbnail": "https://azgames.io/upload/imgs/escapeanimals.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "escape-bear",
       "title": "Escape Bear",
       "description": "Escape Bear is an engaging 3D action-adventure game, where you take on the role of a brave bear trying to save your captured bear friends from evil bees. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/escapebear.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "escape-drive",
       "title": "Escape Drive",
       "description": "Play Escape Drive and drive monster-like cars through hilly terrains filled with steep hills, traps, and enemy cars. Stay sharp, dodge danger, and don’t get caught.",
       "thumbnail": "https://azgames.io/upload/imgs/escapedrive3.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "escape-jump",
       "title": "Escape Jump",
       "description": "Play Escape Road as a bank robber dodging traffic and obstacles in this addictive pixel art game.",
       "thumbnail": "https://azgames.io/upload/imgs/escapejump1.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "escape-raid",
       "title": "Escape Raid",
       "description": "Escape Raid is a fast-paced, chaotic car driving game where you play as a courageous sheriff, racing to escape enemy chases in a post-apocalyptic wasteland.",
       "thumbnail": "https://azgames.io/upload/imgs/escaperaid4.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-road-2",
       "title": "Escape Road 2",
       "description": "Escape Road 2 is the intense sequel in the Escape Road series, published by AZGames.io, bringing even more thrilling police chases and high-speed action through chaotic city streets.",
       "thumbnail": "https://azgames.io/upload/imgs/escaperoad21.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-road-city-2",
       "title": "Escape Road City 2",
       "description": "Escape Road City 2 is the exciting update to the popular action-escape game Escape Road City. Navigate challenging city roads, dodge obstacles, and master your skills to make a daring getaway.",
       "thumbnail": "https://azgames.io/upload/imgs/escaperoadcity2.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "escape-road-city",
       "title": "Escape Road City",
       "description": "Escape Road City is a thrilling car chase game on the streets! Control your car, overcome all obstacles and escape from the police",
       "thumbnail": "https://azgames.io/upload/imgs/icon.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-road-halloween",
       "title": "Escape Road Halloween",
       "description": "Escape Road Halloween is a variation of Escape Road game with a Halloween theme. The robbers will escape at night, and the Halloween atmosphere will cover the city.",
       "thumbnail": "https://azgames.io/upload/imgs/escaperoadhalloween.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-road-winter",
       "title": "Escape Road Winter",
       "description": "Escape Road Winter is the most exciting escape game this winter. Uncover the mysteries in the city and escape from the snowstorm.",
       "thumbnail": "https://azgames.io/upload/imgs/escaperoadwinter.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-road",
       "title": "Escape Road",
       "description": "Escape Road is a hit game developed and published by AZGames.io, featuring thrilling one-touch gameplay where every tap helps you dodge and survive endless road traps.",
       "thumbnail": "https://azgames.io/upload/imgs/escaperoad.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "escape-tsunami-brainrots-online",
       "title": "Escape Tsunami Brainrots Online",
       "description": "Escape Tsunami Brainrots Online is a fast-paced survival tycoon-style game that challenges you to collect the rarest Brainrots while surviving giant tsunami waves.",
       "thumbnail": "https://azgames.io/upload/imgs/escapetsunamibrainrots.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "escape-vehicles",
       "title": "Escape Vehicles",
       "description": "Escape Vehicles is the #1 action game for speed racers. Drive hard, escape the police and upgrade your car.",
       "thumbnail": "https://azgames.io/upload/imgs/escapevehicles.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "fall-flat-battle",
       "title": "Fall Flat Battle",
       "description": "Fall Flat Battle is a hilarious, physics-based puzzle platformer where you navigate different dreamscapes and solve physics puzzles by interacting with the environment.",
       "thumbnail": "https://azgames.io/upload/imgs/fallflatbattle.png",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "fire-flush",
       "title": "Fire Flush",
       "description": "Play Fire Flush and extinguish raging wildfires. Get ready to take on the role of a courageous firefighting dog soaring through the skies to save the burning forests.",
       "thumbnail": "https://azgames.io/upload/imgs/fireflush.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "fireboy-and-watergirl",
       "title": "Fireboy And Watergirl",
       "description": "Fireboy and Watergirl is a fun two-player game that is completely free. Your mission is to assist Fireboy and Watergirl in finding their way out of the Forest Temple while collecting diamonds.",
       "thumbnail": "https://azgames.io/upload/imgs/fireboy-watergirl-1.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "fish-it-online",
       "title": "Fish It Online",
       "description": "Get ready to Fish It Online! Play the game now on Azgames and cast your fishing line with the perfect timing for better chances of catching bigger, rarer fish.",
       "thumbnail": "https://azgames.io/upload/imgs/fishitonline3.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "flamy-dash",
       "title": "Flamy Dash",
       "description": "Flamy Dash is a thrilling one-button arcade game where you control a glowing fireball swinging through a dark, obstacle-filled cave. Try to travel as far as possible!",
       "thumbnail": "https://azgames.io/upload/imgs/flamydash3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "flip-rush",
       "title": "Flip Rush",
       "description": "Flip Rush is a physics-based stunt sports game that challenges your timing and precision. Play now, control your ragdoll athlete and perform amazing flips and tricks!",
       "thumbnail": "https://azgames.io/upload/imgs/fliprush3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "flipping-master",
       "title": "Flipping Master",
       "description": "Flipping Master is a pattern-based adventure game where you play as powerful heroes flipping across tiles, battling enemies with smart moves and special abilities.",
       "thumbnail": "https://azgames.io/upload/imgs/flippingmaster3.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "flying-ball",
       "title": "Flying Ball",
       "description": "Flying Ball is a 3D endless runner Slope-style game, where you guide a ball across sky-high tracks, dodging obstacles or traps, and survive as many levels as you can.",
       "thumbnail": "https://azgames.io/upload/imgs/flyingball3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "flying-kong",
       "title": "Flying Kong",
       "description": "Flying Kong is a 3D arcade endless runner where you guide a gorilla flying through a lush jungle, avoid quirky obstacles, and collect bananas. Play free online now!",
       "thumbnail": "https://azgames.io/upload/imgs/flyingkong1.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "forest-mouse",
       "title": "Forest Mouse",
       "description": "Forest Mouse is a 3D simulation game where players experience the world from the view of a rodent. Jump in, explore the forest, collect resources, avoid dangers, etc.",
       "thumbnail": "https://azgames.io/upload/imgs/forestmouse.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "fun-typing-io",
       "title": "Fun Typing IO",
       "description": "Fun Typing IO is a fast-paced online typing game where speed and accuracy are your best weapons. Compete in real-time and type your way to the top of the leaderboard!",
       "thumbnail": "https://azgames.io/upload/imgs/funtypingio2.png",
-      "category": "kids-games"
+      "category": "io-games"
     },
     {
       "slug": "fury-chase-2",
       "title": "Fury Chase 2",
       "description": "Fury Chase 2 is a high-speed arcade racing survival game where players roam through the post-apocalyptic wasteland and try to survive the longest possible.",
       "thumbnail": "https://azgames.io/upload/imgs/furychase23.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "fury-chase",
       "title": "Fury Chase",
       "description": "Furry Chase is a high-speed car driving game, where players play as a getaway driver, picking up crew members after a heist and escaping relentless police chases.",
       "thumbnail": "https://azgames.io/upload/imgs/furychase.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "geometry-dash",
@@ -856,21 +856,21 @@
       "title": "Glide In",
       "description": "Glide In is a 3D casual skill‑based puzzle game where you drag back, aim, and release a puck to sink it into a target hole on each challenge while avoiding hazards.",
       "thumbnail": "https://azgames.io/upload/imgs/glidein3.png",
-      "category": "casual-games"
+      "category": "shooting-games"
     },
     {
       "slug": "god-simulator",
       "title": "God Simulator",
       "description": "God Simulator is a strategy simulation game where players create and spread their unique religion across the world. Play strategically to develop it more and more.",
       "thumbnail": "https://azgames.io/upload/imgs/godsimulator1.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "golf-hit",
       "title": "Golf Hit",
       "description": "Play Golf Hit and find out just how far you can send the ball flying. Jump in, hit the ball as far as possible, aim for birdies and eagles to earn coins for upgrades.",
       "thumbnail": "https://azgames.io/upload/imgs/golfhit2.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "golf-puzzle",
@@ -891,28 +891,28 @@
       "title": "Gun Mayhem",
       "description": "Gun Mayhem is a 2D action video game that is primarily played online. The game includes multiplayer mode, in which players control cartoon characters to fight and exterminate opponents on screen.",
       "thumbnail": "https://azgames.io/upload/imgs/gunmayhem2.png",
-      "category": "adventure-games"
+      "category": "2-player-games"
     },
     {
       "slug": "head-basketball",
       "title": "Head Basketball",
       "description": "Head Basketball is a fun basketball game. In the game, players will be transformed into characters with big heads and special skills.",
       "thumbnail": "https://azgames.io/upload/imgs/headbasketball.png",
-      "category": "sports-games"
+      "category": "2-player-games"
     },
     {
       "slug": "head-soccer-2024",
       "title": "Head Soccer 2024",
       "description": "Head Soccer 2024 is a unique soccer game, the players are transformed into characters with big round heads and special superpowers.",
       "thumbnail": "https://azgames.io/upload/imgs/thumbnail_90x90.jpg",
-      "category": "kids-games"
+      "category": "2-player-games"
     },
     {
       "slug": "highway-heat",
       "title": "Highway Heat",
       "description": "Highway Heat puts you in the fast lane! Race through traffic, earn rewards, and upgrade your dream car in this thrilling arcade racer.",
       "thumbnail": "https://azgames.io/upload/imgs/highwayheat1.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "hill-climb-race",
@@ -926,14 +926,14 @@
       "title": "Hockey Random",
       "description": "Hockey Random is a fun and chaotic hockey game. With a two-player mode, you can challenge friends in unpredictable, fast-paced matches where the gameplay is random.",
       "thumbnail": "https://azgames.io/upload/imgs/hockeyrandom1.png",
-      "category": "casual-games"
+      "category": "2-player-games"
     },
     {
       "slug": "hoop-legends",
       "title": "Hoop Legends",
       "description": "Hoop Legends is a realistic 3D basketball game centered around hooping and scoring yet packed with various modes and customization options. Ready to shoot the hoops?",
       "thumbnail": "https://azgames.io/upload/imgs/hooplegends3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "horror-nun",
@@ -954,49 +954,49 @@
       "title": "Hyper Tunnel",
       "description": "Hyper Tunnel is a fast‑paced arcade flying game where you pilot a spaceship through futuristic tunnels filled with obstacles, aiming to survive as long as you can.",
       "thumbnail": "https://azgames.io/upload/imgs/hypertunnel3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "ice-baby-quest-2",
       "title": "Ice Baby Quest 2",
       "description": "Play Ice Baby Quest 2 and join the quirky adventure, where the ultimate goal is to locate and defeat the ultimate enemy: Ice Age Baby. Jump in now and have fun!",
       "thumbnail": "https://azgames.io/upload/imgs/icebabyquest24.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "ice-baby-quest",
       "title": "Ice Baby Quest",
       "description": "Ice Baby Quest is a fun, quirky meme‑based adventure game where you go through a bizarre 3D world full of random NPCs and challenges to find the Ice Baby character.",
       "thumbnail": "https://azgames.io/upload/imgs/icebabyquest3.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "icy-dash",
       "title": "Icy Dash",
       "description": "Icy Dash is a high-speed downhill snowboarding game where you control a stickman racing down snowy mountain slopes & compete with other players to be the fastest.",
       "thumbnail": "https://azgames.io/upload/imgs/icydash3.png",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "idle-gold-miner",
       "title": "Idle Gold Miner",
       "description": "Idle Miner Tycoon is an idle clicker simulation game where players manage and grow their own mining empire and earn massive profits from zero.",
       "thumbnail": "https://azgames.io/upload/imgs/idlegoldminer.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "italian-brainrot-clicker-2",
       "title": "Italian Brainrot Clicker 2",
       "description": "Italian Brainrot Clicker 2 is a hilarious clicker game where you’ll encounter Tralalero Tralala, Tung Tung Tung Sahur, and many other bizarre-looking characters.",
       "thumbnail": "https://azgames.io/upload/imgs/italianbrainrotclicker3.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "jelly-hop",
       "title": "Jelly Hop",
       "description": "Jelly Hop is an addictive, endless jumping game. Jump higher, survive longer and never give up!",
       "thumbnail": "https://azgames.io/upload/imgs/jellyhop1.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "jelly-runner",
@@ -1010,21 +1010,21 @@
       "title": "Jetski Race",
       "description": "Jetski Race is An exciting arcade racing game! Glide through waves, perform daring flips, and navigate obstacles as you race to the finish. Jump into the action now!",
       "thumbnail": "https://azgames.io/upload/imgs/flippyrace.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "kickback-dash",
       "title": "Kickback Dash",
       "description": "Kickback Dash is an engaging arcade game featuring physics-based flying and shooting mechanics, where players guide a weapon to fly the farthest distance possible.",
       "thumbnail": "https://azgames.io/upload/imgs/kickbackdash3.png",
-      "category": "casual-games"
+      "category": "shooting-games"
     },
     {
       "slug": "kitten-defense",
       "title": "Kitten Defense",
       "description": "Kitten Defense is a fast-paced, action-packed game where fierce kittens defend their turf from waves of crazy enemies. Gear up, launch attacks, and protect the cat kingdom!",
       "thumbnail": "https://azgames.io/upload/imgs/kittendefense.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "knife-master",
@@ -1038,7 +1038,7 @@
       "title": "Knock Balls",
       "description": "Knock Balls is a fun ball shooting game. In Knock Balls, your mission is to shoot balls to destroy structures.",
       "thumbnail": "https://azgames.io/upload/imgs/knockballs.png",
-      "category": "casual-games"
+      "category": "shooting-games"
     },
     {
       "slug": "kong-adventure",
@@ -1052,49 +1052,49 @@
       "title": "Krunker",
       "description": "Krunker is a free online first-person shooter. Players will engage in fast and furious battles with players from all over the world.",
       "thumbnail": "https://azgames.io/upload/imgs/krunker-io.png",
-      "category": "shooting-games"
+      "category": "io-games"
     },
     {
       "slug": "labubu-clicker",
       "title": "Labubu Clicker",
       "description": "Labubu Clicker is a new, charming online idle clicker game where you will meet and click on the adorable character Labubu to earn points and unlock upgrades.",
       "thumbnail": "https://azgames.io/upload/imgs/labubuclicker1.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "lift-off",
       "title": "Lift Off",
       "description": "Lift Off is an arcade rocket-launching game where players send multi-stage rockets into orbit, aiming for the best altitude by timing stage separations perfectly.",
       "thumbnail": "https://azgames.io/upload/imgs/liftoff3.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "lizard-lizard-clicker",
       "title": "Lizard Lizard Clicker",
       "description": "Lizard Lizard Clicker is a new, thrilling idle clicker game, where players click and buy upgrades to earn as many points as possible and meet cute and quirky lizards.",
       "thumbnail": "https://azgames.io/upload/imgs/lizardlizardclicker2.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "loop-breakout",
       "title": "Loop Breakout",
       "description": "Loop Breakout is a thrilling escape puzzle game! Help Tommy break out of new tricky levels filled with traps, logic challenges, and unexpected twists. Can you escape?",
       "thumbnail": "https://azgames.io/upload/imgs/loopbreakout1.png",
-      "category": "adventure-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "loop-crash",
       "title": "Loop Crash",
       "description": "Loop Crash is a fun arcade driving game where your goal is as simple as keeping your car driving in a circle without crashing or colliding with any other vehicle.",
       "thumbnail": "https://azgames.io/upload/imgs/loopcrash3.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "loot-and-scoot",
       "title": "Loot And Scoot",
       "description": "Loot and Scoot is a quirky, fast-paced casual game where players play as a recently fired bank employee and become a thief. Dodge obstacles, loot coins, and survive!",
       "thumbnail": "https://azgames.io/upload/imgs/lootandscoot3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "mad-pursuit",
@@ -1115,14 +1115,14 @@
       "title": "Mad Trails",
       "description": "Mad Trails is a casual physics-based off-road driving game where you control cars with oversized wheels to climb rocky terrain and conquer extreme hills. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/madtrails3.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "madness-lab",
       "title": "Madness Lab",
       "description": "Madness Lab is a chaotic runner-style arcade game where you play as different minions, running through randomized challenge rooms to test their abilities.",
       "thumbnail": "https://azgames.io/upload/imgs/madnesslab3.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "mamas-cookeria",
@@ -1136,77 +1136,77 @@
       "title": "Mars Jump",
       "description": "Mars Jump is a casual yet challenging arcade-style platformer where players use a jetpack to leap from platform to platform, aiming to travel as far as possible",
       "thumbnail": "https://azgames.io/upload/imgs/marsjump1.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "mayhem-drive",
       "title": "Mayhem Drive",
       "description": "Drive, roam across massive open worlds of Mayhem Drive and pull off stunts along the way. Earn coins & scores to level up your vehicle with better stunt abilities.",
       "thumbnail": "https://azgames.io/upload/imgs/mayhemdrive2.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "meme-puzzle",
       "title": "Meme Puzzle",
       "description": "Meme Puzzle is a fun casual puzzle game where you piece together hilarious meme images. Relax, laugh, and unlock endless meme combinations in this addictive game!",
       "thumbnail": "https://azgames.io/upload/imgs/mempuzzle1.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "merge-brainrot",
       "title": "Merge Brainrot",
       "description": "Merge Brainrot is a captivating drop-and-merge puzzle game. Drop, merge, and evolve Brainrot characters to earn as many points as possible before the board fills up.",
       "thumbnail": "https://azgames.io/upload/imgs/mergebrainrot1.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "merge-infinity",
       "title": "Merge Infinity",
       "description": "Merge Infinity is a relaxing number merge puzzle inspired by 2048, where you connect identical tiles to create the next higher number by drawing lines between them.",
       "thumbnail": "https://azgames.io/upload/imgs/mergeinfinity3.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "monkey-mart",
       "title": "Monkey Mart",
       "description": "If you like the job of managing and coordinating stalls, you can’t try to play the Monkey Mart game.",
       "thumbnail": "https://azgames.io/upload/imgs/monkeymart.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "moto-x3m",
       "title": "Moto X3M",
       "description": "Moto X3M is a fast motorcycle racing game where you tackle difficult obstacles. Madpuffers",
       "thumbnail": "https://azgames.io/upload/imgs/moto-x3m.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "mountain-road",
       "title": "Mountain Road",
       "description": "Mountain Road is a super hot driving game. Players will maneuver the car through steep hills and rough terrain to reach the highest point. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/mountainroad.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "mr-flip",
       "title": "Mr Flip",
       "description": "Mr Flips is a ragdoll, physics-based stunt game where players become a male gymnast, launching into the air to perform daring backflips and gravity-defying stunts.",
       "thumbnail": "https://azgames.io/upload/imgs/mrflip3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "narrow-one",
       "title": "Narrow One",
       "description": "Narrow One is a 3D fast-paced multiplayer first-person archery game where you join team-based capture-the-flag battles using bows and arrows. Play for free now!",
       "thumbnail": "https://azgames.io/upload/imgs/narrow-one.png",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "neon-leap",
       "title": "Neon Leap",
       "description": "Neon Leap is a casual platformer game starring a little stickman character who swings and jumps across glowing shapes to conquer the high-speed obstacle course.",
       "thumbnail": "https://azgames.io/upload/imgs/neonleap3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "new-games",
@@ -1220,7 +1220,7 @@
       "title": "Omnom Jump",
       "description": "Om Nom Jump is a game where you jump and stack blocks to reach new heights! Get On Nom as high as possible to avoid the starving sharks.",
       "thumbnail": "https://azgames.io/upload/imgs/omnomjump11.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "orbit-beats",
@@ -1234,14 +1234,14 @@
       "title": "Orbit Dash",
       "description": "Orbit Dash is a single-player casual, arcade game that challenges players to guide a rainbow-colored line through a vertically course. Play on AZ Games now!",
       "thumbnail": "https://azgames.io/upload/imgs/orbitdash.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "orbit-kick",
       "title": "Orbit Kick",
       "description": "Orbit Kick is a casual soccer game where you launch perfect kicks and send the ball as far as possible to earn coins for upgrades. Play now and soar the distance.",
       "thumbnail": "https://azgames.io/upload/imgs/orbitkick3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "orbit-rush",
@@ -1255,7 +1255,7 @@
       "title": "Overtake X",
       "description": "Traffic Racer is a high-speed driving game where you weave through endless traffic. Dodge cars, earn cash, and upgrade your ride. Can you become the ultimate road king?",
       "thumbnail": "https://azgames.io/upload/imgs/overtakex.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "pacman-30th-anniversary",
@@ -1276,21 +1276,21 @@
       "title": "Paper IO",
       "description": "Paper IO is a free to play online multiplayer IO game. In the game, you control a cube and are tasked with expanding your territory by capturing an area on the map.",
       "thumbnail": "https://azgames.io/upload/imgs/paper-io.jpeg",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "paper-minecraft",
       "title": "Paper Minecraft",
       "description": "Paper Minecraft is a 2D version of the iconic sandbox game Minecraft. Jump in blocky terrains, mine materials, gather resources, craft tools, and build structures now!",
       "thumbnail": "https://azgames.io/upload/imgs/paperminecraft.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "perfect-orbit",
       "title": "Perfect Orbit",
       "description": "Perfect Orbit is a fun one-button arcade simulator sports game where your goal is to hit the ball as far as possible, across different terrains or even into space.",
       "thumbnail": "https://azgames.io/upload/imgs/perfectorbit1.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "pinball-master",
@@ -1304,7 +1304,7 @@
       "title": "Planet Buster",
       "description": "Planet Buster is an idle casual space-themed game where your major objective is to destroy planets across the galaxy using a variety of missiles and upgrades.",
       "thumbnail": "https://azgames.io/upload/imgs/planetbuster3.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "plants-vs-brainrots-online",
@@ -1332,7 +1332,7 @@
       "title": "Power Surfer",
       "description": "Play Power Hover to soar through futuristic skies in this thrilling hoverboard game! Dodge obstacles, collect power-ups, and perform amazing stunts. Click here to play!",
       "thumbnail": "https://azgames.io/upload/imgs/powersurfer1.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "privacy-policy",
@@ -1353,35 +1353,35 @@
       "title": "Ragdoll Flip",
       "description": "Play Ragdoll Flip, jump high, do stunning tricks, and collect as many coins as you can to unlock different cool locations and other features of the game. Try it now!",
       "thumbnail": "https://azgames.io/upload/imgs/ragdollflip1.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "ragdoll-hit-stickman",
       "title": "Ragdoll Hit Stickman",
       "description": "Ragdoll Hit Stickman is an action-packed fighting game with a variety of characters and weapons, promising intense battles. Play now to experience it!",
       "thumbnail": "https://azgames.io/upload/imgs/ragdollhitstickman1.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "ragdoll-launcher",
       "title": "Ragdoll Launcher",
       "description": "Ragdoll Launcher is an arcade-style game that challenges you to launch a ragdoll character from a cannon and fly as far as possible. Timing and upgrades are keys!",
       "thumbnail": "https://azgames.io/upload/imgs/ragdolllauncher2.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "ragdoll-playground",
       "title": "Ragdoll Playground",
       "description": "Ragdoll Playground is a 2D physics-based sandbox game where players can spawn many objects and experiment with them in different vast open environments.",
       "thumbnail": "https://azgames.io/upload/imgs/ragdollplayground.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "ramp-xtreme",
       "title": "Ramp Xtreme",
       "description": "Master epic stunts and race through thrilling ramps in Ramp Xtreme! Perform flips, crush challenges, and unlock powerful bikes in the ultimate offline stunt adventure!",
       "thumbnail": "https://azgames.io/upload/imgs/rampxtreme3.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "rebound-shooter",
@@ -1395,14 +1395,14 @@
       "title": "Red Rush",
       "description": "Red Rush is a super fast-paced arcade game that challenges players with rapid reflexes and intense gameplay. Control a speeding craft & survive as long as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/redrush2.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "retro-blaster",
       "title": "Retro Blaster",
       "description": "Retro Blaster is an addictive retro arcade shooter where you pilot a relentless ship, dodge enemies, grab power-ups, and chase high scores in intense bullet-hell chaos.",
       "thumbnail": "https://azgames.io/upload/imgs/retroblaster3.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "retro-bowl",
@@ -1423,28 +1423,28 @@
       "title": "Rob Brainrot 2",
       "description": "Play Rob Brainrot 2, collect, buy, and steal quirky Brainrots meme characters. Let’s build your base with the rarest Brainrots and protect them from the opponents.",
       "thumbnail": "https://azgames.io/upload/imgs/robbrainrot23.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "rocket-fortress",
       "title": "Rocket Fortress",
       "description": "Rocket Fortress is an engaging clicker RPG where you use holy missiles and units to fight demons, portals, bosses and upgrade your firepower and army over time.",
       "thumbnail": "https://azgames.io/upload/imgs/rocketfortress3.png",
-      "category": "casual-games"
+      "category": "shooting-games"
     },
     {
       "slug": "rooftop-rush",
       "title": "Rooftop Rush",
       "description": "Rooftop Rush is a fast-paced endless runner where you skate across rooftops, dodge obstacles, escape police helicopters, and collect coins to unlock upgrades while pushing your reflexes to the limit.",
       "thumbnail": "https://azgames.io/upload/imgs/rooftoprush.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "run-3",
       "title": "Run 3",
       "description": "Run 3 is an incredibly addicting, endless runner-type action/platforming game in which you play as a little grey alien. The little alien is trespassing in an architecturally challenged area that is floating in space.",
       "thumbnail": "https://azgames.io/upload/imgs/run3thumb.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "run-3d",
@@ -1458,42 +1458,42 @@
       "title": "Santa Run",
       "description": "Santa Run is a simple, fast-paced, endless running and jumping game, where you become Santa Claus as he runs through winter- and Christmas-themed environments.",
       "thumbnail": "https://azgames.io/upload/imgs/santarun3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "scary-wheels",
       "title": "Scary Wheels",
       "description": "Scary Wheels isn",
       "thumbnail": "https://azgames.io/upload/imgs/scarywheels1.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "shell-shockers",
       "title": "Shell Shockers",
       "description": "Shell Shockers is a first-person shooter game with an egg theme that blends enjoyable and humorous elements with furious multiplayer combat.",
       "thumbnail": "https://azgames.io/upload/imgs/shell-shockers.jpg",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "shooter-hero",
       "title": "Shooter Hero",
       "description": "Become a shooting master in Shooter Hero game! Aim and shoot to destroy targets, get the highest score and unlock new characters.",
       "thumbnail": "https://azgames.io/upload/imgs/shooterhero.jpg",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "shooter-sky",
       "title": "Shooter Sky",
       "description": "Shooter Sky is a crazy and exciting shooting game. Destroy game consoles, phones, animals and more.",
       "thumbnail": "https://azgames.io/upload/imgs/shootersky3.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "ski-frenzy",
       "title": "Ski Frenzy",
       "description": "Ski Frenzy is a thrilling, endless runner experience where players control Sven or Evana skiing down treacherous slopes on the mission to escape a relentless avalanche.",
       "thumbnail": "https://azgames.io/upload/imgs/skifrenzy1.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "skip-it",
@@ -1507,7 +1507,7 @@
       "title": "Slap Champions",
       "description": "Slap Champions is a casual arcade game where you try to beat opponents with the strongest slaps in fun 1v1 slap battles. Try it now & use your perfect timing to win.",
       "thumbnail": "https://azgames.io/upload/imgs/slapchampions.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "slide-down",
@@ -1521,7 +1521,7 @@
       "title": "Slope 2",
       "description": "Slope 2 is back with thrilling new obstacles! Test your reflexes, dodge traps, and race down faster than ever. Can you survive the challenge?",
       "thumbnail": "https://azgames.io/upload/imgs/slope2.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "slope-3",
@@ -1570,14 +1570,14 @@
       "title": "Slope Rider 3D",
       "description": "Slope Rider 3D is a reflex-based endless runner game where you ride down dynamic 3D slopes, dodging obstacles like trees, logs, gaps, etc., while collecting rewards.",
       "thumbnail": "https://azgames.io/upload/imgs/sloperider3d1.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "slope-rider",
       "title": "Slope Rider",
       "description": "Slope Rider is an endless sledding game set in a breathtaking winter wonderland. Let’s ride a sled racing through snowy forests and icy terrain full of obstacles.",
       "thumbnail": "https://azgames.io/upload/imgs/sloperider4.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "slope-snowball",
@@ -1598,7 +1598,7 @@
       "title": "Slope Xtreme",
       "description": "Slope Xtreme is a new fast-paced ball rolling game inspired by the Slope game. Control a ball racing on tracks full of obstacles & survive for as long as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/slopeextreme.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "slope",
@@ -1612,49 +1612,49 @@
       "title": "Smash Karts",
       "description": "Smash Karts is an exciting 3D multiplayer IO kart fighting game. Your mission is to control your go-kart, collect weapons, and destroy other karts to win.",
       "thumbnail": "https://azgames.io/upload/imgs/smash-karts.jpg",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "smashy-road",
       "title": "Smashy Road",
       "description": "Smashy Road is a single-player arcade car driving game that puts players behind the wheel of a vehicle trying to escape from the police in a high-speed chase.",
       "thumbnail": "https://azgames.io/upload/imgs/smashyroad.png",
-      "category": "casual-games"
+      "category": "io-games"
     },
     {
       "slug": "snake-arena",
       "title": "Snake Arena",
       "description": "Snake Arena is a thrilling battle for survival. Grow longer, outsmart rivals, and dominate the arena. Slither your way to victory!",
       "thumbnail": "https://azgames.io/upload/imgs/snakearena.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "snow-rider-3d",
       "title": "Snow Rider 3D",
       "description": "Snow Rider 3D is a dramatic and exciting snowboarding simulation game! You can freely perform beautiful runways!",
       "thumbnail": "https://azgames.io/upload/imgs/snow-rider-3d.png",
-      "category": "kids-games"
+      "category": "sports-games"
     },
     {
       "slug": "snow-road-3d",
       "title": "Snow Road 3D",
       "description": "Snow Road 3D is A thrilling 3D racing game! Speed through icy tracks, dodge obstacles, and perform daring stunts in this fast-paced snow adventure. Ready to race?",
       "thumbnail": "https://azgames.io/upload/imgs/snowroad3d4.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "snow-road",
       "title": "Snow Road",
       "description": "Snow Road is a 3D fast-paced endless sled driving game packed with lots of obstacles. Play now & survive as long as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/snowroad4.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "snowtrail-legends",
       "title": "Snowtrail Legends",
       "description": "Snowtrail Legends is an epic snowboarding adventure with falling trees, shaky bridges, and icy slopes. Jump in for fast-paced, ever-changing action right in your browser!",
       "thumbnail": "https://azgames.io/upload/imgs/snowtraillegends1.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "sorry-bob",
@@ -1668,21 +1668,21 @@
       "title": "Space Road",
       "description": "Play Space Road! The game provides players with a colorful and attractive experience.",
       "thumbnail": "https://azgames.io/upload/imgs/spaceroad.jpg",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "spear-warzone",
       "title": "Spear Warzone",
       "description": "Spear Warzone is a 2D stickman action game where players control a stickman warrior armed with a spear, defeating various enemies like archers, swordsmen, and more.",
       "thumbnail": "https://azgames.io/upload/imgs/spearwazone.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "speed-legends",
       "title": "Speed Legends",
       "description": "Speed Legends is an exciting running sports game where players become a pro sprint runner, dashing through challenging race tracks and aiming to be the champion.",
       "thumbnail": "https://azgames.io/upload/imgs/speedlegends.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "speed-shooter",
@@ -1696,63 +1696,63 @@
       "title": "Spin Blast",
       "description": "Spin Blast is a 2D casual arcade shooting-style game where you control a spinning tool shooting towards target zones marked with a different color to clear them all!",
       "thumbnail": "https://azgames.io/upload/imgs/spinblast3.png",
-      "category": "casual-games"
+      "category": "shooting-games"
     },
     {
       "slug": "sprunki-clicker",
       "title": "Sprunki Clicker",
       "description": "Spunki Clicker is an endless idle clicker game featuring the main character named Sprunki. Click/tap, collect points, and unlock as many upgrade options as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/sprunkiclicker.png",
-      "category": "casual-games"
+      "category": "clicker-games"
     },
     {
       "slug": "sprunki-jump",
       "title": "Sprunki Jump",
       "description": "Sprunki Jump lets you leap through colorful worlds, avoiding obstacles and collecting rewards. Experience endless adventure and test your jumping skills!",
       "thumbnail": "https://azgames.io/upload/imgs/sprunkijump.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "sprunki",
       "title": "Sprunki",
       "description": "Play Sprunki Incredibox! Join the Incredibox community and create amazing music! With the Sprunki mod, you can mix music, share and connect with music lovers around the world.",
       "thumbnail": "https://azgames.io/upload/imgs/sprunki.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "stack-rush",
       "title": "Stack Rush",
       "description": "Stack Rush is a 3D Tetris-style puzzle game where you place falling blocks of different shapes on a rotatable cube platform to clear as many layers as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/stackrush3.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "steal-brainrots",
       "title": "Steal Brainrots",
       "description": "Steal Brainrots is a new, thrilling multiplayer Roblox heist game where players buy quirky meme characters, steal them from others, and defend their base. Enjoy now!",
       "thumbnail": "https://azgames.io/upload/imgs/stealbrainrots3.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "steel-legion",
       "title": "Steel Legion",
       "description": "Play Hills of Steel and command powerful tanks across hilly battlefields! Unlock mechs, robots, and boosters to dominate enemies in this thrilling action shooter.",
       "thumbnail": "https://azgames.io/upload/imgs/steellegion3.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "stellar-burner",
       "title": "Stellar Burner",
       "description": "Stellar Burner is a fast-paced spaceflight game that puts players in control of high-performance spaceships flying through a series of increasingly difficult courses.",
       "thumbnail": "https://azgames.io/upload/imgs/stellarburner1.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "stick-hero-rpg",
       "title": "Stick Hero RPG",
       "description": "Stick Hero RPG is an action survival stickman shooter game where players take control of a stickman warrior fighting waves of enemies and monsters. Try it now!",
       "thumbnail": "https://azgames.io/upload/imgs/stickherorpg2.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "stickman-empires",
@@ -1766,21 +1766,21 @@
       "title": "Stickman Hook",
       "description": "Stickman Hook is a fun physics-based casual game where players control a stickman to bounce and swing through many challenging levels. Play free online now!",
       "thumbnail": "https://azgames.io/upload/imgs/stickmanhook.jpg",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "stickman-racing",
       "title": "Stickman Racing",
       "description": "Stickman Racing is a free multiplayer parkour game. where you jump, climb, slide, flip, swing, and run through obstacles. Avoid falling and reach the finish line!",
       "thumbnail": "https://azgames.io/upload/imgs/stickmanracing2.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "stickman-slash",
       "title": "Stickman Slash",
       "description": "Play Stickman Slash and become a lightning-fast ninja! Slash enemies, defeat epic bosses, and master intense offline combat in this thrilling stickman action game.",
       "thumbnail": "https://azgames.io/upload/imgs/stickmanslash3.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "stickman-war",
@@ -1794,35 +1794,35 @@
       "title": "Street Wheelie",
       "description": "Street Wheelie is a 3D online wheelie game where players control a bike and perform wheelies and stunts across maps. Earn points & unlock bike customization options.",
       "thumbnail": "https://azgames.io/upload/imgs/streetwheelie.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "subway-moto",
       "title": "Subway Moto",
       "description": "Subway Moto is a fast-paced first-person motorcycle driving game where you become a rider, speeding across different train tracks filled with obstacles and dangers.",
       "thumbnail": "https://azgames.io/upload/imgs/subwaymoto2.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "subway-santa",
       "title": "Subway Santa",
       "description": "Play Subway Santa free online.",
       "thumbnail": "https://azgames.io/upload/imgs/subwaysanta.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "subway-surfers",
       "title": "Subway Surfers",
       "description": "Subway Surfers is an endless running game on train tracks. Are you ready for your obstacle course adventure?",
       "thumbnail": "https://azgames.io/upload/imgs/subwaysurfers.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "sugar-sugar",
       "title": "Sugar Sugar",
       "description": "Sugar Sugar is an engaging puzzle game. Draw lines on the screen to fill your cups. So sweet!",
       "thumbnail": "https://azgames.io/upload/imgs/sugarsugar1.png",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "suika-game",
@@ -1836,21 +1836,21 @@
       "title": "Supermarket Master",
       "description": "Build your retail empire with Supermarket Master! Manage stores, expand departments, and attract customers in this fun, addictive business simulator. Start growing now!",
       "thumbnail": "https://azgames.io/upload/imgs/supermarket_master_s2.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "swipe-ball",
       "title": "Swipe Ball",
       "description": "Swipe Ball is an engaging physics-based arcade puzzle game where your goal is to throw a bouncing ball into a basket or container and progress through levels.",
       "thumbnail": "https://azgames.io/upload/imgs/swipeball3.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "tap-drift",
       "title": "Tap Drift",
       "description": "Tap Drift is a fast-paced, timing-based drifting game where the main challenge is mastering car drifts around sharp corners at an increasingly faster pace. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/tapdrift.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "tap-rich-idle",
@@ -1864,28 +1864,28 @@
       "title": "Tap Road Beat",
       "description": "Tap Road Beat is a rhythm-packed ball runner where every move syncs to the beat! Dodge obstacles, collect gems, and groove through stunning neon tracks.",
       "thumbnail": "https://azgames.io/upload/imgs/taproadbeat2.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "tap-road",
       "title": "Tap Road",
       "description": "Tap Road is an exciting 3D high-speed, endless ball rolling game where you guide a glowing ball along a neon track filled with obstacles and sharp turns.",
       "thumbnail": "https://azgames.io/upload/imgs/taproad.jpg",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "tap-rush",
       "title": "Tap Rush",
       "description": "Tap Rush is a game where you control a small ball rolling on a track filled with obstacles. Your goal is to guide the ball through challenges and achieve the highest score possible.",
       "thumbnail": "https://azgames.io/upload/imgs/taprush2.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "temple-run-2",
       "title": "Temple Run 2",
       "description": "Play Temple Run 2 free online.",
       "thumbnail": "https://azgames.io/upload/imgs/templerun22.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "temple-runner",
@@ -1913,7 +1913,7 @@
       "title": "Tic Tac Toe IO",
       "description": "Tic Tac Toe IO brings the classic game to life with real-time multiplayer battles. Outsmart opponents worldwide in fast, fun, and addictive matches online.",
       "thumbnail": "https://azgames.io/upload/imgs/tictactoeio2.png",
-      "category": "kids-games"
+      "category": "io-games"
     },
     {
       "slug": "tiny-arena",
@@ -1927,7 +1927,7 @@
       "title": "Tiny Fishing",
       "description": "Tiny Fishing brings an entertaining and exciting fishing experience. The images in the game are designed to be extremely attractive and vivid. There are lovely underwater creatures and become realistic.",
       "thumbnail": "https://azgames.io/upload/imgs/tinyfishing.jpg",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "titans-clicker",
@@ -1941,21 +1941,21 @@
       "title": "Town Run",
       "description": "Town Run is an exciting endless running game in which you will play as mischievous cat Tom and other lovely friends on an adventure to chase the cunning raccoon thief.",
       "thumbnail": "https://azgames.io/upload/imgs/town-run.jpg",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "traffic-jam-3d",
       "title": "Traffic Jam 3D",
       "description": "Test your driving skills in Traffic Jam 3D: race at high speed, navigate busy traffic, avoid collision, and earn in-game money to upgrade and buy your dream car.",
       "thumbnail": "https://azgames.io/upload/imgs/trafficjam3d.jpeg",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "traffic-rally",
       "title": "Traffic Rally",
       "description": "Traffic Rally is a fast-paced car driving game where players speed through crowded streets and conquer tough missions that test both quick reflexes and precision.",
       "thumbnail": "https://azgames.io/upload/imgs/trafficrally.png",
-      "category": "adventure-games"
+      "category": "car-games"
     },
     {
       "slug": "traffic-rider",
@@ -1969,7 +1969,7 @@
       "title": "Traffic Road",
       "description": "Traffic Road is a fast-paced motorcycle driving game where players navigate through heavy highway traffic without crashing and score best points for skillful riding.",
       "thumbnail": "https://azgames.io/upload/imgs/trafficroad.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "tralalero-tralala-clicker",
@@ -1983,7 +1983,7 @@
       "title": "Trap The Cat",
       "description": "Don’t let the cat escape. It may sound simple; however, the cat is clever, and without strategic moves, it’s hard to prevent it from escaping. Play Trap the Cat now!",
       "thumbnail": "https://azgames.io/upload/imgs/trap-the-cat.jpg",
-      "category": "casual-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "trending-games",
@@ -2004,14 +2004,14 @@
       "title": "Tube Fall",
       "description": "Tube Fall is 3D endless-run adventure! Take on level after level, flying your adorable Fluffy through danger.",
       "thumbnail": "https://azgames.io/upload/imgs/tubefall.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "tung-sahur-clicker",
       "title": "Tung Sahur Clicker",
       "description": "Tung Sahur Clicker is a fun, fast-paced Ramadan-themed game where you wake up the village before dawn! Tap fast, earn rewards, and become the Galatic Sahur!",
       "thumbnail": "https://azgames.io/upload/imgs/tungsahurclicker2.png",
-      "category": "adventure-games"
+      "category": "clicker-games"
     },
     {
       "slug": "tung-sahur-horror",
@@ -2025,14 +2025,14 @@
       "title": "Tunnel Ball",
       "description": "Tunnel Ball is a game that controls a ball rolling through challenging obstacles! Collect diamonds, avoid traps and roll as far as possible. Try Now!",
       "thumbnail": "https://azgames.io/upload/imgs/tunnelball.png",
-      "category": "adventure-games"
+      "category": "puzzle-games"
     },
     {
       "slug": "turbo-street",
       "title": "Turbo Street",
       "description": "Turbo Street is a high-speed motorcycle racing game where players control powerful motorbikes and race through busy streets. Play online for free now!",
       "thumbnail": "https://azgames.io/upload/imgs/turbostreet.png",
-      "category": "kids-games"
+      "category": "car-games"
     },
     {
       "slug": "unchill-guy-clicker",
@@ -2060,21 +2060,21 @@
       "title": "Venge IO",
       "description": "Venge IO is a multiplayer online first-person shooter game. You can engage in fast-paced gun battles with players from all over the world.",
       "thumbnail": "https://azgames.io/upload/imgs/venge2.png",
-      "category": "shooting-games"
+      "category": "io-games"
     },
     {
       "slug": "vex-3",
       "title": "Vex 3",
       "description": "Vex 3 is an exciting platform game where breathtaking challenges push the player to the limit. You have to perform stunts and overcome bizarre obstacles.",
       "thumbnail": "https://azgames.io/upload/imgs/vex3v.jpg",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "wacky-flip",
       "title": "Wacky Flip",
       "description": "Wacky Flip is a skill-based simulator game that combines parkour, gymnastics, and ragdoll physics. Jump in, perform extreme flips and tricks, and earn your best scores.",
       "thumbnail": "https://azgames.io/upload/imgs/wackyflip.png",
-      "category": "casual-games"
+      "category": "sports-games"
     },
     {
       "slug": "wacky-nursery-2",
@@ -2088,21 +2088,21 @@
       "title": "Wacky Nursery",
       "description": "Wacky Nursery is a twisted puzzle-adventure set in a sinister school—solve darkly humorous mysteries, avoid danger, and survive a day where not dying is the real challenge!",
       "thumbnail": "https://azgames.io/upload/imgs/wackynursery1.png",
-      "category": "adventure-games"
+      "category": "io-games"
     },
     {
       "slug": "wacky-steps",
       "title": "Wacky Steps",
       "description": "Get ready to laugh out loud with every awkward step as you walk down the street! But be careful; one mistimed move and your ragdoll character will tumble spectacularly. Play Wacky Steps now on Azgames and have fun.\r\nGameplay: Walk Without Falling &amp; Stay on Your Feet\r\nWacky",
       "thumbnail": "https://azgames.io/upload/imgs/wackysteps.png",
-      "category": "casual-games"
+      "category": "kids-games"
     },
     {
       "slug": "wave-rider",
       "title": "Wave Rider",
       "description": "Wave Rider is a casual, endless surfing game that drops you into a fresh high-speed race: control your surfboards or jet skis to ride waves and dodge obstacles.",
       "thumbnail": "https://azgames.io/upload/imgs/waverider4.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "wave-road",
@@ -2116,56 +2116,56 @@
       "title": "Wheelie Master",
       "description": "Wheelie Master is all about balance, timing, and smooth riding. Pop long wheelies, unlock cool bikes, and enjoy endless rides while mastering full control on two wheels.",
       "thumbnail": "https://azgames.io/upload/imgs/wheeliemaster1.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "wheelie-party",
       "title": "Wheelie Party",
       "description": "Wheelie Party is a fun arcade stunt‑riding game that challenges you to ride a motorbike on the rear wheel and maintain the stunt for as long as possible. Play now!",
       "thumbnail": "https://azgames.io/upload/imgs/wheelieparty3.png",
-      "category": "casual-games"
+      "category": "car-games"
     },
     {
       "slug": "white-horizon",
       "title": "White Horizon",
       "description": "White Horizon is a visually appealing endless snowboarding game featuring a young snowboarder on his breathtaking journey through snowy mountains & alpine forests.",
       "thumbnail": "https://azgames.io/upload/imgs/whitehorizon.png",
-      "category": "adventure-games"
+      "category": "sports-games"
     },
     {
       "slug": "wing-smash",
       "title": "Wing Smash",
       "description": "Wing Smash is a single-player endless flight runner game where players pilot a fighter airplane through stunning 3D environments on a mission to bomb enemy bases.",
       "thumbnail": "https://azgames.io/upload/imgs/wingsmash.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "wyrmdash",
       "title": "Wyrmdash",
       "description": "Wyrmdash a fast-paced adventure where the princess herself takes control, riding a mighty dragon in a fast and furious quest for revenge. Play on Azgames.io now!",
       "thumbnail": "https://azgames.io/upload/imgs/wyrmdash.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "ziggy-road",
       "title": "Ziggy Road",
       "description": "In Ziggy Road, players control a ball rolling along an endless narrow zig-zagging platform without falling off the edges; however, it’s uneasy to earn high scores.",
       "thumbnail": "https://azgames.io/upload/imgs/ziggyroad1.png",
-      "category": "adventure-games"
+      "category": "kids-games"
     },
     {
       "slug": "zombie-rising",
       "title": "Zombie Rising",
       "description": "Zombie Rising is a third-person shooting game set in a dark city full of pixel zombies. Play the game now to defeat the undead and survive as long as possible.",
       "thumbnail": "https://azgames.io/upload/imgs/zombierising1.png",
-      "category": "adventure-games"
+      "category": "shooting-games"
     },
     {
       "slug": "zombie-strike",
       "title": "Zombie Strike",
       "description": "Play Zombie Strike, an action-packed FPS survival game. Get ready to battle relentless waves of zombies, build defenses, and fight to stay alive!",
       "thumbnail": "https://azgames.io/upload/imgs/zombiestrike2.png",
-      "category": "adventure-games"
+      "category": "io-games"
     }
   ]
 }

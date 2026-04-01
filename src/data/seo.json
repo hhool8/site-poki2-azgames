@@ -10,23 +10,23 @@
     {
       "slug": "index",
       "outputFile": "index.html",
-      "title": "AZ Games | Free Online Games — No Download, Play Instantly",
-      "description": "Play 300+ free online games at AZ Games. Browse clicker, IO, adventure, shooting, sports, car, puzzle, casual and kids games. No download, no login — instant play!",
-      "keywords": "az games, free online games, play games online, unblocked games, browser games, no download games",
+      "title": "AZ Games — Play 300+ Free Online Games Instantly | No Download",
+      "description": "Play 300+ free online games at AZ Games — clicker, IO, adventure, 2 player, shooting, sports, car, puzzle, casual and kids games. No download, no login. Instant browser play.",
+      "keywords": "az games, az games free online, play games online free, unblocked games, browser games no download, free games 2026, casual games online, io games, adventure games free",
       "canonical": "https://azgames.poki2.online/",
       "bodyClass": "home-page",
-      "h1": "AZ Games — Browse 300+ Free Online Games",
+      "h1": "Play 300+ Free Online Games — No Download",
       "og": {
-        "title": "AZ Games | Free Online Games — No Download, Play Instantly",
-        "description": "Play 300+ free online games at AZ Games. No download, no login — instant play!",
+        "title": "AZ Games — Play 300+ Free Online Games Instantly | No Download",
+        "description": "300+ free browser games — clicker, IO, adventure, shooting, car, sports, puzzle, casual, kids. No download, no login.",
         "type": "website",
         "url": "https://azgames.poki2.online/",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "twitter": {
         "card": "summary_large_image",
-        "title": "AZ Games | Free Online Games — No Download, Play Instantly",
-        "description": "Play 300+ free online games at AZ Games. No download, no login — instant play!",
+        "title": "AZ Games — Play 300+ Free Online Games Instantly",
+        "description": "300+ free browser games — no download, no login. Instant play.",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "changefreq": "daily",
