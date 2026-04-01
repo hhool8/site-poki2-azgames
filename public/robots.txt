@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dist/
+
+Sitemap: https://azgames.poki2.online/sitemap.xml

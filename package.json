@@ -1,0 +1,20 @@
+{
+  "name": "azgames-poki2-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "scrape": "node scripts/scrape-games.js",
+    "build:pages": "node scripts/build-pages.js",
+    "build:games": "node scripts/build-games.js",
+    "build:sitemap": "node scripts/build-sitemap.js",
+    "build": "node scripts/build-pages.js && node scripts/build-games.js && node scripts/build-sitemap.js",
+    "deploy": "wrangler pages deploy dist --project-name azgames-poki2-site",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "wrangler": "^3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="keywords" content="{{KEYWORDS}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{OG_DESCRIPTION}}">
+  <meta property="og:url" content="{{OG_URL}}">
+  <meta property="og:type" content="{{OG_TYPE}}">
+  <meta property="og:site_name" content="AZ Games">
+  <meta property="og:image" content="{{OG_IMAGE}}">
+
+  <meta name="twitter:card" content="{{TWITTER_CARD}}">
+  <meta name="twitter:title" content="{{TWITTER_TITLE}}">
+  <meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{TWITTER_IMAGE}}">
+
+  {{SCHEMA}}
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="{{BODY_CLASS}}">
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" style="flex-shrink:0"><rect width="32" height="32" rx="5" fill="#0f0f1a"/><text x="3" y="22" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="14" fill="#f97316">AZ</text></svg>AZ Games</a>
+    <ul id="nav-menu">
+      <li><a class="nav-home" href="/">Home</a></li>
+      <li><a class="nav-about" href="/about.html">About</a></li>
+      <li><a class="nav-privacy" href="/privacy.html">Privacy</a></li>
+      <li><a class="nav-terms" href="/terms.html">Terms</a></li>
+      <li><a class="nav-contact" href="/contact.html">Contact</a></li>
+    </ul>
+    {{NAV_GAMES}}
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="content">
+    {{CONTENT}}
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/">AZ Games</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">&#169; 2026 AZ Games. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('nav-toggle');
+      var menu = document.getElementById('nav-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function(){
+          var open = menu.classList.toggle('open');
+          btn.classList.toggle('open', open);
+          btn.setAttribute('aria-expanded', open);
+        });
+      }
+      var gBtn = document.getElementById('nav-games-btn');
+      var gDrop = document.getElementById('nav-games-dropdown');
+      if (gBtn && gDrop) {
+        gBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          var open = gDrop.classList.toggle('open');
+          gBtn.setAttribute('aria-expanded', open);
+        });
+        document.addEventListener('click', function(){
+          gDrop.classList.remove('open');
+          gBtn.setAttribute('aria-expanded', 'false');
+        });
+        document.addEventListener('keydown', function(e){
+          if (e.key === 'Escape') {
+            gDrop.classList.remove('open');
+            gBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
