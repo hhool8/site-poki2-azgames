@@ -117,7 +117,18 @@ for (const cat of categories) {
 
   const html = renderBase(baseTemplate, {
     title, description,
-    keywords:     `${cat.name.toLowerCase()} online free, play ${cat.name.toLowerCase()}, free ${cat.name.toLowerCase()} no download, az games ${cat.name.toLowerCase()}, browser ${cat.name.toLowerCase()}`,
+    keywords:     ({
+      'clicker-games':   'italian brainrot clicker, labubu clicker game, brainrot clicker, clicker games online free, free clicker games no download',
+      'io-games':        'brainrot games online, io games online free, play io games free, free io games no download, browser io games',
+      'car-games':       'escape road game online, car games free online, drift car games, free car games no download, browser car games',
+      'adventure-games': 'escape road game online, adventure games free online, free adventure games no download, browser adventure games',
+      '2-player-games':  '2 player games no download, two player games online free, free 2 player games browser, multiplayer browser games',
+      'shooting-games':  'shooting games free online, free shooting games no download, browser shooting games, online shooting games',
+      'sports-games':    'sports games free online, free sports games no download, browser sports games, online sports games',
+      'puzzle-games':    'puzzle games free online, free puzzle games no download, brain puzzle games browser, puzzle games no login',
+      'casual-games':    'casual games free online, free casual games no download, browser casual games, casual games no login',
+      'kids-games':      'kids games free online, free kids games no download, safe kids browser games, kids games no login',
+    })[cat.slug] || `${cat.name.toLowerCase()} online free, play ${cat.name.toLowerCase()}, free ${cat.name.toLowerCase()} no download`,
     canonical:    canonicalUrl,
     ogTitle:      title,
     ogDescription: description,
