@@ -425,25 +425,11 @@
       "category": "kids-games"
     },
     {
-      "slug": "contact-us",
-      "title": "Contact Us",
-      "description": "The information Contact Us at A-Z Games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
-    },
-    {
       "slug": "cookie-clicker",
       "title": "Cookie Clicker",
       "description": "Cookie Clicker is a popular clicker game where players click a cookie to generate cookies, aiming to collect and upgrade for faster production.",
       "thumbnail": "https://azgames.io/upload/imgs/cookieclickerthumb.png",
       "category": "clicker-games"
-    },
-    {
-      "slug": "copyright-infringement-notice-procedure",
-      "title": "Copyright Infringement Notice Procedure",
-      "description": "The information Copyright Infringement Notice Procedure at A-Z Games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
     },
     {
       "slug": "cowboy-safari",
@@ -943,13 +929,6 @@
       "category": "casual-games"
     },
     {
-      "slug": "hot-games",
-      "title": "HOT GAMES",
-      "description": "Want to play Hot Games? Play Orbit Kick, Cowboy Safari, Steal Brainrots and many more for free on A-Z Games. The best starting point to discover hot games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
-    },
-    {
       "slug": "hyper-tunnel",
       "title": "Hyper Tunnel",
       "description": "Hyper Tunnel is a fast‑paced arcade flying game where you pilot a spaceship through futuristic tunnels filled with obstacles, aiming to survive as long as you can.",
@@ -1209,13 +1188,6 @@
       "category": "kids-games"
     },
     {
-      "slug": "new-games",
-      "title": "NEW GAMES",
-      "description": "Want to play New Games? Play Astro Tycoon, Stick Hero RPG, Wacky Steps and many more for free on A-Z Games. The best starting point to discover new games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
-    },
-    {
       "slug": "omnom-jump",
       "title": "Omnom Jump",
       "description": "Om Nom Jump is a game where you jump and stack blocks to reach new heights! Get On Nom as high as possible to avoid the starving sharks.",
@@ -1321,25 +1293,11 @@
       "category": "car-games"
     },
     {
-      "slug": "popular-games",
-      "title": "POPULAR GAMES",
-      "description": "Want to play Hot Games? Play Geometry Dash, Retro Bowl, Subway Surfers and many more for free on A-Z Games. The best starting point to discover hot games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
-    },
-    {
       "slug": "power-surfer",
       "title": "Power Surfer",
       "description": "Play Power Hover to soar through futuristic skies in this thrilling hoverboard game! Dodge obstacles, collect power-ups, and perform amazing stunts. Click here to play!",
       "thumbnail": "https://azgames.io/upload/imgs/powersurfer1.png",
       "category": "sports-games"
-    },
-    {
-      "slug": "privacy-policy",
-      "title": "Privacy Policy",
-      "description": "The information privacy policy at A-Z Games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
     },
     {
       "slug": "ragdoll-arena",
@@ -1895,13 +1853,6 @@
       "category": "adventure-games"
     },
     {
-      "slug": "term-of-use",
-      "title": "Tearm Of Use",
-      "description": "The information Tearm Of Use at A-Z Games",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
-    },
-    {
       "slug": "tetris",
       "title": "Tetris",
       "description": "Tetris is a timeless puzzle game in which players manipulate falling shapes known as Tetriminos, rotating and positioning them to form uninterrupted horizontal lines.",
@@ -1984,13 +1935,6 @@
       "description": "Don’t let the cat escape. It may sound simple; however, the cat is clever, and without strategic moves, it’s hard to prevent it from escaping. Play Trap the Cat now!",
       "thumbnail": "https://azgames.io/upload/imgs/trap-the-cat.jpg",
       "category": "puzzle-games"
-    },
-    {
-      "slug": "trending-games",
-      "title": "TRENDING GAMES",
-      "description": "Want to play trending games? Play Slope Rider, Slope 2, Escape Road City 2 and many more for free on A-Z Games. The best starting point to discover",
-      "thumbnail": "https://azgames.io/upload/imgs/options/azgamesbanner.png",
-      "category": "casual-games"
     },
     {
       "slug": "trimerge",
