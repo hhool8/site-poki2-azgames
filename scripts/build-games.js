@@ -40,6 +40,36 @@ for (const game of games) {
       applicationCategory: 'Game',
       operatingSystem: 'Any',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: `Is ${game.title} unblocked?`,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: `Yes — ${game.title} is fully unblocked on AZ Games. No VPN, proxy, or special setup needed. Play directly from any school or office network.`
+          }
+        },
+        {
+          '@type': 'Question',
+          name: `Can I play ${game.title} on a Chromebook?`,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: `Yes. ${game.title} runs entirely in the browser, so it works perfectly on Chromebook without any extensions or downloads.`
+          }
+        },
+        {
+          '@type': 'Question',
+          name: `Is ${game.title} free to play?`,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: `100% free. ${game.title} requires no login, no account, and no payment. Open the page and play instantly.`
+          }
+        }
+      ]
     }
   ]);
 
@@ -51,12 +81,12 @@ for (const game of games) {
     .replace(/\{\{CATEGORY_NAME\}\}/g, cat.name)
     .replace(/\{\{RESOURCE_URL\}\}/g,  resourceUrl);
 
-  const title       = `Play ${game.title} Free Online — No Download | AZ Games`;
-  const description = `Play ${game.title} for free in your browser. ${game.description} No download, no login — instant play on AZ Games!`;
+  const title       = `Play ${game.title} Unblocked — Free, No VPN | AZ Games`;
+  const description = `Play ${game.title} unblocked on Chromebook — no VPN, no download, no login. ${game.description} Instant free browser play on AZ Games.`;
 
   const html = renderBase(baseTemplate, {
     title, description,
-    keywords:     `${game.title}, ${game.title} online, ${game.title} free, play ${game.title}`,
+    keywords:     `${game.title}, ${game.title} unblocked, ${game.title} unblocked chromebook, play ${game.title} no vpn, ${game.title} free online no download`,
     canonical:    canonicalUrl,
     ogTitle:      title,
     ogDescription: description,
