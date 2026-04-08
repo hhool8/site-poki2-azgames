@@ -276,7 +276,9 @@ ul { list-style: none; }
 .nsd-more:hover { background: rgba(249,115,22,0.14); text-decoration: none; }
 
 @media (max-width: 600px) {
-  .nav-search-wrap { display: none; }
+  .nav-search-input { width: 100px; }
+  .nav-search-input:focus { width: 130px; }
+  .nav-search-dropdown { width: 280px; }
 }
 
 /* ===== Buttons ===== */
@@ -951,6 +953,12 @@ section h2 {
   section { padding: 3rem 0; }
   .page-content { padding: 2.5rem 1.25rem 3.5rem; }
   .game-row-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.7rem; }
+}
+
+@media (max-width: 380px) {
+  .nav-search-input { width: 80px; }
+  .nav-search-input:focus { width: 100px; }
+  .nav-search-dropdown { width: calc(100vw - 2rem); right: -1rem; }
 }
 
 @media (max-width: 480px) {
