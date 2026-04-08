@@ -1,20 +1,119 @@
 <div class="page-content">
   <h1>Contact Us</h1>
-  <p>Have a question, spotted a bug, or want to suggest a game? We'd love to hear from you.</p>
+  <p>Have a question, found a bug, or want to suggest a game? Fill in the form below and we'll get back to you.</p>
 
   <div class="contact-form-wrap">
-    <h2>Send Us a Message</h2>
-    <p>Email us directly at:</p>
-    <p class="contact-email">contact@poki2.online</p>
-    <p>We typically respond within 2–3 business days.</p>
+    <h2>Send a Message</h2>
+    <form class="cf-form" id="contactForm" novalidate>
+      <div class="cf-two-col">
+        <div class="cf-row">
+          <label class="cf-label" for="cf-name">Your Name <span style="color:#f87171">*</span></label>
+          <input class="cf-input" id="cf-name" type="text" name="name" placeholder="e.g. Alex" required maxlength="80" autocomplete="name">
+        </div>
+        <div class="cf-row">
+          <label class="cf-label" for="cf-email">Your Email <span style="color:#f87171">*</span></label>
+          <input class="cf-input" id="cf-email" type="email" name="email" placeholder="you@example.com" required maxlength="120" autocomplete="email">
+        </div>
+      </div>
+      <div class="cf-two-col">
+        <div class="cf-row">
+          <label class="cf-label" for="cf-type">Subject</label>
+          <select class="cf-select" id="cf-type" name="type">
+            <option value="general">General Question</option>
+            <option value="feedback">Game Feedback</option>
+            <option value="bug">Bug Report</option>
+            <option value="suggest">Game Suggestion</option>
+            <option value="business">Business Inquiry</option>
+          </select>
+        </div>
+        <div class="cf-row">
+          <label class="cf-label" for="cf-game">Game Name <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+          <input class="cf-input" id="cf-game" type="text" name="game" placeholder="e.g. Drift Hunters" maxlength="80">
+        </div>
+      </div>
+      <div class="cf-row">
+        <label class="cf-label" for="cf-message">Message <span style="color:#f87171">*</span></label>
+        <textarea class="cf-textarea" id="cf-message" name="message" placeholder="Describe your question or feedback in detail…" required maxlength="2000"></textarea>
+      </div>
+      <button class="cf-submit" id="cf-submit" type="submit">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z"/></svg>
+        Send Message
+      </button>
+      <div class="cf-msg" id="cf-success">
+        ✓ Thank you! Your message has been sent. We'll get back to you within 2–3 business days.
+      </div>
+      <div class="cf-msg" id="cf-error">
+        Something went wrong. Please email us directly at <a href="mailto:contact@poki2.online">contact@poki2.online</a>.
+      </div>
+    </form>
   </div>
 
   <section>
     <h2>What to Include</h2>
     <ul>
-      <li><strong>Bug reports</strong> — Tell us the game name, your browser and OS, and what happened.</li>
-      <li><strong>Game suggestions</strong> — Share the game title and a link if you have one.</li>
-      <li><strong>Business inquiries</strong> — Describe your proposal briefly and we'll get back to you.</li>
+      <li><strong>Bug reports</strong> — Game name, your browser, OS, and what happened.</li>
+      <li><strong>Game suggestions</strong> — Title and a link if you have one.</li>
+      <li><strong>Business inquiries</strong> — Brief outline of your proposal.</li>
     </ul>
   </section>
+
+  <section>
+    <h2>Direct Email</h2>
+    <p>Prefer email? Reach us at <a href="mailto:contact@poki2.online" class="contact-email">contact@poki2.online</a>. We typically respond within 2–3 business days.</p>
+  </section>
 </div>
+
+<script>
+(function(){
+  // Pre-fill from URL params ?game=...&type=...
+  var params = new URLSearchParams(window.location.search);
+  var gameParam = params.get('game');
+  var typeParam = params.get('type');
+  if (gameParam) {
+    var gf = document.getElementById('cf-game');
+    if (gf) gf.value = decodeURIComponent(gameParam);
+  }
+  if (typeParam) {
+    var tf = document.getElementById('cf-type');
+    if (tf) {
+      var opt = tf.querySelector('option[value="' + typeParam + '"]');
+      if (opt) tf.value = typeParam;
+    }
+  }
+
+  // Form submission — mailto fallback
+  var form = document.getElementById('contactForm');
+  var submitBtn = document.getElementById('cf-submit');
+  var successMsg = document.getElementById('cf-success');
+  var errorMsg = document.getElementById('cf-error');
+
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name    = document.getElementById('cf-name').value.trim();
+    var email   = document.getElementById('cf-email').value.trim();
+    var type    = document.getElementById('cf-type').value;
+    var game    = document.getElementById('cf-game').value.trim();
+    var message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !email || !message) return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+
+    submitBtn.disabled = true;
+
+    var subject = type.charAt(0).toUpperCase() + type.slice(1)
+      + (game ? ' — ' + game : '') + ' | AZ Games Contact';
+    var body = 'Name: ' + name + '\nEmail: ' + email
+      + '\nType: ' + type + (game ? '\nGame: ' + game : '')
+      + '\n\nMessage:\n' + message;
+
+    window.location.href = 'mailto:contact@poki2.online'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    successMsg.classList.add('success');
+    successMsg.style.display = 'block';
+    submitBtn.disabled = false;
+  });
+})();
+</script>

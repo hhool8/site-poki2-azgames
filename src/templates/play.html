@@ -293,13 +293,12 @@
     });
   }
 
-  // Feedback
+  // Feedback — navigate to contact page with game pre-filled
   var feedbackBtn = document.getElementById('feedbackBtn');
   if (feedbackBtn) {
     feedbackBtn.addEventListener('click', function(){
-      feedbackBtn.classList.add('active');
-      showToast('Thanks for your feedback!');
-      setTimeout(function(){ feedbackBtn.classList.remove('active'); }, 2000);
+      var gameTitle = '{{GAME_TITLE}}';
+      window.location.href = '/contact.html?game=' + encodeURIComponent(gameTitle) + '&type=feedback';
     });
   }
 
