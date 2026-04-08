@@ -1,16 +1,23 @@
 <style>
   body.game-play-page main { padding: 0; }
+  .game-play-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 0;
+  }
   .game-play-wrap {
     display: flex;
     flex-direction: column;
     height: min(68vh, 600px);
     position: relative;
+    transition: height 0.3s ease;
   }
+  .game-play-wrap.fullwindow { height: min(90vh, 960px); }
   .game-play-bar {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0 1rem;
+    gap: 0.5rem;
+    padding: 0 0.75rem;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     height: 44px;
@@ -35,6 +42,7 @@
   }
   .game-play-breadcrumb a { color: var(--primary); }
   .game-play-breadcrumb a:hover { text-decoration: none; opacity: .8; }
+  .game-play-actions { display: flex; align-items: center; gap: 0.25rem; flex-shrink: 0; }
   .game-play-btn {
     flex-shrink: 0;
     background: rgba(249, 115, 22, 0.1);
@@ -50,9 +58,36 @@
     white-space: nowrap;
   }
   .game-play-btn:hover { background: rgba(249, 115, 22, 0.22); text-decoration: none; }
+  .game-icon-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    flex-shrink: 0;
+    padding: 0;
+  }
+  .game-icon-btn:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.2); }
+  .game-icon-btn.active { color: #f97316; border-color: rgba(249,115,22,0.5); background: rgba(249,115,22,0.1); }
+  .game-icon-btn svg { width: 15px; height: 15px; fill: currentColor; }
   .game-play-frame { flex: 1; overflow: hidden; position: relative; }
   .game-play-frame iframe { width: 100%; height: 100%; border: none; display: block; }
   @media (max-width: 520px) { .game-play-title { display: none; } }
+  @media (max-width: 480px) { .game-play-outer { padding: 0.5rem 0.5rem 0; } }
+  .game-toast {
+    position: fixed; bottom: 2rem; left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #1f2937; color: #e5e7eb;
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.55rem 1.1rem; font-size: .84rem;
+    pointer-events: none; opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 999; white-space: nowrap;
+  }
+  .game-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   .game-loading-overlay {
     position: absolute; inset: 0;
     background: #0f0f1a;
@@ -147,13 +182,32 @@
   }
 </style>
 
-<div class="game-play-wrap">
+<div class="game-toast" id="gameToast"></div>
+<div class="game-play-outer">
+<div class="game-play-wrap" id="gameWrap">
   <div class="game-play-bar">
     <span class="game-play-title">{{GAME_TITLE}}</span>
     <div class="game-play-breadcrumb">
       <a href="/">Home</a> › <a href="/category/{{CATEGORY_SLUG}}.html">{{CATEGORY_NAME}}</a>
     </div>
-    <a class="game-play-btn" href="/category/{{CATEGORY_SLUG}}.html">← Back</a>
+    <div class="game-play-actions">
+      <a class="game-play-btn" href="/category/{{CATEGORY_SLUG}}.html">← Back</a>
+      <button class="game-icon-btn" id="likeBtn" title="Like this game">
+        <svg viewBox="0 0 20 20"><path d="M2 10.5a1.5 1.5 0 113 0v5a1.5 1.5 0 01-3 0v-5zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/></svg>
+      </button>
+      <button class="game-icon-btn" id="feedbackBtn" title="Feedback / Report">
+        <svg viewBox="0 0 20 20"><path d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 7l2.55 2.4A1 1 0 0116 11H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"/></svg>
+      </button>
+      <button class="game-icon-btn" id="resetBtn" title="Reload game">
+        <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+      </button>
+      <button class="game-icon-btn" id="fullwindowBtn" title="Expand game area">
+        <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 011.414 1.414L7.414 15H9a1 1 0 010 2H5a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 011.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+      </button>
+      <button class="game-icon-btn" id="fullscreenBtn" title="Fullscreen">
+        <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 010 2H5.414l1.293 1.293a1 1 0 01-1.414 1.414L4 6.414V8a1 1 0 01-2 0V4zm12 0a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-1.293 1.293a1 1 0 01-1.414-1.414L12.586 5H11a1 1 0 010-2h4zM4 12a1 1 0 011 1v1.586l1.293-1.293a1 1 0 011.414 1.414L6.414 16H8a1 1 0 010 2H4a1 1 0 01-1-1v-4a1 1 0 011-1zm12 0a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-1.293-1.293a1 1 0 011.414-1.414L15 13.414V12a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+      </button>
+    </div>
   </div>
   <div class="game-play-frame">
     <div class="game-loading-overlay" id="gameLoadOverlay">
@@ -171,6 +225,7 @@
       loading="eager"
     ></iframe>
   </div>
+</div>
 </div>
 
 <div class="game-info">
@@ -211,13 +266,74 @@
 (function(){
   var overlay = document.getElementById('gameLoadOverlay');
   var frame   = document.getElementById('gameFrame');
-  if (!overlay || !frame) return;
-  var timer = setTimeout(function(){
-    overlay.classList.add('error');
-  }, 12000);
-  frame.addEventListener('load', function(){
-    clearTimeout(timer);
-    overlay.classList.add('hidden');
-  });
+  var toast   = document.getElementById('gameToast');
+  var wrap    = document.getElementById('gameWrap');
+
+  // Loading overlay
+  if (overlay && frame) {
+    var loadTimer = setTimeout(function(){ overlay.classList.add('error'); }, 12000);
+    frame.addEventListener('load', function(){ clearTimeout(loadTimer); overlay.classList.add('hidden'); });
+  }
+
+  // Toast helper
+  var toastTimer;
+  function showToast(msg) {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2500);
+  }
+
+  // Like
+  var likeBtn = document.getElementById('likeBtn');
+  if (likeBtn) {
+    likeBtn.addEventListener('click', function(){
+      likeBtn.classList.toggle('active');
+      showToast(likeBtn.classList.contains('active') ? 'Added to liked games ♥' : 'Removed from liked games');
+    });
+  }
+
+  // Feedback
+  var feedbackBtn = document.getElementById('feedbackBtn');
+  if (feedbackBtn) {
+    feedbackBtn.addEventListener('click', function(){
+      feedbackBtn.classList.add('active');
+      showToast('Thanks for your feedback!');
+      setTimeout(function(){ feedbackBtn.classList.remove('active'); }, 2000);
+    });
+  }
+
+  // Reset / Reload
+  var resetBtn = document.getElementById('resetBtn');
+  if (resetBtn && frame && overlay) {
+    resetBtn.addEventListener('click', function(){
+      overlay.classList.remove('hidden', 'error');
+      var src = frame.src;
+      frame.src = '';
+      setTimeout(function(){ frame.src = src; }, 50);
+    });
+  }
+
+  // Full Window toggle
+  var fullwindowBtn = document.getElementById('fullwindowBtn');
+  if (fullwindowBtn && wrap) {
+    fullwindowBtn.addEventListener('click', function(){
+      var expanded = wrap.classList.toggle('fullwindow');
+      fullwindowBtn.classList.toggle('active', expanded);
+      showToast(expanded ? 'Expanded view on' : 'Normal view');
+    });
+  }
+
+  // Fullscreen
+  var fullscreenBtn = document.getElementById('fullscreenBtn');
+  if (fullscreenBtn && frame) {
+    fullscreenBtn.addEventListener('click', function(){
+      var el = frame;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+      else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+    });
+  }
 })();
 </script>
