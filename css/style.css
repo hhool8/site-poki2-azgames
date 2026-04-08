@@ -432,7 +432,7 @@ section h2 {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
