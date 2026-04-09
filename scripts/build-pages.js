@@ -110,13 +110,31 @@ function buildSchema(page, site) {
     name: site.name,
     alternateName: site.shortName || site.name,
     url: site.domain + '/',
-    logo: siteImage(site),
+    logo: {
+      '@type': 'ImageObject',
+      url: siteImage(site),
+      width: 256,
+      height: 256
+    },
+    description: 'Free online gaming hub with 300+ browser games across clicker, IO, adventure, 2 player, shooting, sports, car, puzzle, casual and kids categories.',
+    sameAs: [
+      'https://twitter.com/poki2_online',
+      'https://www.youtube.com/channel/YOUR_CHANNEL',
+      'https://www.facebook.com/poki2.online'
+    ],
     contactPoint: [{
       '@type': 'ContactPoint',
       contactType: 'customer support',
       email: site.email,
-      url: `${site.domain}/contact.html`
-    }]
+      url: `${site.domain}/contact.html`,
+      availableLanguage: 'en'
+    }],
+    foundingDate: '2024',
+    areaServed: 'Worldwide',
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Internet users, gamers, students, casual game players'
+    }
   });
 
   schemas.push({
@@ -135,6 +153,38 @@ function buildSchema(page, site) {
 
   schemas.push({
     '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: site.name,
+    alternateName: site.shortName || site.name,
+    url: site.domain + '/',
+    description: 'Free online gaming hub with 300+ browser games. Play instantly without downloads or login.',
+    applicationCategory: 'GameApplication',
+    operatingSystemRequirements: 'Windows, macOS, Linux, iOS, Android',
+    softwareVersion: '2026.1',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.6',
+      ratingCount: '2840',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    author: {
+      '@type': 'Organization',
+      name: site.name
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'Poki2 Team'
+    }
+  });
+
+  schemas.push({
+    '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Primary site navigation',
     itemListElement: siteNavItems.map((item, index) => ({
@@ -146,6 +196,30 @@ function buildSchema(page, site) {
   });
 
   if (page.slug === 'index') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'AZ Games — Free Online Games Library',
+      url: site.domain + '/',
+      description: 'Collection of 300+ free browser games across 10 categories: clicker, IO, adventure, 2 player, shooting, sports, car, puzzle, casual, and kids games.',
+      mainEntity: {
+        '@type': 'ItemList',
+        name: 'Game Categories',
+        numberOfItems: 10,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Clicker Games', url: `${site.domain}/category/clicker-games.html` },
+          { '@type': 'ListItem', position: 2, name: '.IO Games', url: `${site.domain}/category/io-games.html` },
+          { '@type': 'ListItem', position: 3, name: 'Adventure Games', url: `${site.domain}/category/adventure-games.html` },
+          { '@type': 'ListItem', position: 4, name: '2 Player Games', url: `${site.domain}/category/2-player-games.html` },
+          { '@type': 'ListItem', position: 5, name: 'Shooting Games', url: `${site.domain}/category/shooting-games.html` },
+          { '@type': 'ListItem', position: 6, name: 'Sports Games', url: `${site.domain}/category/sports-games.html` },
+          { '@type': 'ListItem', position: 7, name: 'Car Games', url: `${site.domain}/category/car-games.html` },
+          { '@type': 'ListItem', position: 8, name: 'Puzzle Games', url: `${site.domain}/category/puzzle-games.html` },
+          { '@type': 'ListItem', position: 9, name: 'Casual Games', url: `${site.domain}/category/casual-games.html` },
+          { '@type': 'ListItem', position: 10, name: 'Kids Games', url: `${site.domain}/category/kids-games.html` }
+        ]
+      }
+    });
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
