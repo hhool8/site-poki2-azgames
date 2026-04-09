@@ -89,6 +89,12 @@ ul { list-style: none; }
   letter-spacing: -0.01em;
   text-shadow: 0 0 20px var(--primary-glow);
 }
+.site-nav .logo-mark {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: block;
+}
 .site-nav .logo:hover { text-decoration: none; opacity: .85; }
 
 /* Flat category nav bar */
@@ -756,9 +762,18 @@ section h2 {
 }
 
 .footer-brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--primary);
   font-size: 1.25rem;
   font-weight: 800;
+}
+.footer-brand .logo-mark {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: block;
 }
 .footer-brand a:hover { text-decoration: none; opacity: .85; }
 
