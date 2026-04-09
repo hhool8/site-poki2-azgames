@@ -23,6 +23,13 @@ fs.mkdirSync(distBlogDir, { recursive: true });
 const { games, categories } = gamesData;
 const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
 const site   = seoData.site;
+const siteNavItems = [
+  { name: 'Home', url: `${site.domain}/` },
+  { name: 'Games', url: `${site.domain}/category/clicker-games.html` },
+  { name: 'Blog', url: `${site.domain}/blog.html` },
+  { name: 'About', url: `${site.domain}/about.html` },
+  { name: 'Contact', url: `${site.domain}/contact.html` }
+];
 
 // ── Article bodies (auto-generated SEO content) ────────────────────────────
 const ARTICLE_BODIES = {
@@ -266,21 +273,43 @@ for (const post of blogData.posts) {
     .replace(/\{\{POST_BODY\}\}/g,           body + relatedHtml);
 
   const schema = buildSchema([
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/` },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${site.domain}/blog.html` },
+        { '@type': 'ListItem', position: 3, name: post.h1, item: post.canonical }
+      ]
+    },
     { '@context': 'https://schema.org', '@type': 'BlogPosting',
       headline: post.h1, description: post.description,
       url: post.canonical, datePublished: post.date,
+      mainEntityOfPage: post.canonical,
       author: { '@type': 'Organization', name: site.name, url: site.domain + '/' },
       publisher: { '@type': 'Organization', name: site.name, url: site.domain + '/' }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Primary site navigation',
+      itemListElement: siteNavItems.map((item, index) => ({
+        '@type': 'SiteNavigationElement',
+        position: index + 1,
+        name: item.name,
+        url: item.url
+      }))
     }
   ]);
 
   const html = render(baseTemplate, {
-    title: post.title, description: post.description,
+    title: withBrand(post.title), description: post.description,
     keywords: post.keywords, canonical: post.canonical,
-    ogTitle: post.title, ogDescription: post.description,
+    robotsMeta: robotsMeta(true),
+    ogTitle: withBrand(post.title), ogDescription: post.description,
     ogUrl: post.canonical, ogType: 'article',
     ogImage: site.faviconUrl,
-    twitterCard: 'summary_large_image', twitterTitle: post.title,
+    twitterCard: 'summary_large_image', twitterTitle: withBrand(post.title),
     twitterDescription: post.description, twitterImage: site.faviconUrl,
     bodyClass: 'blog-post-page',
     schema, content: postContent
@@ -307,19 +336,39 @@ const indexFull = indexContent.replace('{{BLOG_POSTS_HTML}}', postsHtml);
 
 const blogIdxSchema = buildSchema([
   { '@context': 'https://schema.org', '@type': 'Blog',
-    name: 'AZ Games Blog', url: blogData.index.canonical,
+    name: 'AZ Games by Poki2 Blog', url: blogData.index.canonical,
     description: blogData.index.description,
     publisher: { '@type': 'Organization', name: site.name, url: site.domain + '/' }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: blogData.index.canonical }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Primary site navigation',
+    itemListElement: siteNavItems.map((item, index) => ({
+      '@type': 'SiteNavigationElement',
+      position: index + 1,
+      name: item.name,
+      url: item.url
+    }))
   }
 ]);
 
 const idxHtml = render(baseTemplate, {
-  title: blogData.index.title, description: blogData.index.description,
+  title: withBrand(blogData.index.title), description: blogData.index.description,
   keywords: blogData.index.keywords, canonical: blogData.index.canonical,
-  ogTitle: blogData.index.title, ogDescription: blogData.index.description,
+  robotsMeta: robotsMeta(true),
+  ogTitle: withBrand(blogData.index.title), ogDescription: blogData.index.description,
   ogUrl: blogData.index.canonical, ogType: 'website',
   ogImage: site.faviconUrl,
-  twitterCard: 'summary_large_image', twitterTitle: blogData.index.title,
+  twitterCard: 'summary_large_image', twitterTitle: withBrand(blogData.index.title),
   twitterDescription: blogData.index.description, twitterImage: site.faviconUrl,
   bodyClass: blogData.index.bodyClass,
   schema: blogIdxSchema, content: indexFull
@@ -336,6 +385,7 @@ function render(template, p) {
     .replace(/\{\{DESCRIPTION\}\}/g,         escAttr(p.description))
     .replace(/\{\{KEYWORDS\}\}/g,            escAttr(p.keywords || ''))
     .replace(/\{\{CANONICAL\}\}/g,           escAttr(p.canonical))
+    .replace(/\{\{ROBOTS_META\}\}/g,         p.robotsMeta)
     .replace(/\{\{OG_TITLE\}\}/g,            escAttr(p.ogTitle))
     .replace(/\{\{OG_DESCRIPTION\}\}/g,      escAttr(p.ogDescription))
     .replace(/\{\{OG_URL\}\}/g,              escAttr(p.ogUrl))
@@ -354,6 +404,18 @@ function buildSchema(schemas) {
   return schemas.map(s =>
     `<script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n</script>`
   ).join('\n');
+}
+
+function withBrand(title) {
+  const value = String(title || '').trim();
+  if (!value) return site.name;
+  if (value.includes(site.name)) return value;
+  if (value.includes('AZ Games')) return value.replace(/AZ Games/g, site.name);
+  return `${value} | ${site.name}`;
+}
+
+function robotsMeta(indexable) {
+  return `<meta name="robots" content="${indexable ? 'index,follow' : 'noindex,follow'}">`;
 }
 
 function escAttr(str) {

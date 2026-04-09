@@ -11,6 +11,13 @@ const distDir      = path.join(ROOT, 'dist');
 fs.mkdirSync(distDir, { recursive: true });
 
 const homepageGameRows = buildHomepageGameRows(gamesData.games, gamesData.categories);
+const siteNavItems = [
+  { name: 'Home', url: `${data.site.domain}/` },
+  { name: 'Games', url: `${data.site.domain}/category/clicker-games.html` },
+  { name: 'Blog', url: `${data.site.domain}/blog.html` },
+  { name: 'About', url: `${data.site.domain}/about.html` },
+  { name: 'Contact', url: `${data.site.domain}/contact.html` }
+];
 
 for (const page of data.pages) {
   const contentPath = path.join(ROOT, 'src/content', `${page.slug}.html`);
@@ -21,17 +28,18 @@ for (const page of data.pages) {
   const schema = buildSchema(page, data.site);
 
   const html = baseTemplate
-    .replace(/\{\{TITLE\}\}/g,               escAttr(page.title))
+    .replace(/\{\{TITLE\}\}/g,               escAttr(withBrand(page.title)))
     .replace(/\{\{DESCRIPTION\}\}/g,          escAttr(page.description))
     .replace(/\{\{KEYWORDS\}\}/g,             escAttr(page.keywords || ''))
     .replace(/\{\{CANONICAL\}\}/g,            escAttr(page.canonical))
-    .replace(/\{\{OG_TITLE\}\}/g,             escAttr((page.og && page.og.title)       || page.title))
+    .replace(/\{\{ROBOTS_META\}\}/g,          robotsMeta(page.indexable !== false))
+    .replace(/\{\{OG_TITLE\}\}/g,             escAttr(withBrand((page.og && page.og.title) || page.title)))
     .replace(/\{\{OG_DESCRIPTION\}\}/g,       escAttr((page.og && page.og.description) || page.description))
     .replace(/\{\{OG_URL\}\}/g,               escAttr((page.og && page.og.url)         || page.canonical))
     .replace(/\{\{OG_TYPE\}\}/g,              escAttr((page.og && page.og.type)        || 'website'))
     .replace(/\{\{OG_IMAGE\}\}/g,             escAttr((page.og && page.og.image)       || siteImage(data.site)))
     .replace(/\{\{TWITTER_CARD\}\}/g,         escAttr((page.twitter && page.twitter.card)        || 'summary_large_image'))
-    .replace(/\{\{TWITTER_TITLE\}\}/g,        escAttr((page.twitter && page.twitter.title)       || page.title))
+    .replace(/\{\{TWITTER_TITLE\}\}/g,        escAttr(withBrand((page.twitter && page.twitter.title) || page.title)))
     .replace(/\{\{TWITTER_DESCRIPTION\}\}/g,  escAttr((page.twitter && page.twitter.description) || page.description))
     .replace(/\{\{TWITTER_IMAGE\}\}/g,        escAttr((page.twitter && page.twitter.image)       || siteImage(data.site)))
     .replace(/\{\{BODY_CLASS\}\}/g,           escAttr(page.bodyClass))
@@ -81,15 +89,60 @@ function siteImage(site) {
   return (site && site.faviconUrl) || 'https://azgames.poki2.online/favicon.svg';
 }
 
+function withBrand(title) {
+  const value = String(title || '').trim();
+  if (!value) return data.site.name;
+  if (value.includes('AZ Games by Poki2')) return value;
+  if (value.includes('AZ Games')) return value.replace(/AZ Games/g, 'AZ Games by Poki2');
+  return `${value} | ${data.site.name}`;
+}
+
+function robotsMeta(indexable) {
+  return `<meta name="robots" content="${indexable ? 'index,follow' : 'noindex,follow'}">`;
+}
+
 function buildSchema(page, site) {
   const schemas = [];
+
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: site.name,
+    alternateName: site.shortName || site.name,
+    url: site.domain + '/',
+    logo: siteImage(site),
+    contactPoint: [{
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: site.email,
+      url: `${site.domain}/contact.html`
+    }]
+  });
 
   schemas.push({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     url: site.domain + '/',
     name: site.name,
-    publisher: { '@type': 'Organization', name: site.name, url: site.domain + '/' }
+    alternateName: site.shortName || site.name,
+    publisher: { '@type': 'Organization', name: site.name, url: site.domain + '/' },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${site.domain}/search/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string'
+    }
+  });
+
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Primary site navigation',
+    itemListElement: siteNavItems.map((item, index) => ({
+      '@type': 'SiteNavigationElement',
+      position: index + 1,
+      name: item.name,
+      url: item.url
+    }))
   });
 
   if (page.slug === 'index') {
@@ -99,12 +152,12 @@ function buildSchema(page, site) {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'What is AZ Games?',
-          acceptedAnswer: { '@type': 'Answer', text: 'AZ Games is a free online gaming hub featuring 300+ browser games across 10 categories — no downloads, no login required.' }
+          name: 'What is AZ Games by Poki2?',
+          acceptedAnswer: { '@type': 'Answer', text: 'AZ Games by Poki2 is a free online gaming hub featuring 300+ browser games across 10 categories — no downloads, no login required.' }
         },
         {
           '@type': 'Question',
-          name: 'Are all games on AZ Games free?',
+          name: 'Are all games on AZ Games by Poki2 free?',
           acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every game is completely free to play. The site is supported by advertising.' }
         },
         {

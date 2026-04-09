@@ -18,6 +18,13 @@ fs.mkdirSync(distCategoryDir, { recursive: true });
 
 const { site, games, categories } = gamesData;
 const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
+const siteNavItems = [
+  { name: 'Home', url: `${site.domain}/` },
+  { name: 'Games', url: `${site.domain}/category/clicker-games.html` },
+  { name: 'Blog', url: `${site.domain}/blog.html` },
+  { name: 'About', url: `${site.domain}/about.html` },
+  { name: 'Contact', url: `${site.domain}/contact.html` }
+];
 
 // ── Play pages ───────────────────────────────────────────────────────────────
 
@@ -31,15 +38,38 @@ for (const game of games) {
   const schema = buildSchema([
     {
       '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/` },
+        { '@type': 'ListItem', position: 2, name: cat.name, item: `${site.domain}/category/${cat.slug}.html` },
+        { '@type': 'ListItem', position: 3, name: game.title, item: canonicalUrl }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'VideoGame',
       name: game.title,
       description: game.description,
       url: canonicalUrl,
+      mainEntityOfPage: canonicalUrl,
+      image: thumbUrl,
       genre: cat.name,
       gamePlatform: 'Browser',
       applicationCategory: 'Game',
       operatingSystem: 'Any',
+      isFamilyFriendly: true,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Primary site navigation',
+      itemListElement: siteNavItems.map((item, index) => ({
+        '@type': 'SiteNavigationElement',
+        position: index + 1,
+        name: item.name,
+        url: item.url
+      }))
     },
     {
       '@context': 'https://schema.org',
@@ -81,13 +111,14 @@ for (const game of games) {
     .replace(/\{\{CATEGORY_NAME\}\}/g, cat.name)
     .replace(/\{\{RESOURCE_URL\}\}/g,  resourceUrl);
 
-  const title       = `Play ${game.title} Unblocked — Free, No VPN | AZ Games`;
-  const description = `Play ${game.title} unblocked on Chromebook — no VPN, no download, no login. ${game.description} Instant free browser play on AZ Games.`;
+  const title       = withBrand(`Play ${game.title} Unblocked — Free, No VPN`);
+  const description = `Play ${game.title} unblocked on Chromebook — no VPN, no download, no login. ${game.description} Instant free browser play on AZ Games by Poki2.`;
 
   const html = renderBase(baseTemplate, {
     title, description,
     keywords:     `${game.title}, ${game.title} unblocked, ${game.title} unblocked chromebook, play ${game.title} no vpn, ${game.title} free online no download`,
     canonical:    canonicalUrl,
+    robotsMeta:   robotsMeta(true),
     ogTitle:      title,
     ogDescription: description,
     ogUrl:        canonicalUrl,
@@ -123,14 +154,51 @@ for (const cat of categories) {
   const schema = buildSchema([
     {
       '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/` },
+        { '@type': 'ListItem', position: 2, name: `${cat.name} Games`, item: canonicalUrl }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: `${cat.name} Games — AZ Games`,
+      name: `${cat.name} Games — ${site.name}`,
       description: cat.description,
       url: canonicalUrl,
-      hasPart: catGames.map(g => ({
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: catGames.slice(0, 24).map((g, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `${site.domain}/play/${g.slug}.html`,
+          name: g.title
+        }))
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Primary site navigation',
+      itemListElement: siteNavItems.map((item, index) => ({
+        '@type': 'SiteNavigationElement',
+        position: index + 1,
+        name: item.name,
+        url: item.url
+      }))
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${cat.name} games list`,
+      itemListElement: catGames.slice(0, 24).map((g, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
         '@type': 'VideoGame',
         name: g.title,
         url: `${site.domain}/play/${g.slug}.html`
+        }
       }))
     }
   ]);
@@ -142,8 +210,8 @@ for (const cat of categories) {
     .replace(/\{\{GAME_COUNT\}\}/g,            catGames.length)
     .replace(/\{\{GAMES_HTML\}\}/g,            gamesHtml);
 
-  const title       = `${cat.name} — Play Free Online, No Download | AZ Games`;
-  const description = `Play ${catGames.length} free ${cat.name} games online at AZ Games. ${cat.description} No download, no login — instant browser play!`;
+  const title       = withBrand(`${cat.name} Games — Play Free Online, No Download`);
+  const description = `Play ${catGames.length} free ${cat.name} games online at AZ Games by Poki2. ${cat.description} No download, no login — instant browser play.`;
 
   const html = renderBase(baseTemplate, {
     title, description,
@@ -160,6 +228,7 @@ for (const cat of categories) {
       'kids-games':      'kids games free online, free kids games no download, safe kids browser games, kids games no login',
     })[cat.slug] || `${cat.name.toLowerCase()} online free, play ${cat.name.toLowerCase()}, free ${cat.name.toLowerCase()} no download`,
     canonical:    canonicalUrl,
+    robotsMeta:   robotsMeta(true),
     ogTitle:      title,
     ogDescription: description,
     ogUrl:        canonicalUrl,
@@ -188,6 +257,7 @@ function renderBase(template, p) {
     .replace(/\{\{DESCRIPTION\}\}/g,          escAttr(p.description))
     .replace(/\{\{KEYWORDS\}\}/g,             escAttr(p.keywords || ''))
     .replace(/\{\{CANONICAL\}\}/g,            escAttr(p.canonical))
+    .replace(/\{\{ROBOTS_META\}\}/g,          p.robotsMeta)
     .replace(/\{\{OG_TITLE\}\}/g,             escAttr(p.ogTitle))
     .replace(/\{\{OG_DESCRIPTION\}\}/g,       escAttr(p.ogDescription))
     .replace(/\{\{OG_URL\}\}/g,               escAttr(p.ogUrl))
@@ -206,6 +276,18 @@ function buildSchema(schemas) {
   return schemas.map(s =>
     `<script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n</script>`
   ).join('\n');
+}
+
+function withBrand(title) {
+  const value = String(title || '').trim();
+  if (!value) return site.name;
+  if (value.includes(site.name)) return value;
+  if (value.includes('AZ Games')) return value.replace(/AZ Games/g, site.name);
+  return `${value} | ${site.name}`;
+}
+
+function robotsMeta(indexable) {
+  return `<meta name="robots" content="${indexable ? 'index,follow' : 'noindex,follow'}">`;
 }
 
 function escAttr(str) {

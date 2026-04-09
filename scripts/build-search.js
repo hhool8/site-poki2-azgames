@@ -54,6 +54,7 @@ function renderBase(template, p) {
     .replace(/\{\{DESCRIPTION\}\}/g,          escAttr(p.description))
     .replace(/\{\{KEYWORDS\}\}/g,             escAttr(p.keywords || ''))
     .replace(/\{\{CANONICAL\}\}/g,            escAttr(p.canonical))
+    .replace(/\{\{ROBOTS_META\}\}/g,          p.robotsMeta)
     .replace(/\{\{OG_TITLE\}\}/g,             escAttr(p.ogTitle))
     .replace(/\{\{OG_DESCRIPTION\}\}/g,       escAttr(p.ogDescription))
     .replace(/\{\{OG_URL\}\}/g,               escAttr(p.ogUrl))
@@ -69,13 +70,14 @@ function renderBase(template, p) {
 }
 
 const canonicalUrl = `${site.domain}/search/`;
-const title        = 'Search Games — AZ Games';
-const description  = 'Search all free unblocked games on AZ Games. Find your favourite game instantly — no login, no VPN needed.';
+const title        = 'Search Games | AZ Games by Poki2';
+const description  = 'Search all free unblocked games on AZ Games by Poki2. Find your favourite game instantly — no login, no VPN needed.';
 
 const html = renderBase(baseTemplate, {
   title, description,
   keywords:    'search games, find games, unblocked games search, azgames search',
   canonical:   canonicalUrl,
+  robotsMeta:  '<meta name="robots" content="noindex,follow">',
   ogTitle:     title,
   ogDescription: description,
   ogUrl:       canonicalUrl,

@@ -27,6 +27,7 @@ const entries = [];
 
 // Static pages
 for (const p of seoData.pages) {
+  if (p.indexable === false) continue;
   entries.push(urlTag(p.canonical, today, p.changefreq || 'monthly', p.priority || '0.5'));
 }
 

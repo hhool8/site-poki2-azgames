@@ -1,6 +1,7 @@
 {
   "site": {
-    "name": "AZ Games",
+    "name": "AZ Games by Poki2",
+    "shortName": "AZ Games",
     "domain": "https://azgames.poki2.online",
     "email": "contact@poki2.online",
     "faviconUrl": "https://azgames.poki2.online/favicon.svg",
@@ -10,14 +11,14 @@
     {
       "slug": "index",
       "outputFile": "index.html",
-      "title": "AZ Games — Play 300+ Free Online Games Instantly | No Download",
-      "description": "Play 300+ free online games at AZ Games — clicker, IO, adventure, 2 player, shooting, sports, car, puzzle, casual and kids games. No download, no login. Instant browser play.",
+      "title": "AZ Games by Poki2 — Play 300+ Free Online Games Instantly",
+      "description": "Play 300+ free online games at AZ Games by Poki2 — clicker, IO, adventure, 2 player, shooting, sports, car, puzzle, casual and kids games. No download, no login. Instant browser play.",
       "keywords": "az games, az games free online, play games online free, unblocked games, browser games no download, free games 2026, brainrot games online, italian brainrot clicker, labubu clicker game, escape road game online, 2 player games no download",
       "canonical": "https://azgames.poki2.online/",
       "bodyClass": "home-page",
-      "h1": "Play 300+ Free Online Games — No Download",
+      "h1": "AZ Games by Poki2: Play 300+ Free Online Games",
       "og": {
-        "title": "AZ Games — Play 300+ Free Online Games Instantly | No Download",
+        "title": "AZ Games by Poki2 — Play 300+ Free Online Games Instantly",
         "description": "300+ free browser games — clicker, IO, adventure, shooting, car, sports, puzzle, casual, kids. No download, no login.",
         "type": "website",
         "url": "https://azgames.poki2.online/",
@@ -25,7 +26,7 @@
       },
       "twitter": {
         "card": "summary_large_image",
-        "title": "AZ Games — Play 300+ Free Online Games Instantly",
+        "title": "AZ Games by Poki2 — Play 300+ Free Online Games Instantly",
         "description": "300+ free browser games — no download, no login. Instant play.",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
@@ -35,23 +36,23 @@
     {
       "slug": "about",
       "outputFile": "about.html",
-      "title": "About AZ Games — Your Free Online Games Hub",
-      "description": "Learn about AZ Games, a free online gaming hub offering 300+ browser games across 10 categories. No downloads, no accounts — just instant fun.",
+      "title": "About AZ Games by Poki2",
+      "description": "Learn about AZ Games by Poki2, a free online gaming hub offering 300+ browser games across 10 categories. No downloads, no accounts — just instant fun.",
       "keywords": "about az games, free online games, browser games hub",
       "canonical": "https://azgames.poki2.online/about.html",
       "bodyClass": "about-page",
-      "h1": "About AZ Games",
+      "h1": "About AZ Games by Poki2",
       "og": {
-        "title": "About AZ Games — Your Free Online Games Hub",
-        "description": "Learn about AZ Games, a free online gaming hub offering 300+ browser games. No downloads, no accounts.",
+        "title": "About AZ Games by Poki2",
+        "description": "Learn about AZ Games by Poki2, a free online gaming hub offering 300+ browser games. No downloads, no accounts.",
         "type": "website",
         "url": "https://azgames.poki2.online/about.html",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "twitter": {
         "card": "summary_large_image",
-        "title": "About AZ Games — Your Free Online Games Hub",
-        "description": "Learn about AZ Games, a free online gaming hub offering 300+ browser games.",
+        "title": "About AZ Games by Poki2",
+        "description": "Learn about AZ Games by Poki2, a free online gaming hub offering 300+ browser games.",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "changefreq": "monthly",
@@ -60,23 +61,23 @@
     {
       "slug": "privacy",
       "outputFile": "privacy.html",
-      "title": "Privacy Policy — AZ Games",
-      "description": "Read the AZ Games privacy policy. We explain what data we collect, how we use it, and your rights.",
+      "title": "Privacy Policy — AZ Games by Poki2",
+      "description": "Read the AZ Games by Poki2 privacy policy. We explain what data we collect, how we use it, and your rights.",
       "keywords": "az games privacy policy",
       "canonical": "https://azgames.poki2.online/privacy.html",
       "bodyClass": "privacy-page",
       "h1": "Privacy Policy",
       "og": {
-        "title": "Privacy Policy — AZ Games",
-        "description": "Read the AZ Games privacy policy.",
+        "title": "Privacy Policy — AZ Games by Poki2",
+        "description": "Read the AZ Games by Poki2 privacy policy.",
         "type": "website",
         "url": "https://azgames.poki2.online/privacy.html",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "twitter": {
         "card": "summary",
-        "title": "Privacy Policy — AZ Games",
-        "description": "Read the AZ Games privacy policy.",
+        "title": "Privacy Policy — AZ Games by Poki2",
+        "description": "Read the AZ Games by Poki2 privacy policy.",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "changefreq": "yearly",
@@ -85,23 +86,23 @@
     {
       "slug": "terms",
       "outputFile": "terms.html",
-      "title": "Terms of Service — AZ Games",
-      "description": "Read the AZ Games terms of service to understand how you may use this website.",
+      "title": "Terms of Service — AZ Games by Poki2",
+      "description": "Read the AZ Games by Poki2 terms of service to understand how you may use this website.",
       "keywords": "az games terms of service",
       "canonical": "https://azgames.poki2.online/terms.html",
       "bodyClass": "terms-page",
       "h1": "Terms of Service",
       "og": {
-        "title": "Terms of Service — AZ Games",
-        "description": "Read the AZ Games terms of service.",
+        "title": "Terms of Service — AZ Games by Poki2",
+        "description": "Read the AZ Games by Poki2 terms of service.",
         "type": "website",
         "url": "https://azgames.poki2.online/terms.html",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "twitter": {
         "card": "summary",
-        "title": "Terms of Service — AZ Games",
-        "description": "Read the AZ Games terms of service.",
+        "title": "Terms of Service — AZ Games by Poki2",
+        "description": "Read the AZ Games by Poki2 terms of service.",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "changefreq": "yearly",
@@ -110,23 +111,23 @@
     {
       "slug": "contact",
       "outputFile": "contact.html",
-      "title": "Contact Us — AZ Games",
-      "description": "Get in touch with the AZ Games team. Report bugs, suggest games, or ask questions.",
+      "title": "Contact AZ Games by Poki2",
+      "description": "Get in touch with the AZ Games by Poki2 team. Report bugs, suggest games, or ask questions.",
       "keywords": "az games contact, contact az games",
       "canonical": "https://azgames.poki2.online/contact.html",
       "bodyClass": "contact-page",
       "h1": "Contact Us",
       "og": {
-        "title": "Contact Us — AZ Games",
-        "description": "Get in touch with the AZ Games team.",
+        "title": "Contact AZ Games by Poki2",
+        "description": "Get in touch with the AZ Games by Poki2 team.",
         "type": "website",
         "url": "https://azgames.poki2.online/contact.html",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "twitter": {
         "card": "summary",
-        "title": "Contact Us — AZ Games",
-        "description": "Get in touch with the AZ Games team.",
+        "title": "Contact AZ Games by Poki2",
+        "description": "Get in touch with the AZ Games by Poki2 team.",
         "image": "https://azgames.poki2.online/favicon.svg"
       },
       "changefreq": "yearly",
