@@ -30,7 +30,7 @@
   #page-search-input::placeholder { color: var(--text-muted); }
   .search-results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 155px), 1fr));
     gap: 1rem;
   }
   .search-game-card {
@@ -74,6 +74,31 @@
     text-align: center;
     padding: 3rem 0;
     font-size: .95rem;
+  }
+  @media (max-width: 768px) {
+    .search-page-wrap {
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+    }
+    .search-results-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+      gap: 0.75rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .search-bar-wrap {
+      gap: 0.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .search-results-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .search-results-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
