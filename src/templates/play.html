@@ -77,6 +77,36 @@
   .game-play-frame iframe { width: 100%; height: 100%; border: none; display: block; }
   @media (max-width: 520px) { .game-play-title { display: none; } }
   @media (max-width: 480px) { .game-play-outer { padding: 0.5rem 0.5rem 0; } }
+  /* Portrait phone: scale iframe 2× so landscape game renders at landscape resolution */
+  .rotate-hint {
+    display: none;
+    text-align: center;
+    padding: 0.38rem 0.75rem;
+    font-size: .74rem;
+    color: var(--text-muted);
+    background: rgba(249,115,22,0.07);
+    border-bottom: 1px solid rgba(249,115,22,0.15);
+  }
+  @media (orientation: portrait) and (max-width: 768px) {
+    .rotate-hint { display: block; }
+    .game-play-wrap { height: auto; }
+    .game-play-wrap.fullwindow { height: auto; }
+    .game-play-frame {
+      aspect-ratio: 16 / 9;
+      flex: 0 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .game-play-frame iframe {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: 0;
+      left: 0;
+      transform: scale(0.5);
+      transform-origin: top left;
+    }
+  }
   .game-toast {
     position: fixed; bottom: 2rem; left: 50%;
     transform: translateX(-50%) translateY(10px);
@@ -185,6 +215,7 @@
 <div class="game-toast" id="gameToast"></div>
 <div class="game-play-outer">
 <div class="game-play-wrap" id="gameWrap">
+  <div class="rotate-hint">↻ Rotate your device for the best experience</div>
   <div class="game-play-bar">
     <span class="game-play-title">{{GAME_TITLE}}</span>
     <div class="game-play-breadcrumb">
