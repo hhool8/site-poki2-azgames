@@ -33,7 +33,7 @@ for (const p of seoData.pages) {
 
 // Game play pages
 for (const g of gamesData.games) {
-  entries.push(urlTag(`${gamesData.site.domain}/play/${g.slug}.html`, today, 'weekly', '0.8'));
+  entries.push(urlTag(`${gamesData.site.domain}/play/${g.slug}`, today, 'weekly', '0.8'));
 }
 
 // Category pages
