@@ -70,36 +70,6 @@ for (const game of games) {
         name: item.name,
         url: item.url
       }))
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: `Is ${game.title} unblocked?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `Yes — ${game.title} is fully unblocked on AZ Games. No VPN, proxy, or special setup needed. Play directly from any school or office network.`
-          }
-        },
-        {
-          '@type': 'Question',
-          name: `Can I play ${game.title} on a Chromebook?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `Yes. ${game.title} runs entirely in the browser, so it works perfectly on Chromebook without any extensions or downloads.`
-          }
-        },
-        {
-          '@type': 'Question',
-          name: `Is ${game.title} free to play?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `100% free. ${game.title} requires no login, no account, and no payment. Open the page and play instantly.`
-          }
-        }
-      ]
     }
   ]);
 

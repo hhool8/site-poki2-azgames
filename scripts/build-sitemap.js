@@ -59,9 +59,10 @@ fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap, 'utf8');
 console.log(`Built: dist/sitemap.xml (${entries.length} URLs)`);
 
 function urlTag(loc, lastmod, changefreq, priority) {
+  const normalizedLoc = loc.replace(/\.html$/, '');
   return [
     '  <url>',
-    `    <loc>${loc}</loc>`,
+    `    <loc>${normalizedLoc}</loc>`,
     `    <lastmod>${lastmod}</lastmod>`,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority}</priority>`,
