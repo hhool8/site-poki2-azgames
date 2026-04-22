@@ -8,62 +8,62 @@
     {
       "slug": "clicker-games",
       "name": "Clicker Games",
-      "emoji": "🖱️",
+      "emoji": "\ud83d\uddb1\ufe0f",
       "description": "Satisfying incremental and idle clicker games. Click, tap, and automate your way to billions."
     },
     {
       "slug": "io-games",
       "name": ".IO Games",
-      "emoji": "🌐",
-      "description": "Lightweight browser multiplayer games. Compete against real players in real time — no login needed."
+      "emoji": "\ud83c\udf10",
+      "description": "Lightweight browser multiplayer games. Compete against real players in real time \u2014 no login needed."
     },
     {
       "slug": "adventure-games",
       "name": "Adventure Games",
-      "emoji": "🗺️",
+      "emoji": "\ud83d\uddfa\ufe0f",
       "description": "Explore worlds, defeat enemies, and solve puzzles in thrilling browser adventure games."
     },
     {
       "slug": "2-player-games",
       "name": "2 Player Games",
-      "emoji": "👥",
+      "emoji": "\ud83d\udc65",
       "description": "Play head-to-head with a friend on the same device. Fighter, racing, and skill-based multiplayer."
     },
     {
       "slug": "shooting-games",
       "name": "Shooting Games",
-      "emoji": "🎯",
+      "emoji": "\ud83c\udfaf",
       "description": "First-person shooters, top-down blasters, and aim trainers. Lock and load."
     },
     {
       "slug": "sports-games",
       "name": "Sports Games",
-      "emoji": "🏆",
-      "description": "Basketball, soccer, golf, and athletics — all playable in your browser for free."
+      "emoji": "\ud83c\udfc6",
+      "description": "Basketball, soccer, golf, and athletics \u2014 all playable in your browser for free."
     },
     {
       "slug": "car-games",
       "name": "Car Games",
-      "emoji": "🚗",
+      "emoji": "\ud83d\ude97",
       "description": "Drift, race, and stunt your way through dozens of driving challenges in the browser."
     },
     {
       "slug": "puzzle-games",
       "name": "Puzzle Games",
-      "emoji": "🧩",
+      "emoji": "\ud83e\udde9",
       "description": "Brain teasers, match-3, logic puzzles, and word games for every skill level."
     },
     {
       "slug": "casual-games",
       "name": "Casual Games",
-      "emoji": "🎮",
+      "emoji": "\ud83c\udfae",
       "description": "Easy to pick up, hard to put down. Quick-session favourites for every mood."
     },
     {
       "slug": "kids-games",
       "name": "Kids Games",
-      "emoji": "🧒",
-      "description": "Age-appropriate fun for younger players — coloring, matching, and friendly platformers."
+      "emoji": "\ud83e\uddd2",
+      "description": "Age-appropriate fun for younger players \u2014 coloring, matching, and friendly platformers."
     }
   ],
   "games": [
@@ -113,7 +113,7 @@
       "slug": "age-of-war",
       "title": "Age Of War",
       "description": "Age of War is an online strategy game in which users create and advance a civilization from the Stone Age to the present age.",
-      "thumbnail": "https://azgames.io/upload/imgs/ageofwar.jpg",
+      "thumbnail": "/images/games/age-of-war.jpg",
       "category": "casual-games"
     },
     {
@@ -211,7 +211,7 @@
       "slug": "bitlife",
       "title": "Bitlife",
       "description": "BitLife is a text-based life simulation game. Here you can make every decision about your life, from birth to death. Each choice will create a unique and unpredictable life story.",
-      "thumbnail": "https://azgames.io/upload/imgs/bitlifegamebanner1.png",
+      "thumbnail": "/images/games/bitlife.png",
       "category": "kids-games"
     },
     {
@@ -281,21 +281,21 @@
       "slug": "bottle-jump",
       "title": "Bottle Jump",
       "description": "Bottle Jump is an addictive arcade skill-based game, where players progress by jumping a bottle from object to object while ensuring its upright landing. Play it now!",
-      "thumbnail": "https://azgames.io/upload/imgs/bottlejump2.png",
+      "thumbnail": "/images/games/bottle-jump.png",
       "category": "kids-games"
     },
     {
       "slug": "bounce-path",
       "title": "Bounce Path",
-      "description": "Bounce Path is a rhythm‑platformer game where you control a small black blob-looking character jumping in sync with the beat of the music. Jump through paths now!",
-      "thumbnail": "https://azgames.io/upload/imgs/bouncepath1.png",
+      "description": "Bounce Path is a rhythm\u2011platformer game where you control a small black blob-looking character jumping in sync with the beat of the music. Jump through paths now!",
+      "thumbnail": "/images/games/bounce-path.png",
       "category": "kids-games"
     },
     {
       "slug": "bounce-up",
       "title": "Bounce Up",
       "description": "Bounce Up is a fast-paced, skill-based arcade game where you control a ball bouncing from one platform to another. Play now and score as many points as possible.",
-      "thumbnail": "https://azgames.io/upload/imgs/bounceup3.png",
+      "thumbnail": "/images/games/bounce-up.png",
       "category": "kids-games"
     },
     {
@@ -343,7 +343,7 @@
     {
       "slug": "chase-rush",
       "title": "Chase Rush",
-      "description": "Chase Rush is a high-speed car chasing game where you step into the driver’s seat of a getaway car, dodging police pursuit and surviving for as long as possible.",
+      "description": "Chase Rush is a high-speed car chasing game where you step into the driver\u2019s seat of a getaway car, dodging police pursuit and surviving for as long as possible.",
       "thumbnail": "/images/games/chase-rush.png",
       "category": "car-games"
     },
@@ -351,7 +351,7 @@
       "slug": "chicken-flip",
       "title": "Chicken Flip",
       "description": "Chicken Flip is a hilariously chaotic arcade game where you guide your cute little chicken down hills by jumping, flipping, and bouncing through tricky levels.",
-      "thumbnail": "https://azgames.io/upload/imgs/chickenflip4.png",
+      "thumbnail": "/images/games/chicken-flip.png",
       "category": "kids-games"
     },
     {
@@ -407,7 +407,7 @@
       "slug": "color-jump",
       "title": "Color Jump",
       "description": "Color Jump is a vibrant arcade game where players guide a shape through a ever-changing color obstacles by matching colors. Play now and go as far as possible.",
-      "thumbnail": "https://azgames.io/upload/imgs/colorjump3.png",
+      "thumbnail": "/images/games/color-jump.png",
       "category": "kids-games"
     },
     {
@@ -456,7 +456,7 @@
       "slug": "crazy-bull-city",
       "title": "Crazy Bull City",
       "description": "Crazy Bull City is a wild 3D bull rampage simulator where players take on the role of a running bull charging through arenas and streets, smashing anything in sight.",
-      "thumbnail": "https://azgames.io/upload/imgs/crazybullcity1.png",
+      "thumbnail": "/images/games/crazy-bull-city.png",
       "category": "kids-games"
     },
     {
@@ -484,14 +484,14 @@
       "slug": "crossy-road",
       "title": "Crossy Road",
       "description": "Crossy Road is a free game with the main character being a cute chicken. You control the chicken to cross the road and avoid obstacles such as cars, trees...",
-      "thumbnail": "https://azgames.io/upload/imgs/crossyroad1.png",
+      "thumbnail": "/images/games/crossy-road.jpg",
       "category": "kids-games"
     },
     {
       "slug": "cuby-road-halloween",
       "title": "Cuby Road Halloween",
       "description": "Cuby Road Halloween is a variation of Cuby Road game with a Halloween theme. To the greatest extent feasible, the player moves a cube across a hostile, obstacle-filled environment.",
-      "thumbnail": "https://azgames.io/upload/imgs/cubyroadhalloween.png",
+      "thumbnail": "/images/games/cuby-road-halloween.png",
       "category": "kids-games"
     },
     {
@@ -504,14 +504,14 @@
     {
       "slug": "curve-rush-2",
       "title": "Curve Rush 2",
-      "description": "Curve Rush 2 is a newly released sequel to the original Curve Rush. It’s still about controlling a rolling ball navigating sandy hills but now having fresh features.",
+      "description": "Curve Rush 2 is a newly released sequel to the original Curve Rush. It\u2019s still about controlling a rolling ball navigating sandy hills but now having fresh features.",
       "thumbnail": "/images/games/curve-rush-2.png",
       "category": "io-games"
     },
     {
       "slug": "curve-rush-io",
       "title": "Curve Rush IO",
-      "description": "The addictive Curve Rush IO experience is back with a twist: now you can guide your ball through endless hills in thrilling multiplayer mode. Let’s give it a try today!",
+      "description": "The addictive Curve Rush IO experience is back with a twist: now you can guide your ball through endless hills in thrilling multiplayer mode. Let\u2019s give it a try today!",
       "thumbnail": "/images/games/curve-rush-io.png",
       "category": "io-games"
     },
@@ -539,7 +539,7 @@
     {
       "slug": "dead-strike",
       "title": "Dead Strike",
-      "description": "Dead Strike is a first‑person zombie shooter survival game where players fight against waves of zombies. Play now & go through quests and missions to save the city.",
+      "description": "Dead Strike is a first\u2011person zombie shooter survival game where players fight against waves of zombies. Play now & go through quests and missions to save the city.",
       "thumbnail": "/images/games/dead-strike.png",
       "category": "shooting-games"
     },
@@ -561,7 +561,7 @@
       "slug": "dino-dash-3d",
       "title": "Dino Dash 3D",
       "description": "Dino Dash 3D is the classic T-Rex game you love now in beautiful and immersive 3D. How long can you survive in this game?",
-      "thumbnail": "https://azgames.io/upload/imgs/dinodash3d1.png",
+      "thumbnail": "/images/games/dino-dash-3d.png",
       "category": "kids-games"
     },
     {
@@ -610,7 +610,7 @@
       "slug": "duck-life",
       "title": "Duck Life",
       "description": "Duck Life is an amazing adventure and training game where you farm and race ducks. The game starts with a tornado destroying your farm and leaving a duck egg...",
-      "thumbnail": "https://azgames.io/upload/imgs/ducklife.png",
+      "thumbnail": "/images/games/duck-life.png",
       "category": "kids-games"
     },
     {
@@ -659,13 +659,13 @@
       "slug": "escape-bear",
       "title": "Escape Bear",
       "description": "Escape Bear is an engaging 3D action-adventure game, where you take on the role of a brave bear trying to save your captured bear friends from evil bees. Play now!",
-      "thumbnail": "https://azgames.io/upload/imgs/escapebear.png",
+      "thumbnail": "/images/games/escape-bear.png",
       "category": "kids-games"
     },
     {
       "slug": "escape-drive",
       "title": "Escape Drive",
-      "description": "Play Escape Drive and drive monster-like cars through hilly terrains filled with steep hills, traps, and enemy cars. Stay sharp, dodge danger, and don’t get caught.",
+      "description": "Play Escape Drive and drive monster-like cars through hilly terrains filled with steep hills, traps, and enemy cars. Stay sharp, dodge danger, and don\u2019t get caught.",
       "thumbnail": "/images/games/escape-drive.png",
       "category": "shooting-games"
     },
@@ -771,7 +771,7 @@
       "slug": "flamy-dash",
       "title": "Flamy Dash",
       "description": "Flamy Dash is a thrilling one-button arcade game where you control a glowing fireball swinging through a dark, obstacle-filled cave. Try to travel as far as possible!",
-      "thumbnail": "https://azgames.io/upload/imgs/flamydash3.png",
+      "thumbnail": "/images/games/flamy-dash.png",
       "category": "kids-games"
     },
     {
@@ -799,14 +799,14 @@
       "slug": "flying-kong",
       "title": "Flying Kong",
       "description": "Flying Kong is a 3D arcade endless runner where you guide a gorilla flying through a lush jungle, avoid quirky obstacles, and collect bananas. Play free online now!",
-      "thumbnail": "https://azgames.io/upload/imgs/flyingkong1.png",
+      "thumbnail": "/images/games/flying-kong.png",
       "category": "kids-games"
     },
     {
       "slug": "forest-mouse",
       "title": "Forest Mouse",
       "description": "Forest Mouse is a 3D simulation game where players experience the world from the view of a rodent. Jump in, explore the forest, collect resources, avoid dangers, etc.",
-      "thumbnail": "https://azgames.io/upload/imgs/forestmouse.png",
+      "thumbnail": "/images/games/forest-mouse.png",
       "category": "kids-games"
     },
     {
@@ -840,7 +840,7 @@
     {
       "slug": "glide-in",
       "title": "Glide In",
-      "description": "Glide In is a 3D casual skill‑based puzzle game where you drag back, aim, and release a puck to sink it into a target hole on each challenge while avoiding hazards.",
+      "description": "Glide In is a 3D casual skill\u2011based puzzle game where you drag back, aim, and release a puck to sink it into a target hole on each challenge while avoiding hazards.",
       "thumbnail": "/images/games/glide-in.png",
       "category": "shooting-games"
     },
@@ -904,7 +904,7 @@
       "slug": "hill-climb-race",
       "title": "Hill Climb Race",
       "description": "Hill Climb Race is a unique off-road racing game, overcoming rugged terrain such as hills, deserts, and even the moon.",
-      "thumbnail": "https://azgames.io/upload/imgs/thumbnail-512.png",
+      "thumbnail": "/images/games/hill-climb-race.png",
       "category": "casual-games"
     },
     {
@@ -931,7 +931,7 @@
     {
       "slug": "hyper-tunnel",
       "title": "Hyper Tunnel",
-      "description": "Hyper Tunnel is a fast‑paced arcade flying game where you pilot a spaceship through futuristic tunnels filled with obstacles, aiming to survive as long as you can.",
+      "description": "Hyper Tunnel is a fast\u2011paced arcade flying game where you pilot a spaceship through futuristic tunnels filled with obstacles, aiming to survive as long as you can.",
       "thumbnail": "/images/games/hyper-tunnel.png",
       "category": "kids-games"
     },
@@ -945,7 +945,7 @@
     {
       "slug": "ice-baby-quest",
       "title": "Ice Baby Quest",
-      "description": "Ice Baby Quest is a fun, quirky meme‑based adventure game where you go through a bizarre 3D world full of random NPCs and challenges to find the Ice Baby character.",
+      "description": "Ice Baby Quest is a fun, quirky meme\u2011based adventure game where you go through a bizarre 3D world full of random NPCs and challenges to find the Ice Baby character.",
       "thumbnail": "/images/games/ice-baby-quest.png",
       "category": "kids-games"
     },
@@ -966,7 +966,7 @@
     {
       "slug": "italian-brainrot-clicker-2",
       "title": "Italian Brainrot Clicker 2",
-      "description": "Italian Brainrot Clicker 2 is a hilarious clicker game where you’ll encounter Tralalero Tralala, Tung Tung Tung Sahur, and many other bizarre-looking characters.",
+      "description": "Italian Brainrot Clicker 2 is a hilarious clicker game where you\u2019ll encounter Tralalero Tralala, Tung Tung Tung Sahur, and many other bizarre-looking characters.",
       "thumbnail": "/images/games/italian-brainrot-clicker-2.png",
       "category": "clicker-games"
     },
@@ -1072,7 +1072,7 @@
       "slug": "loot-and-scoot",
       "title": "Loot And Scoot",
       "description": "Loot and Scoot is a quirky, fast-paced casual game where players play as a recently fired bank employee and become a thief. Dodge obstacles, loot coins, and survive!",
-      "thumbnail": "https://azgames.io/upload/imgs/lootandscoot3.png",
+      "thumbnail": "/images/games/loot-and-scoot.png",
       "category": "kids-games"
     },
     {
@@ -1100,14 +1100,14 @@
       "slug": "madness-lab",
       "title": "Madness Lab",
       "description": "Madness Lab is a chaotic runner-style arcade game where you play as different minions, running through randomized challenge rooms to test their abilities.",
-      "thumbnail": "https://azgames.io/upload/imgs/madnesslab3.png",
+      "thumbnail": "/images/games/madness-lab.png",
       "category": "kids-games"
     },
     {
       "slug": "mamas-cookeria",
       "title": "Mama's Cookeria",
       "description": "Mama",
-      "thumbnail": "https://azgames.io/upload/imgs/mamascookeria3.png",
+      "thumbnail": "/images/games/mamas-cookeria.png",
       "category": "kids-games"
     },
     {
@@ -1148,7 +1148,7 @@
     {
       "slug": "monkey-mart",
       "title": "Monkey Mart",
-      "description": "If you like the job of managing and coordinating stalls, you can’t try to play the Monkey Mart game.",
+      "description": "If you like the job of managing and coordinating stalls, you can\u2019t try to play the Monkey Mart game.",
       "thumbnail": "/images/games/monkey-mart.png",
       "category": "clicker-games"
     },
@@ -1184,14 +1184,14 @@
       "slug": "neon-leap",
       "title": "Neon Leap",
       "description": "Neon Leap is a casual platformer game starring a little stickman character who swings and jumps across glowing shapes to conquer the high-speed obstacle course.",
-      "thumbnail": "https://azgames.io/upload/imgs/neonleap3.png",
+      "thumbnail": "/images/games/neon-leap.png",
       "category": "kids-games"
     },
     {
       "slug": "omnom-jump",
       "title": "Omnom Jump",
       "description": "Om Nom Jump is a game where you jump and stack blocks to reach new heights! Get On Nom as high as possible to avoid the starving sharks.",
-      "thumbnail": "https://azgames.io/upload/imgs/omnomjump11.png",
+      "thumbnail": "/images/games/omnom-jump.png",
       "category": "kids-games"
     },
     {
@@ -1205,7 +1205,7 @@
       "slug": "orbit-dash",
       "title": "Orbit Dash",
       "description": "Orbit Dash is a single-player casual, arcade game that challenges players to guide a rainbow-colored line through a vertically course. Play on AZ Games now!",
-      "thumbnail": "https://azgames.io/upload/imgs/orbitdash.png",
+      "thumbnail": "/images/games/orbit-dash.png",
       "category": "kids-games"
     },
     {
@@ -1233,14 +1233,14 @@
       "slug": "pacman-30th-anniversary",
       "title": "Pacman 30th Anniversary",
       "description": "Pacman 30th Anniversary is a popular arcade game. It has easy gameplay, design, low system requirements, and addictiveness. Popular culture has accepted this simple game.",
-      "thumbnail": "https://azgames.io/upload/imgs/pacman.jpg",
+      "thumbnail": "/images/games/pacman-30th-anniversary.jpg",
       "category": "kids-games"
     },
     {
       "slug": "papas-freezeria",
       "title": "Papa's Freezeria",
       "description": "Papa",
-      "thumbnail": "https://azgames.io/upload/imgs/papasfreezeria.png",
+      "thumbnail": "/images/games/papas-freezeria.png",
       "category": "kids-games"
     },
     {
@@ -1302,7 +1302,7 @@
     {
       "slug": "ragdoll-arena",
       "title": "Ragdoll Arena",
-      "description": "Ragdoll Arena is a 2D side‑view ragdoll shooter game, where the player fights in compact arenas, with random physics and reactions creating unpredictable combat.",
+      "description": "Ragdoll Arena is a 2D side\u2011view ragdoll shooter game, where the player fights in compact arenas, with random physics and reactions creating unpredictable combat.",
       "thumbnail": "/images/games/ragdoll-arena.png",
       "category": "shooting-games"
     },
@@ -1352,7 +1352,7 @@
       "slug": "red-rush",
       "title": "Red Rush",
       "description": "Red Rush is a super fast-paced arcade game that challenges players with rapid reflexes and intense gameplay. Control a speeding craft & survive as long as possible.",
-      "thumbnail": "https://azgames.io/upload/imgs/redrush2.png",
+      "thumbnail": "/images/games/red-rush.png",
       "category": "kids-games"
     },
     {
@@ -1379,7 +1379,7 @@
     {
       "slug": "rob-brainrot-2",
       "title": "Rob Brainrot 2",
-      "description": "Play Rob Brainrot 2, collect, buy, and steal quirky Brainrots meme characters. Let’s build your base with the rarest Brainrots and protect them from the opponents.",
+      "description": "Play Rob Brainrot 2, collect, buy, and steal quirky Brainrots meme characters. Let\u2019s build your base with the rarest Brainrots and protect them from the opponents.",
       "thumbnail": "/images/games/rob-brainrot-2.png",
       "category": "io-games"
     },
@@ -1415,7 +1415,7 @@
       "slug": "santa-run",
       "title": "Santa Run",
       "description": "Santa Run is a simple, fast-paced, endless running and jumping game, where you become Santa Claus as he runs through winter- and Christmas-themed environments.",
-      "thumbnail": "https://azgames.io/upload/imgs/santarun3.png",
+      "thumbnail": "/images/games/santa-run.png",
       "category": "kids-games"
     },
     {
@@ -1456,7 +1456,7 @@
     {
       "slug": "skip-it",
       "title": "Skip It!",
-      "description": "Love skipping stones across water? Let’s enjoy Skip It!, throw stones, and make them skip as far as possible. Don’t forget to upgrade to boost your performance.",
+      "description": "Love skipping stones across water? Let\u2019s enjoy Skip It!, throw stones, and make them skip as far as possible. Don\u2019t forget to upgrade to boost your performance.",
       "thumbnail": "/images/games/skip-it.png",
       "category": "casual-games"
     },
@@ -1533,7 +1533,7 @@
     {
       "slug": "slope-rider",
       "title": "Slope Rider",
-      "description": "Slope Rider is an endless sledding game set in a breathtaking winter wonderland. Let’s ride a sled racing through snowy forests and icy terrain full of obstacles.",
+      "description": "Slope Rider is an endless sledding game set in a breathtaking winter wonderland. Let\u2019s ride a sled racing through snowy forests and icy terrain full of obstacles.",
       "thumbnail": "/images/games/slope-rider.png",
       "category": "sports-games"
     },
@@ -1667,7 +1667,7 @@
       "slug": "sprunki-jump",
       "title": "Sprunki Jump",
       "description": "Sprunki Jump lets you leap through colorful worlds, avoiding obstacles and collecting rewards. Experience endless adventure and test your jumping skills!",
-      "thumbnail": "https://azgames.io/upload/imgs/sprunkijump.png",
+      "thumbnail": "/images/games/sprunki-jump.png",
       "category": "kids-games"
     },
     {
@@ -1737,7 +1737,7 @@
       "slug": "stickman-slash",
       "title": "Stickman Slash",
       "description": "Play Stickman Slash and become a lightning-fast ninja! Slash enemies, defeat epic bosses, and master intense offline combat in this thrilling stickman action game.",
-      "thumbnail": "https://azgames.io/upload/imgs/stickmanslash3.png",
+      "thumbnail": "/images/games/stickman-slash.png",
       "category": "kids-games"
     },
     {
@@ -1821,7 +1821,7 @@
       "slug": "tap-road-beat",
       "title": "Tap Road Beat",
       "description": "Tap Road Beat is a rhythm-packed ball runner where every move syncs to the beat! Dodge obstacles, collect gems, and groove through stunning neon tracks.",
-      "thumbnail": "https://azgames.io/upload/imgs/taproadbeat2.png",
+      "thumbnail": "/images/games/tap-road-beat.png",
       "category": "kids-games"
     },
     {
@@ -1835,7 +1835,7 @@
       "slug": "tap-rush",
       "title": "Tap Rush",
       "description": "Tap Rush is a game where you control a small ball rolling on a track filled with obstacles. Your goal is to guide the ball through challenges and achieve the highest score possible.",
-      "thumbnail": "https://azgames.io/upload/imgs/taprush2.png",
+      "thumbnail": "/images/games/tap-rush.png",
       "category": "kids-games"
     },
     {
@@ -1869,7 +1869,7 @@
     {
       "slug": "tiny-arena",
       "title": "Tiny Arena",
-      "description": "Tiny Arena is an action‑packed RPG fighting game that challenges players to control a tiny gladiator in fast, arcade-style combat against waves of enemies and bosses.",
+      "description": "Tiny Arena is an action\u2011packed RPG fighting game that challenges players to control a tiny gladiator in fast, arcade-style combat against waves of enemies and bosses.",
       "thumbnail": "/images/games/tiny-arena.png",
       "category": "adventure-games"
     },
@@ -1877,7 +1877,7 @@
       "slug": "tiny-fishing",
       "title": "Tiny Fishing",
       "description": "Tiny Fishing brings an entertaining and exciting fishing experience. The images in the game are designed to be extremely attractive and vivid. There are lovely underwater creatures and become realistic.",
-      "thumbnail": "https://azgames.io/upload/imgs/tinyfishing.jpg",
+      "thumbnail": "/images/games/tiny-fishing.jpg",
       "category": "kids-games"
     },
     {
@@ -1932,7 +1932,7 @@
     {
       "slug": "trap-the-cat",
       "title": "Trap The Cat",
-      "description": "Don’t let the cat escape. It may sound simple; however, the cat is clever, and without strategic moves, it’s hard to prevent it from escaping. Play Trap the Cat now!",
+      "description": "Don\u2019t let the cat escape. It may sound simple; however, the cat is clever, and without strategic moves, it\u2019s hard to prevent it from escaping. Play Trap the Cat now!",
       "thumbnail": "/images/games/trap-the-cat.jpg",
       "category": "puzzle-games"
     },
@@ -1960,7 +1960,7 @@
     {
       "slug": "tung-sahur-horror",
       "title": "Tung Sahur Horror",
-      "description": "Tung Sahur Horror is a survival horror game where players find themselves waking up trapped inside Tung Tung Tung Sahur’s house and have to escape within 5 days.",
+      "description": "Tung Sahur Horror is a survival horror game where players find themselves waking up trapped inside Tung Tung Tung Sahur\u2019s house and have to escape within 5 days.",
       "thumbnail": "/images/games/tung-sahur-horror.png",
       "category": "adventure-games"
     },
@@ -2024,13 +2024,13 @@
       "slug": "wacky-nursery-2",
       "title": "Wacky Nursery 2",
       "description": "Wacky Nursery 2 is an adventure puzzle game that follows the chaotic events of Wacky Nursery. Meet new casts, explore new places, and be ready to face new dangers.",
-      "thumbnail": "https://azgames.io/upload/imgs/wackynursery23.png",
+      "thumbnail": "/images/games/wacky-nursery-2.png",
       "category": "casual-games"
     },
     {
       "slug": "wacky-nursery",
       "title": "Wacky Nursery",
-      "description": "Wacky Nursery is a twisted puzzle-adventure set in a sinister school—solve darkly humorous mysteries, avoid danger, and survive a day where not dying is the real challenge!",
+      "description": "Wacky Nursery is a twisted puzzle-adventure set in a sinister school\u2014solve darkly humorous mysteries, avoid danger, and survive a day where not dying is the real challenge!",
       "thumbnail": "/images/games/wacky-nursery.png",
       "category": "io-games"
     },
@@ -2065,7 +2065,7 @@
     {
       "slug": "wheelie-party",
       "title": "Wheelie Party",
-      "description": "Wheelie Party is a fun arcade stunt‑riding game that challenges you to ride a motorbike on the rear wheel and maintain the stunt for as long as possible. Play now!",
+      "description": "Wheelie Party is a fun arcade stunt\u2011riding game that challenges you to ride a motorbike on the rear wheel and maintain the stunt for as long as possible. Play now!",
       "thumbnail": "/images/games/wheelie-party.png",
       "category": "car-games"
     },
@@ -2087,14 +2087,14 @@
       "slug": "wyrmdash",
       "title": "Wyrmdash",
       "description": "Wyrmdash a fast-paced adventure where the princess herself takes control, riding a mighty dragon in a fast and furious quest for revenge. Play on Azgames.io now!",
-      "thumbnail": "https://azgames.io/upload/imgs/wyrmdash.png",
+      "thumbnail": "/images/games/wyrmdash.png",
       "category": "kids-games"
     },
     {
       "slug": "ziggy-road",
       "title": "Ziggy Road",
-      "description": "In Ziggy Road, players control a ball rolling along an endless narrow zig-zagging platform without falling off the edges; however, it’s uneasy to earn high scores.",
-      "thumbnail": "https://azgames.io/upload/imgs/ziggyroad1.png",
+      "description": "In Ziggy Road, players control a ball rolling along an endless narrow zig-zagging platform without falling off the edges; however, it\u2019s uneasy to earn high scores.",
+      "thumbnail": "/images/games/ziggy-road.png",
       "category": "kids-games"
     },
     {
