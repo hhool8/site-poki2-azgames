@@ -53,7 +53,7 @@ const navGamesHtml = (function () {
     ).join('\n');
     return [
       `      <div class="nav-games-group">`,
-      `        <a class="nav-games-cat" href="/category/${cat.slug}.html">${cat.emoji} ${escHtml(cat.name)}</a>`,
+      `        <a class="nav-games-cat" href="/category/${cat.slug}">${cat.emoji} ${escHtml(cat.name)}</a>`,
       `        <ul>`,
       links,
       `        </ul>`,

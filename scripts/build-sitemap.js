@@ -38,7 +38,7 @@ for (const g of gamesData.games) {
 
 // Category pages
 for (const c of gamesData.categories) {
-  entries.push(urlTag(`${gamesData.site.domain}/category/${c.slug}.html`, today, 'weekly', '0.9'));
+  entries.push(urlTag(`${gamesData.site.domain}/category/${c.slug}`, today, 'weekly', '0.9'));
 }
 
 // Blog index + posts

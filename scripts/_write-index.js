@@ -67,7 +67,7 @@ const content = `<section class="homepage-rows">
 <section class="seo-intro">
   <div class="container">
     <h2>AZ Games: Your Free A-to-Z Online Gaming Destination</h2>
-    <p>Welcome to <strong>AZ Games</strong> &mdash; a carefully curated library of <strong>300+ free browser games</strong> spanning every major genre. Whether you are into fast-paced <a href="/category/clicker-games.html">clicker games</a>, competitive <a href="/category/io-games.html">.IO multiplayer games</a>, story-driven <a href="/category/adventure-games.html">adventure games</a>, or relaxing <a href="/category/puzzle-games.html">puzzle games</a>, you will find something here in seconds &mdash; zero downloads, zero sign-ups.</p>
+    <p>Welcome to <strong>AZ Games</strong> &mdash; a carefully curated library of <strong>300+ free browser games</strong> spanning every major genre. Whether you are into fast-paced <a href="/category/clicker-games">clicker games</a>, competitive <a href="/category/io-games">.IO multiplayer games</a>, story-driven <a href="/category/adventure-games">adventure games</a>, or relaxing <a href="/category/puzzle-games">puzzle games</a>, you will find something here in seconds &mdash; zero downloads, zero sign-ups.</p>
     <p>All games run natively in your web browser using modern HTML5 technology. Works on Windows, Mac, Chromebook, iOS, and Android.</p>
   </div>
 </section>
@@ -76,16 +76,16 @@ const content = `<section class="homepage-rows">
   <div class="container">
     <h2>Browse All 10 Online Game Categories</h2>
     <ul class="seo-list">
-      <li><strong><a href="/category/clicker-games.html">Clicker Games</a></strong> &mdash; Satisfying incremental and idle games where every click counts.</li>
-      <li><strong><a href="/category/io-games.html">.IO Games</a></strong> &mdash; Lightweight multiplayer browser games. Compete in real time &mdash; no login needed.</li>
-      <li><strong><a href="/category/adventure-games.html">Adventure Games</a></strong> &mdash; Explore worlds, solve puzzles, and defeat enemies in platformers and RPG-lite adventures.</li>
-      <li><strong><a href="/category/2-player-games.html">2 Player Games</a></strong> &mdash; Play head-to-head with a friend on the same device.</li>
-      <li><strong><a href="/category/shooting-games.html">Shooting Games</a></strong> &mdash; First-person shooters, top-down blasters, and aim-trainers.</li>
-      <li><strong><a href="/category/sports-games.html">Sports Games</a></strong> &mdash; Basketball, soccer, golf, and athletics &mdash; all playable in your browser.</li>
-      <li><strong><a href="/category/car-games.html">Car Games</a></strong> &mdash; Drift, race, and stunt your way through dozens of driving challenges.</li>
-      <li><strong><a href="/category/puzzle-games.html">Puzzle Games</a></strong> &mdash; Brain teasers, match-3, word games, and logic puzzles for all skill levels.</li>
-      <li><strong><a href="/category/casual-games.html">Casual Games</a></strong> &mdash; Easy to pick up, hard to put down. Hundreds of quick-session favourites.</li>
-      <li><strong><a href="/category/kids-games.html">Kids Games</a></strong> &mdash; Age-appropriate fun for younger players.</li>
+      <li><strong><a href="/category/clicker-games">Clicker Games</a></strong> &mdash; Satisfying incremental and idle games where every click counts.</li>
+      <li><strong><a href="/category/io-games">.IO Games</a></strong> &mdash; Lightweight multiplayer browser games. Compete in real time &mdash; no login needed.</li>
+      <li><strong><a href="/category/adventure-games">Adventure Games</a></strong> &mdash; Explore worlds, solve puzzles, and defeat enemies in platformers and RPG-lite adventures.</li>
+      <li><strong><a href="/category/2-player-games">2 Player Games</a></strong> &mdash; Play head-to-head with a friend on the same device.</li>
+      <li><strong><a href="/category/shooting-games">Shooting Games</a></strong> &mdash; First-person shooters, top-down blasters, and aim-trainers.</li>
+      <li><strong><a href="/category/sports-games">Sports Games</a></strong> &mdash; Basketball, soccer, golf, and athletics &mdash; all playable in your browser.</li>
+      <li><strong><a href="/category/car-games">Car Games</a></strong> &mdash; Drift, race, and stunt your way through dozens of driving challenges.</li>
+      <li><strong><a href="/category/puzzle-games">Puzzle Games</a></strong> &mdash; Brain teasers, match-3, word games, and logic puzzles for all skill levels.</li>
+      <li><strong><a href="/category/casual-games">Casual Games</a></strong> &mdash; Easy to pick up, hard to put down. Hundreds of quick-session favourites.</li>
+      <li><strong><a href="/category/kids-games">Kids Games</a></strong> &mdash; Age-appropriate fun for younger players.</li>
     </ul>
   </div>
 </section>

@@ -13,7 +13,7 @@ fs.mkdirSync(distDir, { recursive: true });
 const homepageGameRows = buildHomepageGameRows(gamesData.games, gamesData.categories);
 const siteNavItems = [
   { name: 'Home', url: `${data.site.domain}/` },
-  { name: 'Games', url: `${data.site.domain}/category/clicker-games.html` },
+  { name: 'Games', url: `${data.site.domain}/category/clicker-games` },
   { name: 'Blog', url: `${data.site.domain}/blog.html` },
   { name: 'About', url: `${data.site.domain}/about.html` },
   { name: 'Contact', url: `${data.site.domain}/contact.html` }
@@ -207,16 +207,16 @@ function buildSchema(page, site) {
         name: 'Game Categories',
         numberOfItems: 10,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Clicker Games', url: `${site.domain}/category/clicker-games.html` },
-          { '@type': 'ListItem', position: 2, name: '.IO Games', url: `${site.domain}/category/io-games.html` },
-          { '@type': 'ListItem', position: 3, name: 'Adventure Games', url: `${site.domain}/category/adventure-games.html` },
-          { '@type': 'ListItem', position: 4, name: '2 Player Games', url: `${site.domain}/category/2-player-games.html` },
-          { '@type': 'ListItem', position: 5, name: 'Shooting Games', url: `${site.domain}/category/shooting-games.html` },
-          { '@type': 'ListItem', position: 6, name: 'Sports Games', url: `${site.domain}/category/sports-games.html` },
-          { '@type': 'ListItem', position: 7, name: 'Car Games', url: `${site.domain}/category/car-games.html` },
-          { '@type': 'ListItem', position: 8, name: 'Puzzle Games', url: `${site.domain}/category/puzzle-games.html` },
-          { '@type': 'ListItem', position: 9, name: 'Casual Games', url: `${site.domain}/category/casual-games.html` },
-          { '@type': 'ListItem', position: 10, name: 'Kids Games', url: `${site.domain}/category/kids-games.html` }
+          { '@type': 'ListItem', position: 1, name: 'Clicker Games', url: `${site.domain}/category/clicker-games` },
+          { '@type': 'ListItem', position: 2, name: '.IO Games', url: `${site.domain}/category/io-games` },
+          { '@type': 'ListItem', position: 3, name: 'Adventure Games', url: `${site.domain}/category/adventure-games` },
+          { '@type': 'ListItem', position: 4, name: '2 Player Games', url: `${site.domain}/category/2-player-games` },
+          { '@type': 'ListItem', position: 5, name: 'Shooting Games', url: `${site.domain}/category/shooting-games` },
+          { '@type': 'ListItem', position: 6, name: 'Sports Games', url: `${site.domain}/category/sports-games` },
+          { '@type': 'ListItem', position: 7, name: 'Car Games', url: `${site.domain}/category/car-games` },
+          { '@type': 'ListItem', position: 8, name: 'Puzzle Games', url: `${site.domain}/category/puzzle-games` },
+          { '@type': 'ListItem', position: 9, name: 'Casual Games', url: `${site.domain}/category/casual-games` },
+          { '@type': 'ListItem', position: 10, name: 'Kids Games', url: `${site.domain}/category/kids-games` }
         ]
       }
     });
@@ -283,8 +283,8 @@ function buildHomepageGameRows(games, categories) {
     ).join('\n');
     return `<div class="game-row">
   <div class="game-row-header">
-    <h2><a href="/category/${cat.slug}.html">${cat.emoji} ${escHtml(cat.name)}</a></h2>
-    <a class="game-row-viewall" href="/category/${cat.slug}.html">View all &rsaquo;</a>
+    <h2><a href="/category/${cat.slug}">${cat.emoji} ${escHtml(cat.name)}</a></h2>
+    <a class="game-row-viewall" href="/category/${cat.slug}">View all &rsaquo;</a>
   </div>
   <div class="game-row-grid">
 ${cardsHtml}

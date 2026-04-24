@@ -20,7 +20,7 @@ const { site, games, categories } = gamesData;
 const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
 const siteNavItems = [
   { name: 'Home', url: `${site.domain}/` },
-  { name: 'Games', url: `${site.domain}/category/clicker-games.html` },
+  { name: 'Games', url: `${site.domain}/category/clicker-games` },
   { name: 'Blog', url: `${site.domain}/blog.html` },
   { name: 'About', url: `${site.domain}/about.html` },
   { name: 'Contact', url: `${site.domain}/contact.html` }
@@ -41,7 +41,7 @@ for (const game of games) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/` },
-        { '@type': 'ListItem', position: 2, name: cat.name, item: `${site.domain}/category/${cat.slug}.html` },
+        { '@type': 'ListItem', position: 2, name: cat.name, item: `${site.domain}/category/${cat.slug}` },
         { '@type': 'ListItem', position: 3, name: game.title, item: canonicalUrl }
       ]
     },
@@ -111,7 +111,7 @@ for (const game of games) {
 
 for (const cat of categories) {
   const catGames     = games.filter(g => g.category === cat.slug);
-  const canonicalUrl = `${site.domain}/category/${cat.slug}.html`;
+  const canonicalUrl = `${site.domain}/category/${cat.slug}`;
   const thumbUrl     = `${site.domain}/favicon.svg`;
 
   const gamesHtml = catGames.map(game =>

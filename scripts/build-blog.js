@@ -25,7 +25,7 @@ const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
 const site   = seoData.site;
 const siteNavItems = [
   { name: 'Home', url: `${site.domain}/` },
-  { name: 'Games', url: `${site.domain}/category/clicker-games.html` },
+  { name: 'Games', url: `${site.domain}/category/clicker-games` },
   { name: 'Blog', url: `${site.domain}/blog.html` },
   { name: 'About', url: `${site.domain}/about.html` },
   { name: 'Contact', url: `${site.domain}/contact.html` }
@@ -46,7 +46,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Top Free Clicker Games at AZ Games</h2>
-<p>On <a href="/category/clicker-games.html">AZ Games Clicker Games</a>, you will find a wide variety of incremental titles — from simple tap-to-earn games to deep idle simulations with dozens of upgrade trees. All titles run directly in your browser with no download required.</p>
+<p>On <a href="/category/clicker-games">AZ Games Clicker Games</a>, you will find a wide variety of incremental titles — from simple tap-to-earn games to deep idle simulations with dozens of upgrade trees. All titles run directly in your browser with no download required.</p>
 
 <h2>Tips for Getting the Most Out of Clicker Games</h2>
 <ul>
@@ -80,7 +80,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play .IO Games Free at AZ Games</h2>
-<p>Browse our full <a href="/category/io-games.html">.IO Games collection</a> and start playing instantly — no download, no account needed. Works on desktop and mobile browsers.</p>
+<p>Browse our full <a href="/category/io-games">.IO Games collection</a> and start playing instantly — no download, no account needed. Works on desktop and mobile browsers.</p>
 `,
 
   'adventure-games': `
@@ -103,7 +103,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play Free Adventure Games Online</h2>
-<p>All adventure games on the <a href="/category/adventure-games.html">AZ Games Adventure Games page</a> run in your browser — no download, no login. Whether you are on a PC, Mac, or phone, you can start exploring in seconds.</p>
+<p>All adventure games on the <a href="/category/adventure-games">AZ Games Adventure Games page</a> run in your browser — no download, no login. Whether you are on a PC, Mac, or phone, you can start exploring in seconds.</p>
 `,
 
   '2-player-games': `
@@ -121,7 +121,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play 2 Player Games Free at AZ Games</h2>
-<p>Browse the full <a href="/category/2-player-games.html">2 Player Games collection</a> on AZ Games. All titles run in your browser — gather a friend and start competing in seconds.</p>
+<p>Browse the full <a href="/category/2-player-games">2 Player Games collection</a> on AZ Games. All titles run in your browser — gather a friend and start competing in seconds.</p>
 `,
 
   'shooting-games': `
@@ -143,7 +143,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play Free Shooting Games Online at AZ Games</h2>
-<p>Explore the <a href="/category/shooting-games.html">Shooting Games section</a> on AZ Games and try dozens of free browser shooters — no download, no account, instant play.</p>
+<p>Explore the <a href="/category/shooting-games">Shooting Games section</a> on AZ Games and try dozens of free browser shooters — no download, no account, instant play.</p>
 `,
 
   'sports-games': `
@@ -161,7 +161,7 @@ const ARTICLE_BODIES = {
 <p>Browser sports games play instantly — no large download, no setup. You can pick up a basketball game during a five-minute break and put it down equally quickly. They are also great for quick competitive sessions with friends using 2-player keyboard controls.</p>
 
 <h2>Play Free Sports Games at AZ Games</h2>
-<p>Browse the full <a href="/category/sports-games.html">Sports Games collection</a> on AZ Games. All games work in your browser on desktop and mobile.</p>
+<p>Browse the full <a href="/category/sports-games">Sports Games collection</a> on AZ Games. All games work in your browser on desktop and mobile.</p>
 `,
 
   'car-games': `
@@ -183,7 +183,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play Car Games Free Online at AZ Games</h2>
-<p>Find your next favorite racing or driving game in our <a href="/category/car-games.html">Car Games section</a> — free, instant play, no download required.</p>
+<p>Find your next favorite racing or driving game in our <a href="/category/car-games">Car Games section</a> — free, instant play, no download required.</p>
 `,
 
   'puzzle-games': `
@@ -202,7 +202,7 @@ const ARTICLE_BODIES = {
 <p>Beyond entertainment, puzzle games offer genuine cognitive benefits. Regular play can improve short-term memory, concentration, and problem-solving speed. They are also a great low-stress break activity during a busy day.</p>
 
 <h2>Play Free Puzzle Games Online at AZ Games</h2>
-<p>Browse hundreds of free puzzle games on the <a href="/category/puzzle-games.html">Puzzle Games page</a> — all run directly in your browser, no download needed.</p>
+<p>Browse hundreds of free puzzle games on the <a href="/category/puzzle-games">Puzzle Games page</a> — all run directly in your browser, no download needed.</p>
 `,
 
   'casual-games': `
@@ -220,7 +220,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play Free Casual Games Online at AZ Games</h2>
-<p>The <a href="/category/casual-games.html">Casual Games section</a> is the largest category on AZ Games with hundreds of titles ready to play instantly — no account, no download, just fun.</p>
+<p>The <a href="/category/casual-games">Casual Games section</a> is the largest category on AZ Games with hundreds of titles ready to play instantly — no account, no download, just fun.</p>
 `,
 
   'kids-games': `
@@ -243,7 +243,7 @@ const ARTICLE_BODIES = {
 </ul>
 
 <h2>Play Free Kids Games Online at AZ Games</h2>
-<p>Every game in our <a href="/category/kids-games.html">Kids Games collection</a> is free, safe, and playable immediately in any browser — no download, no account, no in-app purchases.</p>
+<p>Every game in our <a href="/category/kids-games">Kids Games collection</a> is free, safe, and playable immediately in any browser — no download, no account, no in-app purchases.</p>
 `
 };
 
