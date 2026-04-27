@@ -49,7 +49,7 @@ const navGamesHtml = (function () {
   const groups = categories.map(cat => {
     const catGames = games.filter(g => g.category === cat.slug);
     const links = catGames.slice(0, 6).map(g =>
-      `          <li><a href="/play/${g.slug}.html">${escHtml(g.title)}</a></li>`
+      `          <li><a href="/play/${g.slug}">${escHtml(g.title)}</a></li>`
     ).join('\n');
     return [
       `      <div class="nav-games-group">`,

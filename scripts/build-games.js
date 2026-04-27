@@ -30,7 +30,7 @@ const siteNavItems = [
 
 for (const game of games) {
   const cat         = catMap[game.category] || categories[categories.length - 1];
-  const canonicalUrl = `${site.domain}/play/${game.slug}.html`;
+  const canonicalUrl = `${site.domain}/play/${game.slug}`;
   // AZ Games embed URL pattern: https://azgames.io/{slug}.embed
   const resourceUrl  = `${site.resourceSite}/${game.slug}.embed`;
   const thumbUrl     = game.thumbnail;
@@ -103,8 +103,13 @@ for (const game of games) {
     content
   });
 
+  // Write legacy flat .html file for older links
   fs.writeFileSync(path.join(distPlayDir, `${game.slug}.html`), html, 'utf8');
-  console.log(`Built: dist/play/${game.slug}.html`);
+  // Also write a directory index so clean paths like /play/slug work
+  const slugDir = path.join(distPlayDir, game.slug);
+  fs.mkdirSync(slugDir, { recursive: true });
+  fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf8');
+  console.log(`Built: dist/play/${game.slug}.html and dist/play/${game.slug}/index.html`);
 }
 
 // ── Category pages ────────────────────────────────────────────────────────────
@@ -115,7 +120,7 @@ for (const cat of categories) {
   const thumbUrl     = `${site.domain}/favicon.svg`;
 
   const gamesHtml = catGames.map(game =>
-    `      <a class="game-card" href="/play/${game.slug}.html" aria-label="${escAttr('Play ' + game.title + ' free online')}">
+    `      <a class="game-card" href="/play/${game.slug}" aria-label="${escAttr('Play ' + game.title + ' free online')}">
         <img src="${escAttr(game.thumbnail)}" alt="${escAttr(game.title)}" loading="lazy">
         <span class="game-card-label">${escHtml(game.title)}</span>
       </a>`
@@ -141,7 +146,7 @@ for (const cat of categories) {
         itemListElement: catGames.slice(0, 24).map((g, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          url: `${site.domain}/play/${g.slug}.html`,
+          url: `${site.domain}/play/${g.slug}`,
           name: g.title
         }))
       }
@@ -167,7 +172,7 @@ for (const cat of categories) {
         item: {
         '@type': 'VideoGame',
         name: g.title,
-        url: `${site.domain}/play/${g.slug}.html`
+        url: `${site.domain}/play/${g.slug}`
         }
       }))
     }

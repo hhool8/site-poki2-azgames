@@ -276,7 +276,7 @@ function buildHomepageGameRows(games, categories) {
     const catGames = games.filter(g => g.category === cat.slug).slice(0, 12);
     if (catGames.length === 0) return '';
     const cardsHtml = catGames.map(game =>
-      `      <a class="game-card" href="/play/${game.slug}.html" aria-label="Play ${escAttr(game.title)} free online">
+      `      <a class="game-card" href="/play/${game.slug}" aria-label="Play ${escAttr(game.title)} free online">
         <img src="${escAttr(game.thumbnail)}" alt="${escAttr(game.title)}" loading="lazy" width="180" height="135">
         <span class="game-card-label">${escHtml(game.title)}</span>
       </a>`

@@ -147,7 +147,7 @@
         var thumb = g.thumbnail
           ? '<img src="' + escAttr(g.thumbnail) + '" alt="" loading="lazy">'
           : '<span class="nsd-thumb-placeholder"></span>';
-        return '<a class="nsd-item" href="/play/' + escAttr(g.slug) + '.html" role="option" data-idx="' + i + '">'
+        return '<a class="nsd-item" href="/play/' + escAttr(g.slug) + '" role="option" data-idx="' + i + '">'
              + '<span class="nsd-thumb">' + thumb + '</span>'
              + '<span class="nsd-label">' + escHtml(g.title) + '</span>'
              + '<span class="nsd-cat">' + escHtml(g.catName) + '</span>'

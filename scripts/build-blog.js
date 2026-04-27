@@ -258,7 +258,7 @@ for (const post of blogData.posts) {
 <h2>Play These ${escHtml(cat.name)} Right Now</h2>
 <div class="blog-related-games">
   ${catGames.map(g => `
-  <a class="game-card" href="/play/${g.slug}.html" aria-label="Play ${escAttr(g.title)}">
+  <a class="game-card" href="/play/${g.slug}" aria-label="Play ${escAttr(g.title)}">
     <img src="${escAttr(g.thumbnail)}" alt="${escAttr(g.title)}" loading="lazy" width="180" height="135">
     <span class="game-card-label">${escHtml(g.title)}</span>
   </a>`).join('')}

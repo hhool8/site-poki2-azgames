@@ -176,7 +176,7 @@
       var img = g.thumbnail
         ? '<img src="' + escAttr(g.thumbnail) + '" alt="' + escAttr(g.title) + '" loading="lazy">'
         : '<img src="/favicon.svg" alt="' + escAttr(g.title) + '" loading="lazy" style="object-fit:contain;padding:1rem">';
-      return '<a class="search-game-card" href="/play/' + escAttr(g.slug) + '.html" aria-label="Play ' + escAttr(g.title) + ' free online">'
+      return '<a class="search-game-card" href="/play/' + escAttr(g.slug) + '" aria-label="Play ' + escAttr(g.title) + ' free online">'
            + img
            + '<span class="search-game-card-label">' + escHtml(g.title) + '</span>'
            + '</a>';
