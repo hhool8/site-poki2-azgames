@@ -82,7 +82,7 @@ for (const game of games) {
     .replace(/\{\{RESOURCE_URL\}\}/g,  resourceUrl);
 
   const title       = withBrand(`Play ${game.title} Unblocked — Free, No VPN`);
-  const description = `Play ${game.title} unblocked on Chromebook — no VPN, no download, no login. ${game.description} Instant free browser play on AZ Games by Poki2.`;
+  const description = buildPlayDesc(game.title, game.description);
 
   const html = renderBase(baseTemplate, {
     title, description,
@@ -186,7 +186,7 @@ for (const cat of categories) {
     .replace(/\{\{GAMES_HTML\}\}/g,            gamesHtml);
 
   const title       = withBrand(`${cat.name} Games — Play Free Online, No Download`);
-  const description = `Play ${catGames.length} free ${cat.name} games online at AZ Games by Poki2. ${cat.description} No download, no login — instant browser play.`;
+  const description = buildCatDesc(catGames.length, cat.name, cat.description);
 
   const html = renderBase(baseTemplate, {
     title, description,
@@ -259,6 +259,26 @@ function withBrand(title) {
   if (value.includes(site.name)) return value;
   if (value.includes('AZ Games')) return value.replace(/AZ Games/g, site.name);
   return `${value} | ${site.name}`;
+}
+
+function buildPlayDesc(title, gameDesc) {
+  const prefix = `Play ${title} free — no download, no login. `;
+  const brand  = ' | AZ Games';
+  const budget = 158 - prefix.length - brand.length;
+  const mid = gameDesc.length <= budget
+    ? gameDesc
+    : gameDesc.slice(0, budget).replace(/\s\S*$/, '') + '\u2026';
+  return prefix + mid + brand;
+}
+
+function buildCatDesc(count, catName, catDesc) {
+  const prefix = `Play ${count} free ${catName} online. `;
+  const brand  = ' No download — AZ Games by Poki2.';
+  const budget = 158 - prefix.length - brand.length;
+  const mid = catDesc.length <= budget
+    ? catDesc
+    : catDesc.slice(0, budget).replace(/\s\S*$/, '') + '\u2026';
+  return prefix + mid + brand;
 }
 
 function robotsMeta(indexable) {
