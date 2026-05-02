@@ -72,7 +72,8 @@
       "title": "1v1.lol",
       "description": "1v1 LOL is a multiplayer battle game that brings an experience that combines competitive gameplay with diverse modes and player customization.",
       "thumbnail": "/images/games/1v1lol.png",
-      "category": "io-games"
+      "category": "io-games",
+      "hidden": true
     },
     {
       "slug": "1v1soccerio",

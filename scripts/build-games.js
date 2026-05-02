@@ -16,7 +16,8 @@ const distCategoryDir = path.join(distDir, 'category');
 fs.mkdirSync(distPlayDir,     { recursive: true });
 fs.mkdirSync(distCategoryDir, { recursive: true });
 
-const { site, games, categories } = gamesData;
+const { site, games: allGames, categories } = gamesData;
+const games = allGames.filter(g => !g.hidden);
 const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
 const siteNavItems = [
   { name: 'Home', url: `${site.domain}/` },

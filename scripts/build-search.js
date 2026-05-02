@@ -19,7 +19,8 @@ const distDir       = path.join(ROOT, 'dist');
 const distSearchDir = path.join(distDir, 'search');
 fs.mkdirSync(distSearchDir, { recursive: true });
 
-const { site, games, categories } = gamesData;
+const { site, games: allGames, categories } = gamesData;
+const games = allGames.filter(g => !g.hidden);
 const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
 
 // ── Build search index ───────────────────────────────────────────────────────
