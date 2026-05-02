@@ -45,7 +45,7 @@ for (const p of seoData.pages) {
 }
 
 // Game play pages
-for (const g of gamesData.games) {
+for (const g of gamesData.games.filter(g => !g.hidden)) {
   // prefer directory index if present
   const indexPath = path.join(distDir, 'play', g.slug, 'index.html');
   const flatPath = path.join(distDir, 'play', `${g.slug}.html`);

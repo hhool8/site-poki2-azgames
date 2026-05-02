@@ -273,7 +273,7 @@ function buildSchema(page, site) {
 // ── Homepage game rows ──────────────────────────────────────────────────────
 function buildHomepageGameRows(games, categories) {
   return categories.map(cat => {
-    const catGames = games.filter(g => g.category === cat.slug).slice(0, 12);
+    const catGames = games.filter(g => g.category === cat.slug && !g.hidden).slice(0, 12);
     if (catGames.length === 0) return '';
     const cardsHtml = catGames.map(game =>
       `      <a class="game-card" href="/play/${game.slug}" aria-label="Play ${escAttr(game.title)} free online">

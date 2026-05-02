@@ -20,7 +20,8 @@ const distDir     = path.join(ROOT, 'dist');
 const distBlogDir = path.join(distDir, 'blog');
 fs.mkdirSync(distBlogDir, { recursive: true });
 
-const { games, categories } = gamesData;
+const { categories } = gamesData;
+const games = gamesData.games.filter(g => !g.hidden);
 const catMap = Object.fromEntries(categories.map(c => [c.slug, c]));
 const site   = seoData.site;
 const siteNavItems = [
