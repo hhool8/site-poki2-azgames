@@ -8,62 +8,62 @@
     {
       "slug": "clicker-games",
       "name": "Clicker Games",
-      "emoji": "\ud83d\uddb1\ufe0f",
+      "emoji": "🖱️",
       "description": "Satisfying incremental and idle clicker games. Click, tap, and automate your way to billions."
     },
     {
       "slug": "io-games",
       "name": ".IO Games",
-      "emoji": "\ud83c\udf10",
-      "description": "Lightweight browser multiplayer games. Compete against real players in real time \u2014 no login needed."
+      "emoji": "🌐",
+      "description": "Lightweight browser multiplayer games. Compete against real players in real time — no login needed."
     },
     {
       "slug": "adventure-games",
       "name": "Adventure Games",
-      "emoji": "\ud83d\uddfa\ufe0f",
+      "emoji": "🗺️",
       "description": "Explore worlds, defeat enemies, and solve puzzles in thrilling browser adventure games."
     },
     {
       "slug": "2-player-games",
       "name": "2 Player Games",
-      "emoji": "\ud83d\udc65",
+      "emoji": "👥",
       "description": "Play head-to-head with a friend on the same device. Fighter, racing, and skill-based multiplayer."
     },
     {
       "slug": "shooting-games",
       "name": "Shooting Games",
-      "emoji": "\ud83c\udfaf",
+      "emoji": "🎯",
       "description": "First-person shooters, top-down blasters, and aim trainers. Lock and load."
     },
     {
       "slug": "sports-games",
       "name": "Sports Games",
-      "emoji": "\ud83c\udfc6",
-      "description": "Basketball, soccer, golf, and athletics \u2014 all playable in your browser for free."
+      "emoji": "🏆",
+      "description": "Basketball, soccer, golf, and athletics — all playable in your browser for free."
     },
     {
       "slug": "car-games",
       "name": "Car Games",
-      "emoji": "\ud83d\ude97",
+      "emoji": "🚗",
       "description": "Drift, race, and stunt your way through dozens of driving challenges in the browser."
     },
     {
       "slug": "puzzle-games",
       "name": "Puzzle Games",
-      "emoji": "\ud83e\udde9",
+      "emoji": "🧩",
       "description": "Brain teasers, match-3, logic puzzles, and word games for every skill level."
     },
     {
       "slug": "casual-games",
       "name": "Casual Games",
-      "emoji": "\ud83c\udfae",
+      "emoji": "🎮",
       "description": "Easy to pick up, hard to put down. Quick-session favourites for every mood."
     },
     {
       "slug": "kids-games",
       "name": "Kids Games",
-      "emoji": "\ud83e\uddd2",
-      "description": "Age-appropriate fun for younger players \u2014 coloring, matching, and friendly platformers."
+      "emoji": "🧒",
+      "description": "Age-appropriate fun for younger players — coloring, matching, and friendly platformers."
     }
   ],
   "games": [
@@ -288,7 +288,7 @@
     {
       "slug": "bounce-path",
       "title": "Bounce Path",
-      "description": "Bounce Path is a rhythm\u2011platformer game where you control a small black blob-looking character jumping in sync with the beat of the music. Jump through paths now!",
+      "description": "Bounce Path is a rhythm‑platformer game where you control a small black blob-looking character jumping in sync with the beat of the music. Jump through paths now!",
       "thumbnail": "/images/games/bounce-path.png",
       "category": "kids-games"
     },
@@ -344,7 +344,7 @@
     {
       "slug": "chase-rush",
       "title": "Chase Rush",
-      "description": "Chase Rush is a high-speed car chasing game where you step into the driver\u2019s seat of a getaway car, dodging police pursuit and surviving for as long as possible.",
+      "description": "Chase Rush is a high-speed car chasing game where you step into the driver’s seat of a getaway car, dodging police pursuit and surviving for as long as possible.",
       "thumbnail": "/images/games/chase-rush.png",
       "category": "car-games"
     },
@@ -505,14 +505,14 @@
     {
       "slug": "curve-rush-2",
       "title": "Curve Rush 2",
-      "description": "Curve Rush 2 is a newly released sequel to the original Curve Rush. It\u2019s still about controlling a rolling ball navigating sandy hills but now having fresh features.",
+      "description": "Curve Rush 2 is a newly released sequel to the original Curve Rush. It’s still about controlling a rolling ball navigating sandy hills but now having fresh features.",
       "thumbnail": "/images/games/curve-rush-2.png",
       "category": "io-games"
     },
     {
       "slug": "curve-rush-io",
       "title": "Curve Rush IO",
-      "description": "The addictive Curve Rush IO experience is back with a twist: now you can guide your ball through endless hills in thrilling multiplayer mode. Let\u2019s give it a try today!",
+      "description": "The addictive Curve Rush IO experience is back with a twist: now you can guide your ball through endless hills in thrilling multiplayer mode. Let’s give it a try today!",
       "thumbnail": "/images/games/curve-rush-io.png",
       "category": "io-games"
     },
@@ -540,7 +540,7 @@
     {
       "slug": "dead-strike",
       "title": "Dead Strike",
-      "description": "Dead Strike is a first\u2011person zombie shooter survival game where players fight against waves of zombies. Play now & go through quests and missions to save the city.",
+      "description": "Dead Strike is a first‑person zombie shooter survival game where players fight against waves of zombies. Play now & go through quests and missions to save the city.",
       "thumbnail": "/images/games/dead-strike.png",
       "category": "shooting-games"
     },
@@ -666,7 +666,7 @@
     {
       "slug": "escape-drive",
       "title": "Escape Drive",
-      "description": "Play Escape Drive and drive monster-like cars through hilly terrains filled with steep hills, traps, and enemy cars. Stay sharp, dodge danger, and don\u2019t get caught.",
+      "description": "Play Escape Drive and drive monster-like cars through hilly terrains filled with steep hills, traps, and enemy cars. Stay sharp, dodge danger, and don’t get caught.",
       "thumbnail": "/images/games/escape-drive.png",
       "category": "shooting-games"
     },
@@ -841,7 +841,7 @@
     {
       "slug": "glide-in",
       "title": "Glide In",
-      "description": "Glide In is a 3D casual skill\u2011based puzzle game where you drag back, aim, and release a puck to sink it into a target hole on each challenge while avoiding hazards.",
+      "description": "Glide In is a 3D casual skill‑based puzzle game where you drag back, aim, and release a puck to sink it into a target hole on each challenge while avoiding hazards.",
       "thumbnail": "/images/games/glide-in.png",
       "category": "shooting-games"
     },
@@ -932,7 +932,7 @@
     {
       "slug": "hyper-tunnel",
       "title": "Hyper Tunnel",
-      "description": "Hyper Tunnel is a fast\u2011paced arcade flying game where you pilot a spaceship through futuristic tunnels filled with obstacles, aiming to survive as long as you can.",
+      "description": "Hyper Tunnel is a fast‑paced arcade flying game where you pilot a spaceship through futuristic tunnels filled with obstacles, aiming to survive as long as you can.",
       "thumbnail": "/images/games/hyper-tunnel.png",
       "category": "kids-games"
     },
@@ -946,7 +946,7 @@
     {
       "slug": "ice-baby-quest",
       "title": "Ice Baby Quest",
-      "description": "Ice Baby Quest is a fun, quirky meme\u2011based adventure game where you go through a bizarre 3D world full of random NPCs and challenges to find the Ice Baby character.",
+      "description": "Ice Baby Quest is a fun, quirky meme‑based adventure game where you go through a bizarre 3D world full of random NPCs and challenges to find the Ice Baby character.",
       "thumbnail": "/images/games/ice-baby-quest.png",
       "category": "kids-games"
     },
@@ -967,7 +967,7 @@
     {
       "slug": "italian-brainrot-clicker-2",
       "title": "Italian Brainrot Clicker 2",
-      "description": "Italian Brainrot Clicker 2 is a hilarious clicker game where you\u2019ll encounter Tralalero Tralala, Tung Tung Tung Sahur, and many other bizarre-looking characters.",
+      "description": "Italian Brainrot Clicker 2 is a hilarious clicker game where you’ll encounter Tralalero Tralala, Tung Tung Tung Sahur, and many other bizarre-looking characters.",
       "thumbnail": "/images/games/italian-brainrot-clicker-2.png",
       "category": "clicker-games"
     },
@@ -1149,7 +1149,7 @@
     {
       "slug": "monkey-mart",
       "title": "Monkey Mart",
-      "description": "If you like the job of managing and coordinating stalls, you can\u2019t try to play the Monkey Mart game.",
+      "description": "If you like the job of managing and coordinating stalls, you can’t try to play the Monkey Mart game.",
       "thumbnail": "/images/games/monkey-mart.png",
       "category": "clicker-games"
     },
@@ -1303,7 +1303,7 @@
     {
       "slug": "ragdoll-arena",
       "title": "Ragdoll Arena",
-      "description": "Ragdoll Arena is a 2D side\u2011view ragdoll shooter game, where the player fights in compact arenas, with random physics and reactions creating unpredictable combat.",
+      "description": "Ragdoll Arena is a 2D side‑view ragdoll shooter game, where the player fights in compact arenas, with random physics and reactions creating unpredictable combat.",
       "thumbnail": "/images/games/ragdoll-arena.png",
       "category": "shooting-games"
     },
@@ -1380,7 +1380,7 @@
     {
       "slug": "rob-brainrot-2",
       "title": "Rob Brainrot 2",
-      "description": "Play Rob Brainrot 2, collect, buy, and steal quirky Brainrots meme characters. Let\u2019s build your base with the rarest Brainrots and protect them from the opponents.",
+      "description": "Play Rob Brainrot 2, collect, buy, and steal quirky Brainrots meme characters. Let’s build your base with the rarest Brainrots and protect them from the opponents.",
       "thumbnail": "/images/games/rob-brainrot-2.png",
       "category": "io-games"
     },
@@ -1457,7 +1457,7 @@
     {
       "slug": "skip-it",
       "title": "Skip It!",
-      "description": "Love skipping stones across water? Let\u2019s enjoy Skip It!, throw stones, and make them skip as far as possible. Don\u2019t forget to upgrade to boost your performance.",
+      "description": "Love skipping stones across water? Let’s enjoy Skip It!, throw stones, and make them skip as far as possible. Don’t forget to upgrade to boost your performance.",
       "thumbnail": "/images/games/skip-it.png",
       "category": "casual-games"
     },
@@ -1534,7 +1534,7 @@
     {
       "slug": "slope-rider",
       "title": "Slope Rider",
-      "description": "Slope Rider is an endless sledding game set in a breathtaking winter wonderland. Let\u2019s ride a sled racing through snowy forests and icy terrain full of obstacles.",
+      "description": "Slope Rider is an endless sledding game set in a breathtaking winter wonderland. Let’s ride a sled racing through snowy forests and icy terrain full of obstacles.",
       "thumbnail": "/images/games/slope-rider.png",
       "category": "sports-games"
     },
@@ -1870,7 +1870,7 @@
     {
       "slug": "tiny-arena",
       "title": "Tiny Arena",
-      "description": "Tiny Arena is an action\u2011packed RPG fighting game that challenges players to control a tiny gladiator in fast, arcade-style combat against waves of enemies and bosses.",
+      "description": "Tiny Arena is an action‑packed RPG fighting game that challenges players to control a tiny gladiator in fast, arcade-style combat against waves of enemies and bosses.",
       "thumbnail": "/images/games/tiny-arena.png",
       "category": "adventure-games"
     },
@@ -1933,7 +1933,7 @@
     {
       "slug": "trap-the-cat",
       "title": "Trap The Cat",
-      "description": "Don\u2019t let the cat escape. It may sound simple; however, the cat is clever, and without strategic moves, it\u2019s hard to prevent it from escaping. Play Trap the Cat now!",
+      "description": "Don’t let the cat escape. It may sound simple; however, the cat is clever, and without strategic moves, it’s hard to prevent it from escaping. Play Trap the Cat now!",
       "thumbnail": "/images/games/trap-the-cat.jpg",
       "category": "puzzle-games"
     },
@@ -1961,7 +1961,7 @@
     {
       "slug": "tung-sahur-horror",
       "title": "Tung Sahur Horror",
-      "description": "Tung Sahur Horror is a survival horror game where players find themselves waking up trapped inside Tung Tung Tung Sahur\u2019s house and have to escape within 5 days.",
+      "description": "Tung Sahur Horror is a survival horror game where players find themselves waking up trapped inside Tung Tung Tung Sahur’s house and have to escape within 5 days.",
       "thumbnail": "/images/games/tung-sahur-horror.png",
       "category": "adventure-games"
     },
@@ -2031,7 +2031,7 @@
     {
       "slug": "wacky-nursery",
       "title": "Wacky Nursery",
-      "description": "Wacky Nursery is a twisted puzzle-adventure set in a sinister school\u2014solve darkly humorous mysteries, avoid danger, and survive a day where not dying is the real challenge!",
+      "description": "Wacky Nursery is a twisted puzzle-adventure set in a sinister school—solve darkly humorous mysteries, avoid danger, and survive a day where not dying is the real challenge!",
       "thumbnail": "/images/games/wacky-nursery.png",
       "category": "io-games"
     },
@@ -2066,7 +2066,7 @@
     {
       "slug": "wheelie-party",
       "title": "Wheelie Party",
-      "description": "Wheelie Party is a fun arcade stunt\u2011riding game that challenges you to ride a motorbike on the rear wheel and maintain the stunt for as long as possible. Play now!",
+      "description": "Wheelie Party is a fun arcade stunt‑riding game that challenges you to ride a motorbike on the rear wheel and maintain the stunt for as long as possible. Play now!",
       "thumbnail": "/images/games/wheelie-party.png",
       "category": "car-games"
     },
@@ -2094,7 +2094,7 @@
     {
       "slug": "ziggy-road",
       "title": "Ziggy Road",
-      "description": "In Ziggy Road, players control a ball rolling along an endless narrow zig-zagging platform without falling off the edges; however, it\u2019s uneasy to earn high scores.",
+      "description": "In Ziggy Road, players control a ball rolling along an endless narrow zig-zagging platform without falling off the edges; however, it’s uneasy to earn high scores.",
       "thumbnail": "/images/games/ziggy-road.png",
       "category": "kids-games"
     },

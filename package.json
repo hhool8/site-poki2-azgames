@@ -10,8 +10,13 @@
     "build:blog": "node scripts/build-blog.js",
     "build:search": "node scripts/build-search.js",
     "build": "node scripts/build-pages.js && node scripts/build-games.js && node scripts/build-blog.js && node scripts/build-search.js && node scripts/build-sitemap.js",
-    "deploy": "wrangler pages deploy dist --project-name azgames-poki2-site",
-    "clean": "rm -rf dist"
+    "deploy": "wrangler pages deploy dist --project-name ${PROJECT_NAME:-azgames-poki2-site}",
+    "clean": "rm -rf dist",
+    "game:add": "node scripts/game-add.js",
+    "game:remove": "node scripts/game-remove.js",
+    "game:update": "node scripts/game-update.js",
+    "validate": "node scripts/validate-embeds.js",
+    "site:init": "node scripts/init-site.js"
   },
   "devDependencies": {
     "wrangler": "^3"
