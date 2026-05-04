@@ -19,6 +19,8 @@
     "site:init": "node scripts/init-site.js"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
+    "to-ico": "^1.1.5",
     "wrangler": "^3"
   },
   "engines": {
