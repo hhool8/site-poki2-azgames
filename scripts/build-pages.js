@@ -39,6 +39,7 @@ for (const page of data.pages) {
     .replace(/\{\{OG_TYPE\}\}/g,              escAttr((page.og && page.og.type)        || 'website'))
     .replace(/\{\{OG_IMAGE\}\}/g,             escAttr((page.og && page.og.image)       || siteImage(data.site)))
     .replace(/\{\{TWITTER_CARD\}\}/g,         escAttr((page.twitter && page.twitter.card)        || 'summary_large_image'))
+    .replace(/\{\{TWITTER_SITE\}\}/g,         escAttr((page.twitter && page.twitter.site)        || '@poki2online'))
     .replace(/\{\{TWITTER_TITLE\}\}/g,        escAttr(withBrand((page.twitter && page.twitter.title) || page.title)))
     .replace(/\{\{TWITTER_DESCRIPTION\}\}/g,  escAttr((page.twitter && page.twitter.description) || page.description))
     .replace(/\{\{TWITTER_IMAGE\}\}/g,        escAttr((page.twitter && page.twitter.image)       || siteImage(data.site)))

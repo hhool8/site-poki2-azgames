@@ -82,8 +82,8 @@ for (const game of games) {
     .replace(/\{\{CATEGORY_NAME\}\}/g, cat.name)
     .replace(/\{\{RESOURCE_URL\}\}/g,  resourceUrl);
 
-  const title       = withBrand(`Play ${game.title} Unblocked — Free, No VPN`);
-  const description = buildPlayDesc(game.title, game.description);
+  const title       = game.metaTitle || withBrand(`Play ${game.title} Unblocked — Free, No VPN`);
+  const description = game.metaDescription || buildPlayDesc(game.title, game.description);
 
   const html = renderBase(baseTemplate, {
     title, description,
@@ -96,6 +96,7 @@ for (const game of games) {
     ogType:       'website',
     ogImage:      thumbUrl,
     twitterCard:  'summary_large_image',
+    twitterSite:  '@poki2online',
     twitterTitle: title,
     twitterDescription: description,
     twitterImage: thumbUrl,
@@ -240,6 +241,7 @@ function renderBase(template, p) {
     .replace(/\{\{OG_TYPE\}\}/g,              escAttr(p.ogType))
     .replace(/\{\{OG_IMAGE\}\}/g,             escAttr(p.ogImage))
     .replace(/\{\{TWITTER_CARD\}\}/g,         escAttr(p.twitterCard))
+    .replace(/\{\{TWITTER_SITE\}\}/g,         escAttr(p.twitterSite || '@poki2online'))
     .replace(/\{\{TWITTER_TITLE\}\}/g,        escAttr(p.twitterTitle))
     .replace(/\{\{TWITTER_DESCRIPTION\}\}/g,  escAttr(p.twitterDescription))
     .replace(/\{\{TWITTER_IMAGE\}\}/g,        escAttr(p.twitterImage))
