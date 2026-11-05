@@ -59,8 +59,8 @@ match what visitors already had bookmarked.
 
 `azgames.io` serves its `.embed` documents with **no `X-Frame-Options` and no
 CSP**, so the games frame correctly — unlike `static.hahagames.com`, which
-returns 403 + `X-Frame-Options: SAMEORIGIN` and had to be dropped from the
-CrazyGame build.
+returns 403 + `X-Frame-Options: SAMEORIGIN` and had to be dropped from an
+earlier network build.
 
 ## Player
 
