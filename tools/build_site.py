@@ -666,6 +666,17 @@ class Site:
             (DIST / "ads.txt").write_text(
                 f"google.com, {self.site['adsTxtPub']}, DIRECT, {self.site['adsTxtAuth']}\n"
             )
+            # app-ads.txt covers the mobile-app side of the same AdSense account.
+            # Keep the body byte-identical to poki2.online / play.poki2.online so
+            # the network serves one consistent authorized-seller list.
+            pubs = self.site.get("appAdsPubs") or [self.site["adsTxtPub"]]
+            (DIST / "app-ads.txt").write_text(
+                "# app-ads.txt for mobile apps — list authorized ad sources for apps\n"
+                "# Replace or extend entries below with app-specific package identifiers if needed\n"
+                + "".join(
+                    f"google.com, {p}, DIRECT, {self.site['adsTxtAuth']}\n" for p in pubs
+                )
+            )
 
         (DIST / "_headers").write_text(
             "# AZ Games — Cloudflare Pages headers\n"

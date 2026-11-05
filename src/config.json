@@ -7,7 +7,8 @@
     "network": "Poki2",
     "email": "contact@poki2.online",
     "adsTxtPub": "pub-5676206764686662",
-    "adsTxtAuth": "f08c47fec0942fa0"
+    "adsTxtAuth": "f08c47fec0942fa0",
+    "appAdsPubs": ["pub-5676206764686662", "pub-6199549323873133"]
   },
   "ads": {
     "enabled": true,
