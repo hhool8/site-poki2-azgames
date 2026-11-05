@@ -72,8 +72,8 @@ asks for it is a cost with no benefit. `<noscript>` and the play button's
 ## Ads
 
 `src/config.json` → `ads`. AdSense client `ca-pub-5676206764686662` (the same
-account as `poki2.online`, `play.poki2.online` and `crazygame.poki2.online`),
-Auto ads only, plus a generated `ads.txt`.
+account as `poki2.online` and `play.poki2.online`), Auto ads only, plus a
+generated `ads.txt`.
 
 Three manual slot keys exist (`homeMid`, `gameUnderPlayer`, `listInline`) but
 default to empty — an empty slot reserves no space and fires an unfilled request,
