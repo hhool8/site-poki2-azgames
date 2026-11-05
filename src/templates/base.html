@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="google-adsense-account" content="{{ADS_CLIENT}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta property="og:type" content="{{OG_TYPE}}">
+  <meta property="og:site_name" content="{{SITE_NAME}}">
+  <meta property="og:image" content="{{OG_IMAGE}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{OG_TITLE}}">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:image" content="{{OG_IMAGE}}">
+  {{SCHEMA}}
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://azgames.io" crossorigin>
+  <link rel="dns-prefetch" href="https://adservice.google.com">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <meta name="theme-color" content="#0b0b18">
+  {{ADSENSE_LOADER}}
+</head>
+<body class="{{BODY_CLASS}}">
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="logo" href="/">
+      <img class="logo-mark" src="/favicon.svg" alt="{{SITE_NAME}}" width="28" height="28" loading="eager">
+      <span>AZ Games</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li class="nav-has-dropdown">
+        <a href="/games/" aria-haspopup="true" aria-expanded="false"><span>Games</span><span class="nav-caret" aria-hidden="true"></span></a>
+        <ul class="nav-dropdown" role="menu">
+          <li><a href="/games/">All Games</a></li>
+          {{NAV_CATEGORIES}}
+        </ul>
+      </li>
+      <li><a href="/search/">Search</a></li>
+    </ul>
+
+    <div class="nav-search-wrap" id="nav-search-wrap">
+      <form class="nav-search-form" action="/search/" method="get" role="search" aria-label="Search AZ Games" autocomplete="off">
+        <input class="nav-search-input" id="nav-search-input" type="search" name="q" placeholder="Search games..." aria-label="Search games" autocomplete="off" maxlength="100">
+        <button class="nav-search-btn" type="submit" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="content">
+    {{CONTENT}}
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-col--brand">
+        <a href="/" class="footer-logo" aria-label="AZ Games home">
+          <img src="/favicon.svg" alt="AZ Games" width="48" height="48" loading="lazy">
+        </a>
+        <p class="footer-tagline">{{GAME_COUNT}} free browser games, A to Z. No download, no account, no install — play instantly on any device.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-heading">Pages</h3>
+        <ul class="footer-link-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/games/">All Games</a></li>
+          <li><a href="/search/">Search</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/dmca">Copyright / DMCA</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-heading">Categories</h3>
+        <ul class="footer-link-list">
+          {{FOOTER_CATEGORIES}}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-heading">Poki2 Network</h3>
+        <ul class="footer-link-list">
+          <li><a href="https://poki2.online/" rel="noopener">Poki 2</a></li>
+          <li><a href="https://play.poki2.online/" rel="noopener">Play Poki2</a></li>
+          <li><a href="https://crazygame.poki2.online/" rel="noopener">CrazyGame</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{YEAR}} AZ Games, part of the Poki2 network. All rights reserved. Supported by advertising. <a href="/privacy">Cookie &amp; Ad Policy</a></p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

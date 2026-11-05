@@ -1,0 +1,68 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-badges">
+      <span class="hero-badge">🎮 {{GAME_COUNT}} Free Games</span>
+      <span class="hero-badge">🗂️ {{CATEGORY_COUNT}} Categories</span>
+      <span class="hero-badge">✅ No Download</span>
+      <span class="hero-badge">💨 Instant Browser Play</span>
+      <span class="hero-badge">📱 Mobile &amp; Desktop</span>
+    </div>
+    <h1>AZ Games — {{GAME_COUNT}} Free Browser Games, A to Z</h1>
+    <p class="hero-sub" style="text-align:center">Every game on AZ Games runs in the browser: clicker games, .io arenas, puzzle, car, shooting and two-player titles. No account, no install, no waiting — pick a game and it starts.</p>
+    <div class="hero-ctas">
+      <a href="/games/" class="btn btn-primary">Browse all {{GAME_COUNT}} games →</a>
+      <a href="#categories" class="btn btn-secondary">Pick a category →</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-value">{{GAME_COUNT}}</span><span class="stat-label">Games online</span></div>
+  <div class="stat-item"><span class="stat-value">{{CATEGORY_COUNT}}</span><span class="stat-label">Categories</span></div>
+  <div class="stat-item"><span class="stat-value">0</span><span class="stat-label">Downloads</span></div>
+  <div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Free to play</span></div>
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">Start here</h2>
+    <p class="section-sub" style="text-align:center">A spread across the catalogue — one from each corner of the alphabet.</p>
+    <div class="featured-grid">
+      {{FEATURED}}
+    </div>
+  </div>
+</section>
+
+{{AD_HOME}}
+
+<section id="categories">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">Browse by category</h2>
+    <p class="section-sub" style="text-align:center">Ten shelves, {{GAME_COUNT}} games. Each one lists every title in it — no pagination tricks.</p>
+    <div class="network-grid">
+      {{CATEGORY_CARDS}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">More games worth a look</h2>
+    <p class="section-sub" style="text-align:center">A second spread, picked from the middle of the catalogue rather than the top.</p>
+    <div class="featured-grid">
+      {{NEWEST}}
+    </div>
+    <div class="featured-view-all">
+      <a href="/games/" class="btn btn-primary">See all {{GAME_COUNT}} games →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container about-snippet">
+    <h2 class="section-title" style="text-align:center">About AZ Games</h2>
+    <p>AZ Games is the A-to-Z shelf of the <a href="https://poki2.online/" rel="noopener">Poki2</a> network. The idea is plain: if a browser game is worth playing, you should be able to reach it in one click — no launcher, no sign-up, no "download our app" wall between you and the first level.</p>
+    <p>Every game page shows the game itself first, then the things that are actually useful to know before you commit: which category it belongs to, what it plays like, and what else in the same shelf is worth a look. Games run in an embedded player, so nothing is installed on your machine.</p>
+    <p>AZ Games is supported by advertising, which is why you will see ad slots around the player. They never cover the game area, and the <a href="/privacy">privacy policy</a> explains exactly what is collected. If a game is broken, or a listing is wrong, the <a href="/contact">contact page</a> is the fastest way to tell us.</p>
+  </div>
+</section>

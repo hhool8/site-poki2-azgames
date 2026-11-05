@@ -1,0 +1,51 @@
+<div class="container game-page">
+  <p class="article-breadcrumb">
+    <a href="/">Home</a> &rsaquo; <a href="/games/">Games</a> &rsaquo; <a href="/category/{{CAT_SLUG}}/">{{CAT_NAME}}</a> &rsaquo; {{TITLE}}
+  </p>
+
+  <h1 class="article-title">{{TITLE}}</h1>
+
+  <div class="game-meta-bar" aria-label="Game information">
+    <span>🎮 {{CAT_NAME}}</span>
+    <span>🌐 Browser</span>
+    <span>✅ No Download</span>
+    <span>💸 Free</span>
+    {{META_EXTRA}}
+  </div>
+
+  <div class="player" id="player">
+    <button class="player__play" type="button" data-src="{{EMBED}}" data-title="{{TITLE}}" aria-label="Play {{TITLE}}">
+      <img class="player__poster" src="/img/game/{{SLUG}}.webp" alt="{{TITLE}} game cover" width="400" height="400">
+      <span class="player__cta">
+        <i aria-hidden="true">▶</i>
+        <span>Play {{TITLE}}</span>
+      </span>
+    </button>
+    <noscript><p class="player__fallback"><a href="{{EMBED}}" rel="noopener">Open {{TITLE}} in a new tab</a></p></noscript>
+  </div>
+
+  {{AD_UNDER_PLAYER}}
+
+  <article class="article-body">
+    <h2>What is {{TITLE}}?</h2>
+    <p>{{INTRO}}</p>
+
+    <h2>How to play</h2>
+    {{HOW_TO}}
+
+    <h2>Is {{TITLE}} free, and does it need an account?</h2>
+    <p>{{FREE_LINE}}</p>
+
+    {{EXTRA_SECTION}}
+
+    <h2>More from {{CAT_NAME}}</h2>
+    <p>If {{TITLE}} is the kind of thing you came for, the rest of the <a href="/category/{{CAT_SLUG}}/">{{CAT_NAME}}</a> shelf follows the same idea — {{CAT_BLURB}}</p>
+  </article>
+
+  <section class="related-games">
+    <h2>Related games</h2>
+    <div class="featured-grid">
+      {{RELATED}}
+    </div>
+  </section>
+</div>

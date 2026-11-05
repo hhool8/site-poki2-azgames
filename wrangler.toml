@@ -1,0 +1,10 @@
+name = "azgames-poki2-site"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-02-21"
+
+# Direct-upload Pages project. Deploy with:
+#   export CLOUDFLARE_ACCOUNT_ID=$(cat ~/.poki2-cf-account)
+#   wrangler pages deploy dist --project-name azgames-poki2-site --branch main
+#
+# azgames.poki2.online is already attached to this project, so a deploy is all
+# that is needed to publish.

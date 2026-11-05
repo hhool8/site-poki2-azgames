@@ -1,0 +1,133 @@
+/* ===================================================================
+   AZ Games — additions on top of the shared Poki2 stylesheet.
+   Everything here fills gaps the poki2.online CSS never needed:
+   a game player, a metadata bar, pagination and the search box.
+   =================================================================== */
+
+/* ===== Game page ===== */
+.game-page { padding-top: 2rem; padding-bottom: 3rem; }
+.game-page .article-breadcrumb { margin-bottom: .75rem; }
+
+.game-meta-bar {
+  display: flex; flex-wrap: wrap; gap: .5rem .6rem;
+  margin: .85rem 0 1.25rem; font-size: .82rem; color: var(--text-muted);
+}
+.game-meta-bar span {
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .22rem .6rem;
+}
+
+.player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.player iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+.player__play {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+  width: 100%; height: 100%;
+  padding: 0; border: 0;
+  cursor: pointer;
+  background: radial-gradient(circle at 50% 42%, #1b2340 0%, #0e1226 62%, #090c19 100%);
+  font: inherit; color: #fff;
+}
+.player__poster {
+  width: min(30%, 210px);
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .55);
+  transition: transform .2s ease;
+}
+.player__play:hover .player__poster { transform: scale(1.04); }
+.player__cta {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: #06121a;
+  font-weight: 800; font-size: 1rem;
+  padding: .7rem 1.5rem; border-radius: 999px;
+  box-shadow: 0 10px 28px var(--primary-glow);
+}
+.player__cta i { font-style: normal; }
+.player__fallback { padding: 1rem; text-align: center; }
+
+/* ===== Related games ===== */
+.related-games { margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--border); }
+.related-games h2 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 1rem; }
+
+/* ===== Pagination ===== */
+.pagination {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .4rem; margin-top: 2.25rem;
+}
+.pagination a, .pagination span {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 40px; height: 40px; padding: 0 .75rem;
+  border: 1px solid var(--border); border-radius: 8px;
+  font-size: .88rem; font-weight: 700;
+  color: var(--text-muted); text-decoration: none;
+}
+.pagination a:hover { border-color: var(--border-glow); color: #fff; }
+.pagination .current {
+  background: rgba(34, 211, 238, .14);
+  border-color: var(--border-glow);
+  color: var(--primary);
+}
+.pagination .dots { border: 0; color: var(--text-muted); }
+
+/* ===== Search ===== */
+.search-big { max-width: 560px; margin: 0 auto 1.5rem; }
+.search-big__input {
+  width: 100%; height: 52px;
+  padding: 0 1.15rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text); font-size: 1rem; font-family: inherit;
+}
+.search-big__input:focus { outline: none; border-color: var(--border-glow); box-shadow: 0 0 0 3px var(--primary-glow); }
+.search-hint { text-align: center; color: var(--text-muted); font-size: .9rem; margin-bottom: 1.75rem; }
+
+/* ===== Ad units ===== */
+.ad-slot { margin: 1.5rem 0; min-height: 0; }
+.ad-slot ins { display: block; }
+
+/* ===== Category cards reuse .site-card with a per-card accent ===== */
+.site-card-cta.cta-live { background: linear-gradient(135deg, var(--card-color, var(--primary)) 0%, rgba(255,255,255,.08) 100%); color: #06121a; }
+
+/* ===== Mobile header =====
+   The shared nav keeps a 170–220px search field at every width, which squeezes
+   the logo against the hamburger at 390px. There is already a Search item in
+   the menu, so drop the field below 640px instead of shrinking it further. */
+@media (max-width: 640px) {
+  .nav-search-wrap { display: none; }
+  .game-meta-bar { font-size: .78rem; }
+}
+
+/* Two-line card titles shouldn't make neighbouring cards look misaligned. */
+.featured-card-label { min-height: 2.6em; }
+.featured-card-src { margin-top: auto; }
+
+/* ===== Mobile header =====
+   The shared nav keeps a 170–220px search field at every width, which squeezes
+   the logo against the hamburger at 390px. There is already a Search item in
+   the menu, so drop the field below 640px instead of shrinking it further. */
+@media (max-width: 640px) {
+  .nav-search-wrap { display: none; }
+  .game-meta-bar { font-size: .78rem; }
+}
+
+/* Two-line card titles shouldn't make neighbouring cards look misaligned. */
+.featured-card-label { min-height: 2.6em; }
+.featured-card-src { margin-top: auto; }

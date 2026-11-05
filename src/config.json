@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "AZ Games",
+    "domain": "https://azgames.poki2.online",
+    "tagline": "Free browser games, A to Z",
+    "description": "Play free browser games at AZ Games \u2014 clicker, .io, puzzle, car, shooting and 2-player titles. No download, no login, instant play.",
+    "network": "Poki2",
+    "email": "contact@poki2.online",
+    "adsTxtPub": "pub-5676206764686662",
+    "adsTxtAuth": "f08c47fec0942fa0"
+  },
+  "ads": {
+    "enabled": true,
+    "network": "adsense",
+    "client": "ca-pub-5676206764686662",
+    "autoAds": true,
+    "slots": {
+      "homeMid": "",
+      "gameUnderPlayer": "",
+      "listInline": ""
+    }
+  },
+  "build": {
+    "pageSize": 48,
+    "relatedCount": 12,
+    "heroCount": 12
+  }
+}
