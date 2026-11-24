@@ -29,6 +29,14 @@ jobs:
       - name: Build site
         run: python3 tools/build_site.py
 
+      - name: Sitemap lastmod is truthful
+        # Fails if the sitemap collapses back to one build-wide date, claims a
+        # future date, ships a URL with no fingerprint history, or dates a page
+        # TODAY because it had no provenance. That last case is what a fresh CI
+        # checkout looks like when the migration seed inputs are absent, and it
+        # is why this runs here rather than only on the deploy machine.
+        run: python3 tools/check_lastmod_truthful.py
+
       - name: Upload dist (7-day artifact)
         uses: actions/upload-artifact@v4
         with:

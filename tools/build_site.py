@@ -38,7 +38,24 @@ MAIN_SITE_CSS = ROOT / "src" / "styles" / "main.css"
 # (copied 2026-11-24, sha256 1dcc3f6ecccf3385f48839a23dbf86f326713c825f669d56d84be78d50062286).
 # If the main portal's stylesheet changes, re-run `python3 tools/sync_main_css.py <path>` and rebuild.
 
-NOW = dt.date(2026, 11, 6)
+# `NOW` was a hardcoded constant (`dt.date(2026, 11, 6)`), frozen on the day the
+# site was rebuilt on the Poki2 design system. It then served two contradictory
+# jobs: it stamped every sitemap <lastmod> with that date, AND it filled the
+# copyright year. The first is a lie on any day after 11-06 — the 2026-11-24
+# content batches rewrote 274 intros while every URL still advertised 11-06 —
+# and the second would have printed a wrong copyright from 2027-01-01.
+#
+# They are now separated:
+#   TODAY / NOW  — the real build date. Copyright and any "generated on" use it.
+#   sitemap dates — derived per URL from a content-fingerprint history below.
+TODAY = dt.date.today()
+NOW = TODAY
+
+# Committed change history: {url_path: {hash, lastmod, v}}.
+# Mirrors the play site's scripts/sitemap-lastmod.json so both sites answer
+# "when did this page's content last change?" the same way.
+LASTMOD_FILE = DATA / "sitemap-lastmod.json"
+LASTMOD_FORMULA = 1
 
 # IndexNow key for this domain only (deliberately different from
 # poki2.online's key — per-site footprint isolation). The key file must live
@@ -92,6 +109,147 @@ def pick(seq, seed: str, count: int) -> list:
     step = len(seq) / count
     offset = int(hashlib.md5(seed.encode()).hexdigest(), 16) % max(1, int(step))
     return [seq[min(int(i * step) + offset, len(seq) - 1)] for i in range(count)]
+
+
+# ---------------- sitemap lastmod: content fingerprint history ----------------
+#
+# The sitemap used to stamp TODAY on all 314 URLs (`today = NOW.isoformat()`).
+# That describes the build, not the page: every rebuild re-dated pages nobody
+# touched, and once NOW was frozen at 2026-11-06 it went the other way — 274
+# rewritten intros still advertised 11-06. Google reads <lastmod> as "this
+# content changed", so a wrong date in either direction wastes crawl budget.
+#
+# Now each URL carries a fingerprint of its rendered HTML:
+#   same hash    -> keep the previous date
+#   changed hash -> today
+#   never seen   -> the source's own date when the caller knows one, else flagged
+
+# Masked before hashing. The build is currently deterministic (verified: two runs
+# give identical dist/), so this guards against a future step injecting a
+# timestamp or per-run asset hash — the defect that made the play site's checker
+# report permanent drift.
+_VOLATILE = (
+    (re.compile(r'("dateModified"\s*:\s*)"[^"]*"'), r'\1""'),
+    (re.compile(r'("datePublished"\s*:\s*)"[^"]*"'), r'\1""'),
+    (re.compile(r'\?v=[0-9a-f]{6,}(?:-[0-9a-f]{6,})?'), '?v=__V__'),
+)
+
+
+def canonicalize_html(text: str) -> str:
+    """Reduce a rendered page to the part that carries editorial meaning."""
+    out = text
+    for pattern, repl in _VOLATILE:
+        out = pattern.sub(repl, out)
+    out = re.sub(r">\s+<", "><", out)
+    out = re.sub(r"\s+", " ", out)
+    return out.strip()
+
+
+def fingerprint(html_text: str) -> str:
+    return hashlib.sha256(canonicalize_html(html_text).encode()).hexdigest()[:32]
+
+
+class LastmodStore:
+    """Per-URL change history, committed so it survives between builds."""
+
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        try:
+            self.data: dict[str, dict] = json.loads(path.read_text())
+        except (OSError, ValueError):
+            self.data = {}
+        self.entries: dict[str, tuple[str, str]] = {}   # path -> (hash, lastmod)
+        self.stats = {"kept": 0, "bumped": 0, "seeded": 0, "unknown": 0}
+        self.unknown: list[str] = []
+
+    def date_for(self, path: str, html_text: str, *, seed_date: str | None = None) -> str:
+        digest = fingerprint(html_text)
+        prev = self.data.get(path)
+
+        if prev and prev.get("hash") == digest and prev.get("lastmod"):
+            self.stats["kept"] += 1
+            lastmod = prev["lastmod"]
+        elif prev and prev.get("lastmod"):
+            # Seen before, bytes differ: the content genuinely changed.
+            self.stats["bumped"] += 1
+            lastmod = TODAY.isoformat()
+        elif seed_date:
+            # First sighting, but the caller knows when this copy was authored
+            # (e.g. the catalogue's own date). Better than inventing today.
+            self.stats["seeded"] += 1
+            lastmod = seed_date
+        else:
+            # First sighting with no provenance. Stamping today would recreate
+            # the blanket re-date this change removes, so record the date but
+            # list the path for a human to confirm or correct.
+            self.stats["unknown"] += 1
+            self.unknown.append(path)
+            lastmod = TODAY.isoformat()
+
+        self.entries[path] = (digest, lastmod)
+        return lastmod
+
+    def save(self) -> None:
+        # Union the new entries with the old file so URLs that dropped out of the
+        # sitemap scope keep their history — re-adding one later should not count
+        # as "never seen".
+        payload: dict[str, dict] = {}
+        for path, (digest, lastmod) in self.entries.items():
+            payload[path] = {"hash": digest, "lastmod": lastmod, "v": LASTMOD_FORMULA}
+        for path, prev in self.data.items():
+            if path not in payload and prev.get("lastmod"):
+                payload[path] = prev
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.path.write_text(json.dumps(payload, indent=1, sort_keys=True) + "\n")
+
+        # Machine-readable record of how many dates were guessed. tools/
+        # check_lastmod_truthful.py fails the build when this is non-zero, because
+        # a guess that happens to look well-formed is still a false freshness
+        # claim — the exact failure this whole mechanism exists to prevent.
+        report = {
+            "generated": TODAY.isoformat(),
+            "formula": LASTMOD_FORMULA,
+            "stats": dict(self.stats),
+            "unknown": sorted(self.unknown),
+        }
+        (self.path.parent / "sitemap-lastmod-report.json").write_text(
+            json.dumps(report, indent=1) + "\n"
+        )
+
+
+# One-time migration seed. On the first run after this change every URL is
+# "never seen", and the seed decides what date each page starts with. Two dates
+# are defensible here, and they are not the same date:
+#   - pages whose copy was rewritten on 2026-11-24 -> 2026-11-24 (it really did)
+#   - everything else -> 2026-11-06, the catalogue's own fetch date, which is
+#     also the last full build before today
+# Hardcoded rather than TODAY so a rebuild next week cannot move the seed and
+# retroactively claim the copy is newer than it is. Once seeded, this constant
+# never applies again — every URL has a history entry.
+MIGRATION_SEED_DATE = "2026-11-24"
+LEGACY_SITE_DATE = "2026-11-06"
+
+# The catalogue as it stood before today's rewrite batches, used only to decide
+# which slugs get which seed. Absent file -> every page falls back to the legacy
+# date, which is still honest (it just under-claims today's rewrites).
+PRE_BATCH_SNAPSHOT = DATA / ".catalog-pre-p1-batch1.json"
+
+
+def seed_dates(catalog: dict) -> dict[str, str]:
+    """slug -> the date its current `short` first appeared, by snapshot comparison."""
+    try:
+        original = {g["slug"]: g.get("short") for g in
+                    json.loads(PRE_BATCH_SNAPSHOT.read_text())["games"]}
+    except (OSError, ValueError, KeyError):
+        return {}
+    out = {}
+    for game in catalog.get("games", []):
+        slug = game.get("slug")
+        if slug is None:
+            continue
+        authored_today = slug in original and original[slug] != game.get("short")
+        out[slug] = MIGRATION_SEED_DATE if authored_today else LEGACY_SITE_DATE
+    return out
 
 
 class Site:
@@ -149,6 +307,13 @@ class Site:
         )
 
         self.written: list[tuple[str, str]] = []
+        # Path -> lastmod for every URL that goes into the sitemap.
+        self.lastmods: dict[str, str] = {}
+        self.lastmod_store = LastmodStore(LASTMOD_FILE)
+        self.seed_by_slug = seed_dates(self.catalog)
+        # Site-wide pages (/, /about, /category/*, ...) have no per-game copy
+        # history, so they seed at the last full build before today.
+        self.site_seed = LEGACY_SITE_DATE
 
     # ---------------- shared chrome ----------------
 
@@ -224,7 +389,7 @@ class Site:
 
     def write(self, path: str, html_text: str, *, priority: str = "0.6",
               changefreq: str = "weekly", sitemap: bool = True,
-              file: str | None = None) -> None:
+              file: str | None = None, seed_date: str | None = None) -> None:
         if file:
             target = DIST / file
         elif path == "/":
@@ -237,6 +402,13 @@ class Site:
             target = DIST / (path.lstrip("/") + ".html")
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html_text)
+        # Fingerprint at the single write point so no page can skip registration.
+        # Game pages seed from their own copy's authoring date; everything else
+        # (home, categories, static pages) seeds from the last full build.
+        if seed_date is None:
+            m = re.fullmatch(r"/play/([^/]+)/", path)
+            seed_date = self.seed_by_slug.get(m.group(1)) if m else self.site_seed
+        self.lastmods[path] = self.lastmod_store.date_for(path, html_text, seed_date=seed_date)
         self.written.append((path, priority))
         if not sitemap:
             self.written.pop()
@@ -737,12 +909,11 @@ class Site:
                         path="/404.html", body_class="error-page")
         )
 
-        # sitemap
-        today = NOW.isoformat()
+        # sitemap — per-URL lastmod from the fingerprint history, not the build date
         urls = []
         for path, priority in self.written:
             urls.append(
-                f"<url><loc>{self.domain}{path}</loc><lastmod>{today}</lastmod>"
+                f"<url><loc>{self.domain}{path}</loc><lastmod>{self.lastmods[path]}</lastmod>"
                 f"<changefreq>{'daily' if path == '/' else 'weekly'}</changefreq>"
                 f"<priority>{priority}</priority></url>"
             )
@@ -847,6 +1018,32 @@ class Site:
         self.build_search()
         self.build_static()
         self.build_misc()
+
+        # --- lastmod bookkeeping -------------------------------------------
+        # Second pass over exactly the sitemap URLs, so every one of them is in
+        # the store (write() already registered each; this is the authoritative
+        # sweep and it also asserts the two agree).
+        for path, _priority in self.written:
+            if path not in self.lastmods:
+                raise SystemExit(
+                    f"lastmod: {path} was written but never fingerprinted — "
+                    "write() and the sitemap list disagree"
+                )
+        self.lastmod_store.save()
+
+        stats = self.lastmod_store.stats
+        print(
+            f"lastmod: {stats['kept']} kept, {stats['bumped']} bumped (content changed), "
+            f"{stats['seeded']} seeded from source date, {stats['unknown']} unknown"
+        )
+        if self.lastmod_store.unknown:
+            preview = ", ".join(self.lastmod_store.unknown[:6])
+            more = len(self.lastmod_store.unknown) - 6
+            print(
+                f"  WARNING: {len(self.lastmod_store.unknown)} URL(s) had no provenance "
+                f"and were dated today: {preview}"
+                + (f" (+{more} more)" if more > 0 else "")
+            )
 
         pages = len(list(DIST.rglob("*.html")))
         size = sum(f.stat().st_size for f in DIST.rglob("*") if f.is_file())
