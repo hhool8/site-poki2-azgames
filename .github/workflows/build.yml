@@ -20,6 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Content gate consistency
+        # The shared-word-run metric was implemented twice by hand and the two
+        # copies diverged inside a day. This check fails the build if a second
+        # implementation appears or the pinned verdicts stop matching.
+        run: python3 tools/check_gate_single_source.py
+
       - name: Build site
         run: python3 tools/build_site.py
 

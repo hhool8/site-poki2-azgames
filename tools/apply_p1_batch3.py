@@ -22,10 +22,12 @@ Usage:
 from __future__ import annotations
 
 import json
-import re
 import shutil
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from p1_gate import load_baseline, run_gate  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "data" / "catalog.json"
@@ -202,33 +204,6 @@ REWRITES: dict[str, str] = {
         "edges are the entire challenge.",
 }
 
-TOKEN = re.compile(r"[a-z0-9']+")
-
-
-def longest_shared_run(a: str, b: str) -> tuple[int, str]:
-    ta, tb = TOKEN.findall(a.lower()), TOKEN.findall(b.lower())
-    best, best_phrase = 0, ""
-    prev = [0] * (len(tb) + 1)
-    for i in range(1, len(ta) + 1):
-        cur = [0] * (len(tb) + 1)
-        for j in range(1, len(tb) + 1):
-            if ta[i - 1] == tb[j - 1]:
-                cur[j] = prev[j - 1] + 1
-                if cur[j] > best:
-                    best = cur[j]
-                    best_phrase = " ".join(ta[i - cur[j]:i])
-        prev = cur
-    return best, best_phrase
-
-
-def is_benign_title_phrase(slug: str, phrase: str) -> bool:
-    """`<title> is a/an` cannot be avoided: the title is fixed, "is a" is grammar."""
-    title_tokens = TOKEN.findall(slug.replace("-", " ").lower())
-    p = TOKEN.findall(phrase.lower())
-    core = p[:-2] if p[-2:] in (["is", "a"], ["is", "an"]) else None
-    return core is not None and core == title_tokens[-len(core):]
-
-
 def main() -> int:
     apply = "--apply" in sys.argv
     catalog = json.loads(CATALOG.read_text())
@@ -244,36 +219,15 @@ def main() -> int:
         print(f"ERROR: not kids-games: {wrong_cat}")
         return 1
 
-    worst = 0
-    benign: list[str] = []
-    # The gate must always compare against the PRE-batch baseline. After --apply
-    # the catalog already holds the new text, so comparing to its own `short`
-    # would report the rewrite as a 100% overlap with itself.
-    baseline: dict[str, str] = {}
-    if BACKUP.exists():
-        bcat = json.loads(BACKUP.read_text())
-        bgames = bcat if isinstance(bcat, list) else bcat["games"]
-        baseline = {g["slug"]: g["short"] for g in bgames}
-
-    for slug, new in REWRITES.items():
-        old = baseline.get(slug, by_slug[slug]["short"])
-        run, phrase = longest_shared_run(old, new)
-        if run >= 5 and is_benign_title_phrase(slug, phrase):
-            benign.append(f"{slug} (\"{phrase}\")")
-            continue
-        worst = max(worst, run)
-        flag = "  <-- OVERLAP" if run >= 5 else ""
-        print(f"{slug:<26} run={run}{flag}")
-        if run >= 4:
-            print(f"    shared: \"{phrase}\"")
-            print(f"    old: {old}")
-            print(f"    new: {new}")
-
-    print(f"\n{len(REWRITES)} rewrites staged, longest non-benign shared run = {worst}")
-    if benign:
-        print("Benign title phrases (allowed):")
-        for b in benign:
-            print(f"  - {b}")
+    # The gate must compare against the PRE-batch baseline: after --apply the
+    # catalog holds the new text and a self-comparison reports 100% overlap.
+    baseline = (
+        load_baseline(BACKUP) if BACKUP.exists()
+        else {s: by_slug[s]["short"] for s in REWRITES}
+    )
+    rc = run_gate(REWRITES, baseline, verbose=True)
+    if rc:
+        return rc
 
     if not apply:
         print("\nDRY RUN — use --apply to write.")
