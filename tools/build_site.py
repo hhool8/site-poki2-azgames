@@ -48,7 +48,11 @@ MAIN_SITE_CSS = ROOT / "src" / "styles" / "main.css"
 # They are now separated:
 #   TODAY / NOW  — the real build date. Copyright and any "generated on" use it.
 #   sitemap dates — derived per URL from a content-fingerprint history below.
-TODAY = dt.date.today()
+# UTC is the single clock for both the builder and tools/check_lastmod_truthful.py.
+# Using date.today() here let a GMT+8 build stamp 2026-11-25 while the UTC CI
+# runner rejected that same date as future, blocking deploy (run 45449848113).
+# The content change happened at 2026-11-24T17:xxZ, so the UTC date is truthful.
+TODAY = dt.datetime.now(dt.timezone.utc).date()
 NOW = TODAY
 
 # Committed change history: {url_path: {hash, lastmod, v}}.

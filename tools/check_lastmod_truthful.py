@@ -41,7 +41,7 @@ SITEMAP = DIST / "sitemap.xml"
 STORE = ROOT / "data" / "sitemap-lastmod.json"
 
 sys.path.insert(0, str(ROOT / "tools"))
-from build_site import canonicalize_html  # noqa: E402  (single source of truth)
+from build_site import TODAY, canonicalize_html  # noqa: E402  (single source of truth)
 
 failures: list[str] = []
 notes: list[str] = []
@@ -69,7 +69,7 @@ if not pairs:
     print("no <loc>/<lastmod> pairs parsed from sitemap.xml")
     raise SystemExit(1)
 
-today = dt.date.today()
+today = TODAY  # same UTC clock as the builder; never a host-local date
 dates = {loc: lm for loc, lm in pairs}
 distinct = sorted(set(dates.values()))
 
