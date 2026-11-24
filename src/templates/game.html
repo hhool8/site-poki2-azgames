@@ -14,14 +14,48 @@
   </div>
 
   <div class="player" id="player">
-    <button class="player__play" type="button" data-src="{{EMBED}}" data-title="{{TITLE}}" aria-label="Play {{TITLE}}">
-      <img class="player__poster" src="/img/game/{{SLUG}}.webp" alt="{{TITLE}} game cover" width="400" height="400">
-      <span class="player__cta">
-        <i aria-hidden="true">▶</i>
-        <span>Play {{TITLE}}</span>
-      </span>
-    </button>
-    <noscript><p class="player__fallback"><a href="{{EMBED}}" rel="noopener">Open {{TITLE}} in a new tab</a></p></noscript>
+    <div class="player__stage">
+      <button class="player__play" type="button" data-src="{{EMBED}}" data-title="{{TITLE}}" aria-label="Play {{TITLE}}">
+        <img class="player__poster" src="/img/game/{{SLUG}}.webp" alt="{{TITLE}} game cover" width="400" height="400">
+        <span class="player__cta">
+          <i aria-hidden="true">▶</i>
+          <span>Play {{TITLE}}</span>
+        </span>
+      </button>
+      <noscript><p class="player__fallback"><a href="{{EMBED}}" rel="noopener">Open {{TITLE}} in a new tab</a></p></noscript>
+    </div>
+
+    <div class="game-toolbar" id="game-toolbar">
+      <div class="game-toolbar-left">
+        <span class="game-tb-title">{{TITLE}}</span>
+      </div>
+      <div class="game-toolbar-right">
+        <button class="tb-btn" id="tb-like" data-slug="{{SLUG}}" aria-label="Like this game" aria-pressed="false" title="Like">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          <span id="tb-like-count">–</span>
+        </button>
+        <button class="tb-btn" id="tb-fav" data-slug="{{SLUG}}" aria-label="Add to favorites" aria-pressed="false" title="Favorite">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+        <button class="tb-btn" id="tb-share" aria-label="Share this game" title="Share">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+        </button>
+        <button class="tb-btn" id="tb-x" aria-label="Share on X" title="Share on X">X</button>
+        <button class="tb-btn" id="tb-facebook" aria-label="Share on Facebook" title="Share on Facebook">f</button>
+        <button class="tb-btn" id="tb-report" aria-label="Report a problem" title="Report a problem">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </button>
+        <button class="tb-btn" id="tb-reset" aria-label="Reset game" title="Reset game">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </button>
+        <button class="tb-btn" id="tb-expand" aria-label="Expand in page" title="Expand in page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <button class="tb-btn" id="tb-fullscreen" aria-label="Fullscreen" title="Fullscreen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
 
   {{AD_UNDER_PLAYER}}

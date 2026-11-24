@@ -134,6 +134,20 @@ class Site:
         self.static_tpl = (TPL / "static.html").read_text()
         self.search_tpl = (TPL / "search.html").read_text()
 
+        # Asset version = short content hash. Without it, Cloudflare's edge
+        # serves the previous style.css/app.js for up to a day after a deploy
+        # (max-age=86400 on /css/*, and /app.js is cached too), which silently
+        # keeps new markup styled with old CSS.
+        css_source = (MAIN_SITE_CSS.read_text() + "\n\n" + (SRC / "styles" / "extra.css").read_text())
+        js_source = (SRC / "js" / "app.js").read_text()
+        self.css_source = css_source
+        self.js_source = js_source
+        self.asset_v = (
+            hashlib.sha256(css_source.encode()).hexdigest()[:10]
+            + "-"
+            + hashlib.sha256(js_source.encode()).hexdigest()[:10]
+        )
+
         self.written: list[tuple[str, str]] = []
 
     # ---------------- shared chrome ----------------
@@ -198,6 +212,7 @@ class Site:
             "{{NAV_CATEGORIES}}": self.nav_categories(),
             "{{FOOTER_CATEGORIES}}": self.footer_categories(),
             "{{GAME_COUNT}}": f"{len(self.games):,}",
+            "{{ASSET_V}}": self.asset_v,
             "{{YEAR}}": str(NOW.year),
             "{{CONTENT}}": body,
         }
@@ -799,9 +814,9 @@ class Site:
 
         # assets
         (DIST / "css").mkdir(exist_ok=True)
-        css = MAIN_SITE_CSS.read_text() + "\n\n" + (SRC / "styles" / "extra.css").read_text()
+        css = self.css_source
         (DIST / "css" / "style.css").write_text(css)
-        (DIST / "app.js").write_text((SRC / "js" / "app.js").read_text())
+        (DIST / "app.js").write_text(self.js_source)
 
         (DIST / "favicon.svg").write_text(
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AZ Games">'

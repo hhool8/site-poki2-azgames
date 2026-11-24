@@ -6,3 +6,6 @@ data/img-failures.json
 # the old node proxy prototype, kept for reference only
 legacy/node_modules/
 .DS_Store
+
+# catalog backups written by tools/apply_p1_batch*.py
+data/.catalog-pre-p1-batch*.json
