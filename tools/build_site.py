@@ -400,7 +400,18 @@ class Site:
         body = body.replace("{{AD_UNDER_PLAYER}}", self.ad_slot("gameUnderPlayer"))
 
         title = f"{game['title']} — Play Free Online | AZ Games"
-        description = (game.get("meta") or "").split("|")[0].strip()
+        # Meta description is derived from the (hand-edited) intro sentence at
+        # build time. The catalog's pre-truncated `meta` field is NOT used: it
+        # embeds mid-sentence ellipsis artifacts and used to carry a verbatim
+        # copy of the source site's description.
+        short_text = (game.get("short") or "").strip()
+        full_desc = f"Play {game['title']} free — no download, no login. {short_text}"
+        if len(full_desc) <= 155:
+            description = full_desc
+        elif len(short_text) <= 155:
+            description = short_text
+        else:
+            description = short_text[:155].rsplit(" ", 1)[0]
         if len(description) < 60:
             description = f"Play {game['title']} free in your browser — no download, no login. {cat_name} on AZ Games."
         description = description[:158]
@@ -769,12 +780,21 @@ class Site:
         )
 
         # Old paths on this domain: the previous build served .html static pages
-        # and /images/games/*.png covers.
+        # and /images/games/*.png covers. Legacy game URLs still receive Bing
+        # search impressions (Bing WMT page stats 2026-11-24), so each one is
+        # mapped to its current /play/<slug>/ page instead of 404ing.
+        legacy_slugs = [
+            "merge-infinity", "run-3", "crossy-road", "tetris", "kitten-defense",
+        ]
+        legacy_lines = "".join(
+            f"/play/{s}.html /play/{s}/ 301\n" for s in legacy_slugs
+        )
         (DIST / "_redirects").write_text(
             "/index.html / 301\n"
             "/blog.html /games/ 301\n"
             "/blog/ /games/ 301\n"
             "/games/page/1/ /games/ 301\n"
+            + legacy_lines
         )
 
         # assets
