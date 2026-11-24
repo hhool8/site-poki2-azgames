@@ -108,7 +108,32 @@ step is needed for a redeploy.
 
 ## CI
 
-`.github/workflows/deploy.yml` builds from the committed catalogue and deploys
-`dist/` to the Pages project via `wrangler-action`, on every push to `main`.
-Requires the repo secrets `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`
-(same credentials as the local direct-upload path).
+`.github/workflows/build.yml` runs two jobs:
+
+- **build** — every push, every pull request, and manual dispatch. Runs
+  `check_gate_single_source.py`, `build_site.py` and `check_lastmod_truthful.py`,
+  then uploads `dist/` as a 7-day artifact. Never touches a secret.
+- **deploy** — only on a push to `main` in this repository itself. Rebuilds,
+  re-runs both gates, then ships `dist/` via `wrangler-action` with the commit
+  hash and message recorded on the Pages deployment, so "did this commit go
+  live?" is answerable afterwards.
+
+Delivery is therefore push-to-`main`, not a manual `wrangler pages deploy`. The
+local command still works and is the fallback when Actions is unavailable.
+
+### Credentials
+
+The deploy job needs the repository secrets `CLOUDFLARE_ACCOUNT_ID` and
+`CLOUDFLARE_API_TOKEN` (the same credentials the local direct-upload path uses).
+This repository is **public**, so the token lives only in Actions secrets and is
+never written into a tracked file. Two things keep it from leaking to code the
+maintainers did not write: GitHub withholds secrets from fork pull requests, and
+the deploy job is additionally gated on `event_name == push`,
+`ref == refs/heads/main`, and `github.repository == hhool8/site-poki2-azgames`.
+Do not add `pull_request_target` to this workflow — that trigger does expose
+secrets to fork code and would undo both protections.
+
+Note that the Pages project is a **Direct Upload** project (`source: null`), not
+a Git-integrated one. CI deploys into it by API; Cloudflare does not build this
+repository itself. Migrating the project to Git integration is a separate,
+one-way move that needs the Cloudflare GitHub App authorised for this repo.
