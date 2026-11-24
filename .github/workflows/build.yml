@@ -1,9 +1,27 @@
-name: Build check
+name: Build and deploy
 
-# Build-only validation: every push to main proves the static build compiles
-# from the committed catalogue. Deployment stays on the local direct-upload
-# path (see README Deploy) — this is a Direct Upload Pages project, and the
-# repo is public, so no deploy credentials are stored here.
+# Build validation runs for every change; deployment runs only from main.
+#
+# SECURITY — why the deploy job is separated this way:
+# This repository is PUBLIC and holds a Cloudflare API token in Actions secrets.
+# A `pull_request` trigger runs workflows from FORKED repositories, whose content
+# the fork's author controls: any step in the job can print whatever secrets it
+# is given. GitHub withholds secrets from fork PR runs, but relying on that alone
+# is fragile — a later edit adding `pull_request_target`, or a run from a branch
+# somebody else can push to, would expose a token that can deploy this site. So
+# the deploy job is gated on all of:
+#   - event_name == push       (not pull_request, not workflow_dispatch)
+#   - ref == refs/heads/main   (the branch, not a tag or another ref)
+#   - the same repository      (never a fork)
+# Forked PRs still get the build and both guards; they just cannot reach a token.
+#
+# Why not Cloudflare's Git integration instead, which needs no token at all?
+# That is the better long-term answer but needs one manual step: the Cloudflare
+# GitHub App is not currently authorised for this repository. Evidence: a
+# Git-connected probe project created through the API produced ZERO deployments
+# after pushing to a watched branch, while play-poki2-online (authorised) deploys
+# on push. Once the app is installed for this repo, delete the deploy job below
+# and let the integration build `python3 tools/build_site.py` → `dist`.
 
 on:
   push:
@@ -43,3 +61,42 @@ jobs:
           name: dist
           path: dist/
           retention-days: 7
+
+  deploy:
+    needs: build
+    # Every condition here exists to keep the Cloudflare token away from code the
+    # repository's owners did not write. See the note at the top of this file.
+    if: >-
+      github.event_name == 'push'
+      && github.ref == 'refs/heads/main'
+      && github.repository == 'hhool8/site-poki2-azgames'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site
+        # Rebuilt rather than pulled from the artifact: the deploy must ship bytes
+        # produced by this exact commit, and the build takes about three seconds.
+        run: python3 tools/build_site.py
+
+      - name: Gates before deploy
+        # Run again, deliberately. A deploy job that skipped the guards could
+        # ship something the build job would have rejected if the two ever drift.
+        run: |
+          python3 tools/check_gate_single_source.py
+          python3 tools/check_lastmod_truthful.py
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Explicit branch/hash/message so the Pages deployment record points at
+          # a commit instead of an anonymous upload — that metadata is what makes
+          # "did this commit go live?" answerable later.
+          command: >-
+            pages deploy dist
+            --project-name azgames-poki2-site
+            --branch main
+            --commit-hash ${{ github.sha }}
+            --commit-message "CI deploy ${{ github.sha }}"
