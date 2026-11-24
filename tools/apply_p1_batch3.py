@@ -36,8 +36,8 @@ REWRITES: dict[str, str] = {
         "Animal Craft mixes creature-breeding with survival: splice two animals "
         "into a hybrid, then take the result out to fight and see how long it lasts.",
     "astro-tycoon":
-        "Astro Tycoon is idle mining in space: send drones to distant rocks, bank "
-        "the ore, and reinvest until the whole belt answers to you.",
+        "Astro Tycoon is idle mining in space: work the nearest rock for minerals, "
+        "bank what comes back, and push the operation toward the farthest planet.",
     "bottle-hop":
         "Bottle Hop flips a plastic bottle across rooms full of furniture — one tap "
         "per hop, and it has to come down flat on the next ledge.",
@@ -51,8 +51,8 @@ REWRITES: dict[str, str] = {
         "Bounce Up keeps a ball climbing between ledges: bounce, land, repeat, and "
         "never miss the next edge.",
     "bucket-smash":
-        "Bucket Smash hands you an oversized saw blade: cut through walls one course "
-        "at a time and turn the rubble into upgrade money.",
+        "Bucket Smash hands you an oversized saw blade: cut walls down brick by brick "
+        "and sell the debris to pay for upgrades.",
     "chicken-flip":
         "Chicken Flip sends a small chicken down a hill, tumbling over whatever is "
         "in the way and trying not to stop.",
@@ -93,8 +93,8 @@ REWRITES: dict[str, str] = {
         "Dino Dash 3D rebuilds the browser's offline T-Rex runner in three "
         "dimensions: jump, duck, and last one more stretch.",
     "duck-life":
-        "Duck Life raises a duck from egg to racer: train its speed, stamina and "
-        "flying, then take it to the track.",
+        "Duck Life turns a farm duck into a racer: train it between races, then "
+        "put it on the track against the field.",
     "escape-bear":
         "Escape Bear has a bear breaking its friends out of a hive: sneak past the "
         "guards, fight the bees, and get everyone out.",
@@ -114,8 +114,8 @@ REWRITES: dict[str, str] = {
         "Flying Kong puts a gorilla in the air above the jungle canopy: dodge "
         "obstacles, gather bananas, stay airborne.",
     "forest-mouse":
-        "Forest Mouse drops the camera to rodent height: forage, hide, and map a "
-        "forest that is far bigger than you are.",
+        "Forest Mouse drops the camera to rodent height: explore a forest that is far "
+        "bigger than you are, gather what you find, and stay clear of the dangers.",
     "hyper-tunnel":
         "Hyper Tunnel threads a ship through corridors that keep narrowing: small "
         "steering inputs, no wall contact.",
@@ -139,7 +139,7 @@ REWRITES: dict[str, str] = {
         "shape ahead of you.",
     "omnom-jump":
         "Om Nom Jump stacks blocks under a falling candy-eater: keep building "
-        "upward and stay clear of the water below.",
+        "upward, climb higher, and stay ahead of the starving sharks.",
     "orbit-dash":
         "Orbit Dash flies a single coloured line up a vertical course: small "
         "corrections, long runs.",
@@ -246,8 +246,17 @@ def main() -> int:
 
     worst = 0
     benign: list[str] = []
+    # The gate must always compare against the PRE-batch baseline. After --apply
+    # the catalog already holds the new text, so comparing to its own `short`
+    # would report the rewrite as a 100% overlap with itself.
+    baseline: dict[str, str] = {}
+    if BACKUP.exists():
+        bcat = json.loads(BACKUP.read_text())
+        bgames = bcat if isinstance(bcat, list) else bcat["games"]
+        baseline = {g["slug"]: g["short"] for g in bgames}
+
     for slug, new in REWRITES.items():
-        old = by_slug[slug]["short"]
+        old = baseline.get(slug, by_slug[slug]["short"])
         run, phrase = longest_shared_run(old, new)
         if run >= 5 and is_benign_title_phrase(slug, phrase):
             benign.append(f"{slug} (\"{phrase}\")")

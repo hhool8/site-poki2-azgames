@@ -72,6 +72,19 @@ def parse_game(slug: str, doc: str) -> dict:
         meta_desc = html.unescape(m.group(1)).strip()
 
     short = text(between(doc, 'class="game-info-desc">', "</p>"))
+    # The `game-info-desc` container was removed from azgames.io, so this lookup
+    # now returns "" for every game. Fall back to the meta description rather
+    # than emitting an empty/fragmentary string, and record which source was
+    # used so a stale field can be spotted later instead of silently shipping.
+    short_source = "info-desc" if short else ""
+    if not short:
+        short, short_source = meta_desc, "meta-desc"
+    # A sentence that stops without terminal punctuation is the shape the
+    # truncated copies had ("Mama", "Scary Wheels isn"). Flag it for review; it
+    # is a hint, not proof, because some source descriptions legitimately omit
+    # the final full stop.
+    if short and short.rstrip()[-1] not in ".!?":
+        short_source += ":unterminated"
 
     cat_slug = cat_name = ""
     m = re.search(r'class="game-info-tag" href="/category/([^"]+)"[^>]*>([^<]+)<', doc)
@@ -118,6 +131,7 @@ def parse_game(slug: str, doc: str) -> dict:
         "title": title,
         "meta": meta_desc,
         "short": short,
+        "short_source": short_source,
         "image": img,
         "embed": embed,
         "category": cat_slug,
@@ -187,6 +201,9 @@ def main() -> int:
             "errors": len(errors),
             "no_embed": sum(1 for g in rows if not g["embed"]),
             "no_short": sum(1 for g in rows if len(g["short"]) < 30),
+            "short_unterminated": sum(
+                1 for g in rows if g.get("short_source", "").endswith(":unterminated")
+            ),
         },
         "categories": [
             {
