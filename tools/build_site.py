@@ -536,7 +536,8 @@ class Site:
         schema = f'<script type="application/ld+json">{schema}</script>'
 
         self.write("/", self.render(body, title=title, description=description, path="/",
-                                    body_class="home-page", schema=schema), priority="1.0")
+                                    body_class="home-page", schema=schema,
+                                    og_image="/img/og-cover.png"), priority="1.0")
 
     def game_copy(self, game: dict) -> dict:
         title = game["title"]
@@ -1141,10 +1142,20 @@ class Site:
             "</svg>"
         )
 
+        # Social preview: a 1200x630 PNG assembled from this site's own covers
+        # by tools/make_og_cover.py. It is served under /img/* so the existing
+        # 7-day image cache header applies; the default og:image points here
+        # for every page that has no game-specific cover of its own.
         img_dir = DIST / "img" / "game"
         if img_dir.exists():
             shutil.rmtree(img_dir)
         img_dir.mkdir(parents=True)
+
+        og_cover = DATA / "og-cover.png"
+        if not og_cover.is_file():
+            raise SystemExit(f"missing social preview image: {og_cover}")
+        shutil.copy2(og_cover, DIST / "img" / "og-cover.png")
+
         for webp in (DATA / "img").glob("*.webp"):
             shutil.copy2(webp, img_dir / webp.name)
 
