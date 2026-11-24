@@ -13,8 +13,8 @@ proper nouns ("Cuby Road", "Ice Baby Quest") dominate it and produce 0.6-0.74
 false positives on text that shares nothing else.
 
 Threshold: a run of 5+ words is a real copied phrase, except for the single
-structural case `<title> is a/an`, where the title cannot change and "is a" is
-the only English way to introduce a game.
+structural case `<title> is a/an/the`, where the title cannot change and the
+connector is the only grammatical way to introduce a game in English.
 """
 from __future__ import annotations
 
@@ -22,6 +22,7 @@ import re
 import sys
 
 TOKEN = re.compile(r"[a-z0-9']+")
+ARTICLES = {"a", "an", "the"}
 
 
 def longest_shared_run(a: str, b: str) -> tuple[int, str]:
@@ -41,11 +42,14 @@ def longest_shared_run(a: str, b: str) -> tuple[int, str]:
 
 
 def is_benign_title_phrase(slug: str, phrase: str) -> bool:
-    """`<title> is a/an` cannot be avoided: the title is fixed, "is a" is grammar."""
+    """`<title> is a/an/the` cannot be avoided: the title is fixed, the connector
+    is grammar. Anything past the article is a real phrase and still counts."""
     title_tokens = TOKEN.findall(slug.replace("-", " ").lower())
     p = TOKEN.findall(phrase.lower())
-    core = p[:-2] if p[-2:] in (["is", "a"], ["is", "an"]) else None
-    return core is not None and core == title_tokens[-len(core):]
+    if len(p) < 2 or p[-2] != "is" or p[-1] not in ARTICLES:
+        return False
+    core = p[:-2]
+    return bool(core) and core == title_tokens[-len(core):]
 
 
 def run_gate(rewrites: dict[str, str], baseline: dict[str, str], verbose: bool = True) -> int:
