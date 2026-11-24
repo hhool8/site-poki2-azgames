@@ -91,6 +91,63 @@ CATEGORY_BLURB = {
     "sports-games": "the sport is compressed into short arcade rounds.",
 }
 
+# 2026-11-25 audit A2. The old build cut meta descriptions at character 155,
+# which left 17 pages ending mid-phrase. These hand-written replacements are
+# the single source of truth: they are imported by the verification tool, which
+# checks the built HTML against them. Do not reintroduce a truncating generator.
+# Every value must be a complete sentence of at most 155 characters.
+GAME_DESCRIPTION_OVERRIDES = {
+    "bitlife": "BitLife is a text-based life simulation. Make every decision from birth to death, and watch each choice shape a unique, unpredictable story.",
+    "egg-race": "Egg Race is a winter drive with a fragile passenger. Steer over snow, balance the egg through bumps, and collect coins on the way down.",
+    "idle-gold-miner": "Idle Gold Miner turns one shaft into a mining business. Click to dig, hire managers to work without you, and reinvest in mines and warehouses.",
+    "merge-infinity": "Merge Infinity stretches the 2048 idea across a grid of lines. Connect matching numbers, chain merges, and push totals past every previous run.",
+    "pacman-30th-anniversary": "Pacman 30th Anniversary is the classic arcade maze chase. Easy to learn, quick to replay, and still a fixture of popular game culture.",
+    "paper-minecraft": "Paper Minecraft brings the sandbox to two dimensions. Explore blocky terrain, mine materials, craft tools, and build structures of your own.",
+    "plants-vs-brainrots-online": "Plants vs Brainrots Online builds a defence from the ground up. Cultivate plants, place them to cover each lane, and keep zombies off the base.",
+    "retro-bowl": "Retro Bowl puts an NFL franchise in your hands. Build your dream team, expand the roster, and handle the press while chasing a championship.",
+    "steel-legion": "Steel Legion is tank combat on uneven ground. Drive the Cobra over hills, aim around the slope, and spend coins on upgrades before the Legion arrives.",
+    "stickman-hook": "Stickman Hook is a physics-based swing game. Bounce and swing your stickman through challenging levels, then replay for a cleaner run.",
+    "tetris": "Tetris is the timeless falling-block puzzle. Rotate and position Tetriminos to form uninterrupted horizontal lines and keep the stack from topping out.",
+    "slope-rider-3d": "Slope Rider 3D takes the sled run into three dimensions. Trees, logs and gaps arrive without warning, and the best rewards sit on the riskiest lines.",
+}
+
+STATIC_DESCRIPTION_OVERRIDES = {
+    "/about": "AZ Games is a free browser-game directory with 291 titles across 10 categories. Every game opens in one click, with no download or sign-up.",
+    "/contact": "Contact AZ Games about a broken game, a copyright notice, advertising, or privacy. One address per topic keeps each message in the right place.",
+    "/privacy": "How AZ Games handles data: no accounts or forms, standard server logs, advertising cookies with consent, and cookies set by embedded game providers.",
+    "/terms": "The terms for using AZ Games: a free directory of third-party browser games, provided as-is, with acceptable-use rules and an advertising-funded model.",
+    "/dmca": "How rights holders can submit a DMCA notice to AZ Games, what a valid notice must include, what happens next, and how to send a counter-notice.",
+}
+
+DESCRIPTION_LIMIT = 155
+_TERMINAL = (".", "!", "?")
+
+
+def checked_description(description: str, context: str) -> str:
+    """Single gate for every meta description. Fails the build on regressions."""
+    description = re.sub(r"\s+", " ", description).strip()
+    if len(description) > DESCRIPTION_LIMIT or not description.endswith(_TERMINAL):
+        raise SystemExit(
+            f"description for {context} is not a complete sentence "
+            f"of <= {DESCRIPTION_LIMIT} chars: {description!r}"
+        )
+    return description
+
+
+def whole_sentences(text: str, limit: int = DESCRIPTION_LIMIT) -> str:
+    """Longest whole-sentence prefix of text within limit; no mid-phrase cuts."""
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= limit and text.endswith(_TERMINAL):
+        return text
+    kept = ""
+    for sentence in re.split(r"(?<=[.!?])\s+", text):
+        candidate = f"{kept} {sentence}".strip()
+        if len(candidate) <= limit:
+            kept = candidate
+        else:
+            break
+    return kept
+
 
 def esc(value: str) -> str:
     return html.escape(value or "", quote=True)
@@ -456,7 +513,7 @@ class Site:
         body = body.replace("{{GAME_COUNT}}", f"{len(self.games):,}")
         body = body.replace("{{CATEGORY_COUNT}}", str(len(self.cats)))
 
-        title = f"AZ Games — {len(self.games)} Free Browser Games, No Download"
+        title = f"AZ Games — {len(self.games)} Free Browser Games, A to Z | No Download"
         description = (
             f"Play {len(self.games)} free browser games at AZ Games: clicker, .io, puzzle, car, "
             "shooting, sports and 2-player titles. No download, no login, instant play."
@@ -467,11 +524,8 @@ class Site:
                 "@type": "WebSite",
                 "name": "AZ Games",
                 "url": self.domain + "/",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": self.domain + "/search/?q={search_term_string}",
-                    "query-input": "required name=search_term_string",
-                },
+                # No SearchAction: /search/ is client-side only and disallowed
+                # in robots.txt, so advertising it to crawlers was a dead end.
             },
             separators=(",", ":"),
         )
@@ -592,16 +646,20 @@ class Site:
         # embeds mid-sentence ellipsis artifacts and used to carry a verbatim
         # copy of the source site's description.
         short_text = (game.get("short") or "").strip()
-        full_desc = f"Play {game['title']} free — no download, no login. {short_text}"
-        if len(full_desc) <= 155:
-            description = full_desc
-        elif len(short_text) <= 155:
-            description = short_text
+        override = GAME_DESCRIPTION_OVERRIDES.get(game["slug"])
+        if override:
+            description = override
         else:
-            description = short_text[:155].rsplit(" ", 1)[0]
+            full_desc = f"Play {game['title']} free — no download, no login. {short_text}"
+            if len(full_desc) <= DESCRIPTION_LIMIT and full_desc.endswith(_TERMINAL):
+                description = full_desc
+            elif len(short_text) <= DESCRIPTION_LIMIT and short_text.endswith(_TERMINAL):
+                description = short_text
+            else:
+                description = whole_sentences(full_desc) or whole_sentences(short_text)
         if len(description) < 60:
             description = f"Play {game['title']} free in your browser — no download, no login. {cat_name} on AZ Games."
-        description = description[:158]
+        description = checked_description(description, f"/play/{game['slug']}/")
 
         schema = json.dumps(
             {
@@ -693,7 +751,7 @@ class Site:
             body = body.replace("{{PAGINATION}}", "")
             body = body.replace("{{AD_INLINE}}", self.ad_slot("listInline"))
 
-            title = f"{cat['name']} — {len(cat['games'])} Free Online Games | AZ Games"
+            title = f"{cat['name']} — {len(cat['games'])} Free Games | AZ Games"
             description = f"Play {len(cat['games'])} free {cat['name'].lower()} in your browser on AZ Games. No download, no login, instant play."
             schema = json.dumps(
                 {
@@ -726,7 +784,7 @@ class Site:
             chunk = self.games[(page - 1) * size: page * size]
             body = self.list_tpl
             body = body.replace("{{CRUMB}}", "All Games" if page == 1 else f"All Games · page {page}")
-            h1 = f"All {len(self.games)} Games" if page == 1 else f"All Games — Page {page}"
+            h1 = f"All Games — {len(self.games)} Free Browser Games" if page == 1 else f"All Games — Page {page}"
             body = body.replace("{{H1}}", h1)
             sub = ("Every game on AZ Games, alphabetically — the same catalogue the categories are cut from."
                    if page == 1 else f"Page {page} of {total}.")
@@ -736,8 +794,7 @@ class Site:
             body = body.replace("{{AD_INLINE}}", self.ad_slot("listInline"))
 
             path = "/games/" if page == 1 else f"/games/page/{page}/"
-            title = "All Games" if page == 1 else f"All Games — Page {page}"
-            title = f"{title} — {len(self.games)} Free Browser Games | AZ Games"
+            title = f"All Games — {len(self.games)} Free Browser Games | AZ Games" if page == 1 else f"All Games — Page {page} — {len(self.games)} Free Browser Games | AZ Games"
             description = f"Browse all {len(self.games)} free browser games on AZ Games, A to Z. No download, no login."
             self.write(path, self.render(body, title=title, description=description, path=path,
                                          body_class="list-page"),
@@ -773,7 +830,7 @@ class Site:
         pages = {
             "/about": (
                 "About AZ Games",
-                f"""<p>AZ Games is the A-to-Z shelf of the Poki2 network. It exists for one reason: to make a
+                f"""<p>AZ Games is an A-to-Z shelf of browser games. It exists for one reason: to make a
                 browser game reachable in a single click. No launcher, no sign-up, no "install our app" wall.</p>
                 <h2>What is on the site</h2>
                 <p>{len(self.games)} games across {len(self.cats)} categories — clicker, .io, puzzle, car, shooting,
@@ -858,7 +915,7 @@ class Site:
                 <p>These terms may be updated; the date above is the version in force.</p>""",
             ),
             "/dmca": (
-                "Copyright &amp; DMCA",
+                "Copyright & DMCA",
                 f"""<p>AZ Games links to and embeds games published by third parties. It does not host game files.</p>
                 <h2>If you are a rights holder</h2>
                 <p>Send a notice to <a href="mailto:dmca@poki2.online">dmca@poki2.online</a> containing:</p>
@@ -884,10 +941,11 @@ class Site:
 
         for path, (title, body_html) in pages.items():
             body = self.static_tpl
-            body = body.replace("{{TITLE}}", title)
+            body = body.replace("{{TITLE}}", esc(title))
             body = body.replace("{{BODY}}", body_html)
             plain = re.sub(r"<[^>]+>", " ", body_html)
-            description = re.sub(r"\s+", " ", plain).strip()[:155]
+            description = STATIC_DESCRIPTION_OVERRIDES.get(path) or whole_sentences(plain)
+            description = checked_description(description, path)
             self.write(path, self.render(body, title=f"{title} | AZ Games", description=description,
                                          path=path, body_class="static-page"), priority="0.5",
                        file=path.lstrip("/") + ".html")
@@ -902,7 +960,7 @@ class Site:
         )
 
         # 404
-        body = '<div class="page-wrap"><h1>404 — page not found</h1><p>That game may have been renamed or removed. ' \
+        body = '<div class="page-wrap"><h1>Page not found</h1><p>That game may have been renamed or removed. ' \
                'Try the full catalogue:</p><p><a class="btn btn-primary" href="/games/">Browse all games →</a></p></div>'
         (DIST / "404.html").write_text(
             self.render(body, title="Page not found | AZ Games", description="Page not found.",
@@ -923,13 +981,68 @@ class Site:
             + "\n".join(urls) + "\n</urlset>\n"
         )
 
+        # Named AI-crawler groups make the access policy explicit rather than
+        # relying on a `*` fallthrough. The rules are identical on purpose:
+        # every AI UA is welcome on game/category pages and kept out of the
+        # client-side search route, exactly as before.
+        ai_agents = (
+            "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+            "ClaudeBot", "Claude-SearchBot", "Claude-User",
+            "PerplexityBot", "Perplexity-User",
+        )
         (DIST / "robots.txt").write_text(
+            "".join(f"User-agent: {ua}\n" for ua in ai_agents)
+            + "Allow: /\n"
+            "Disallow: /search/\n"
+            "\n"
             "User-agent: *\n"
             "Allow: /\n"
             "Disallow: /search/\n"
             "\n"
             f"Sitemap: {self.domain}/sitemap.xml\n"
         )
+
+        # llms.txt: a concise, canonical map for AI assistants. Static HTML is
+        # already fully rendered, so this only needs to point at the real URLs.
+        llms = [
+            "# AZ Games",
+            "",
+            f"> {self.site['tagline']}. {len(self.games)} browser games across "
+            f"{len(self.cats)} categories. No download, no login; games load in "
+            "the page when the visitor presses play.",
+            "",
+            "AZ Games is a directory of browser games published by third-party "
+            "studios. Game pages carry a short description, how-to notes, a "
+            "three-question FAQ and structured data (VideoGame, BreadcrumbList, "
+            "FAQPage). Category pages are collections; /games/ is the full A–Z "
+            "catalogue.",
+            "",
+            "## Browse",
+            "",
+            f"- [All games]({self.domain}/games/)",
+        ]
+        for cat in self.cats:
+            llms.append(f"- [{cat['name']}]({self.domain}/category/{cat['slug']}/)")
+        llms += [
+            "",
+            "## Games",
+            "",
+        ]
+        for game in self.games:
+            llms.append(f"- [{game['title']}]({self.domain}/play/{game['slug']}/)")
+        llms += [
+            "",
+            "## Site information",
+            "",
+            f"- [About]({self.domain}/about)",
+            f"- [Contact]({self.domain}/contact) — {self.site['email']}",
+            f"- [Privacy]({self.domain}/privacy)",
+            f"- [Terms]({self.domain}/terms)",
+            f"- [DMCA]({self.domain}/dmca)",
+            f"- [Sitemap]({self.domain}/sitemap.xml)",
+            "",
+        ]
+        (DIST / "llms.txt").write_text("\n".join(llms))
 
         if self.ads.get("enabled"):
             (DIST / "ads.txt").write_text(
@@ -947,23 +1060,49 @@ class Site:
                 )
             )
 
-        (DIST / "_headers").write_text(
-            "# AZ Games — Cloudflare Pages headers\n"
-            "/*\n"
-            "  Strict-Transport-Security: max-age=31536000; includeSubDomains\n"
-            "  X-Content-Type-Options: nosniff\n"
-            "  Referrer-Policy: strict-origin-when-cross-origin\n"
-            "  Permissions-Policy: camera=(), microphone=(), geolocation=()\n"
-            "\n"
-            "/img/*\n"
-            "  Cache-Control: public, max-age=604800, stale-while-revalidate=86400\n"
-            "\n"
-            "/css/*\n"
-            "  Cache-Control: public, max-age=86400\n"
-            "\n"
-            "/search-index.json\n"
-            "  Cache-Control: public, max-age=3600\n"
+        # HTML: edge TTL only (s-maxage); no browser max-age, so a visitor can
+        # never serve stale HTML from disk after a deploy. A zone-level Cache
+        # Rule must also include this host for Pages to store text/html at the
+        # edge (same two-part requirement as apex and play). Pages matches
+        # these patterns against the REQUEST path and normalises `/` to
+        # /index.html, so both are listed; extensionless static pages and the
+        # trailing-slash pretty URLs each need their own block. Do not put
+        # Cache-Control in `/*`: Pages concatenates headers when two blocks
+        # match one request, which produces a doubled directive.
+        HTML_CACHE = "  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400\n"
+        html_paths = (
+            "/", "/index.html",
+            "/play/*", "/category/*",
+            # `/games/*` covers /games/ and /games/page/N/; adding an exact
+            # /games/ block would match the same request twice and duplicate
+            # Cache-Control (Pages concatenates headers from matching blocks).
+            "/games", "/games/*",
+            "/about", "/contact", "/privacy", "/terms", "/dmca",
         )
+        header_lines = [
+            "# AZ Games — Cloudflare Pages headers\n",
+            "/*\n",
+            "  Strict-Transport-Security: max-age=31536000; includeSubDomains\n",
+            "  X-Content-Type-Options: nosniff\n",
+            "  Referrer-Policy: strict-origin-when-cross-origin\n",
+            "  Permissions-Policy: camera=(), microphone=(), geolocation=()\n",
+            "\n",
+        ]
+        for path in html_paths:
+            header_lines.append(f"{path}\n{HTML_CACHE}\n")
+        header_lines += [
+            "/img/*\n",
+            "  Cache-Control: public, max-age=604800, stale-while-revalidate=86400\n",
+            "\n",
+            "/css/*\n",
+            "  Cache-Control: public, max-age=86400\n",
+            "\n",
+            "/search-index.json\n",
+            "  Cache-Control: public, max-age=3600\n",
+        ]
+        # /search/ stays uncached: it is client-side only, disallowed in robots,
+        # and has no value as a cached edge copy.
+        (DIST / "_headers").write_text("".join(header_lines))
 
         # Old paths on this domain: the previous build served .html static pages
         # and /images/games/*.png covers. Legacy game URLs still receive Bing
