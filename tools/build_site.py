@@ -331,10 +331,42 @@ class Site:
             f"the ad slots sit around the player, never on top of it."
         )
 
+        # Per-game "good to know" paragraph from the catalog's notes field.
+        # The final sentence is identical boilerplate across the whole catalogue
+        # (site-internal duplication), so it is stripped before rendering.
+        notes_raw = (game.get("notes") or "").strip()
+        if notes_raw:
+            sentences = [s.strip() for s in notes_raw.split(". ") if s.strip()]
+            if sentences and "start instantly on AZ Games" in sentences[-1]:
+                sentences = sentences[:-1]
+            notes_raw = ". ".join(sentences)
+            if notes_raw and not notes_raw.endswith((".", "!", "?")):
+                notes_raw += "."
+        notes_html = ""
+        if notes_raw:
+            notes_html = (
+                f'<h2>Good to know about {esc(title)}</h2>\n    <p>{esc(notes_raw)}</p>'
+            )
+
+        # Per-game FAQ (3 Q&A pairs, self-written in the catalog), rendered as
+        # headings + answers plus an FAQPage JSON-LD block.
+        qs = game.get("faq") or []
+        ans = game.get("faq_answers") or []
+        faq_pairs = [(q.strip(), a.strip()) for q, a in zip(qs, ans) if q.strip() and a.strip()]
+        faq_html = ""
+        if faq_pairs:
+            parts = [f"<h2>{esc(title)} FAQ</h2>"]
+            for q, a in faq_pairs:
+                parts.append(f"<h3>{esc(q)}</h3>\n    <p>{esc(a)}</p>")
+            faq_html = "\n    ".join(parts)
+
         return {
             "intro": esc(intro) if "<" not in intro else intro,
             "how_to": variants[idx],
             "free": free,
+            "notes_html": notes_html,
+            "faq_html": faq_html,
+            "faq_pairs": faq_pairs,
         }
 
     def build_game(self, game: dict) -> None:
@@ -360,6 +392,8 @@ class Site:
         body = body.replace("{{INTRO}}", copy["intro"])
         body = body.replace("{{HOW_TO}}", copy["how_to"])
         body = body.replace("{{FREE_LINE}}", copy["free"])
+        body = body.replace("{{NOTES_SECTION}}", copy["notes_html"])
+        body = body.replace("{{FAQ_SECTION}}", copy["faq_html"])
         body = body.replace("{{CAT_BLURB}}", esc(CATEGORY_BLURB.get(cat_slug, "the same shelf, different game.")))
         body = body.replace("{{EXTRA_SECTION}}", "")
         body = body.replace("{{RELATED}}", "".join(self.card(g) for g in related))
@@ -400,13 +434,32 @@ class Site:
             },
             separators=(",", ":"),
         )
-        schema = (f'<script type="application/ld+json">{schema}</script>'
-                  f'<script type="application/ld+json">{crumbs}</script>')
+        schema_scripts = (
+            f'<script type="application/ld+json">{schema}</script>'
+            f'<script type="application/ld+json">{crumbs}</script>'
+        )
+        if copy["faq_pairs"]:
+            faq_schema = json.dumps(
+                {
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": q,
+                            "acceptedAnswer": {"@type": "Answer", "text": a},
+                        }
+                        for q, a in copy["faq_pairs"]
+                    ],
+                },
+                separators=(",", ":"),
+            )
+            schema_scripts += f'<script type="application/ld+json">{faq_schema}</script>'
 
         self.write(f"/play/{game['slug']}/",
                    self.render(body, title=title, description=description,
                                path=f"/play/{game['slug']}/", body_class="game-play-page",
-                               schema=schema, og_type="article",
+                               schema=schema_scripts, og_type="article",
                                og_image=f"/img/game/{game['slug']}.webp"),
                    priority="0.8")
 
