@@ -105,3 +105,10 @@ step is needed for a redeploy.
    frame goes blank; `_headers` cannot help, the check happens upstream.
 3. **No blog.** The previous build's `/blog.html` returned a 308 to a page that
    did not exist; those paths now 301 to `/games/`.
+
+## CI
+
+`.github/workflows/deploy.yml` builds from the committed catalogue and deploys
+`dist/` to the Pages project via `wrangler-action`, on every push to `main`.
+Requires the repo secrets `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`
+(same credentials as the local direct-upload path).
