@@ -33,7 +33,10 @@ SRC = ROOT / "src"
 TPL = SRC / "templates"
 DATA = ROOT / "data"
 DIST = ROOT / "dist"
-MAIN_SITE_CSS = Path("/Users/hou/Desktop/SEXTANT/sites/poki2-online/04-source/css/style.css")
+MAIN_SITE_CSS = ROOT / "src" / "styles" / "main.css"
+# main.css is a vendored copy of poki2.online's 04-source/css/style.css
+# (copied 2026-11-24, sha256 1dcc3f6ecccf3385f48839a23dbf86f326713c825f669d56d84be78d50062286).
+# If the main portal's stylesheet changes, re-run `python3 tools/sync_main_css.py <path>` and rebuild.
 
 NOW = dt.date(2026, 11, 6)
 
