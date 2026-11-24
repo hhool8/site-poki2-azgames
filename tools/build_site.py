@@ -40,6 +40,14 @@ MAIN_SITE_CSS = ROOT / "src" / "styles" / "main.css"
 
 NOW = dt.date(2026, 11, 6)
 
+# IndexNow key for this domain only (deliberately different from
+# poki2.online's key — per-site footprint isolation). The key file must live
+# at <domain>/<key>.txt so search engines can verify submissions.
+INDEXNOW_KEY = "b8dcde93c2db4806861deeb864a14922"
+# Bing Webmaster verification — same user GUID as poki2.online's
+# BingSiteAuth.xml: one Bing account, one user key, all owned sites.
+BING_SITE_AUTH_USER = "78AADB21984CBE2A60AA3CCA6149D514"
+
 CATEGORY_META = {
     "2-player-games": ("👥", "#a855f7", "One keyboard, two players — the games here expect a second person on the same machine."),
     "adventure-games": ("🗺️", "#22d3ee", "Exploration, quests and slow-burn progression rather than a single run."),
@@ -634,6 +642,14 @@ class Site:
                        file=path.lstrip("/") + ".html")
 
     def build_misc(self) -> None:
+        # webmaster / IndexNow verification files
+        (DIST / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY)
+        (DIST / "BingSiteAuth.xml").write_text(
+            '<?xml version="1.0"?>\n<users>\n'
+            f"    <user>{BING_SITE_AUTH_USER}</user>\n"
+            "</users>\n"
+        )
+
         # 404
         body = '<div class="page-wrap"><h1>404 — page not found</h1><p>That game may have been renamed or removed. ' \
                'Try the full catalogue:</p><p><a class="btn btn-primary" href="/games/">Browse all games →</a></p></div>'
