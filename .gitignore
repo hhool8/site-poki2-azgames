@@ -9,3 +9,6 @@ legacy/node_modules/
 
 # catalog backups written by tools/apply_p1_batch*.py
 data/.catalog-pre-p1-batch*.json
+
+# machine-local wrangler state (CF account cache)
+.wrangler/
